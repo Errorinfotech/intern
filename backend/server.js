@@ -35,7 +35,9 @@ app.use(cors({
     if (!origin) return callback(null, true);
 
     // 2. Define allowed non-local origins here (if any)
-    const allowedOrigins = [];
+    const allowedOrigins = [
+      'https://intern.errorinfotech.in'
+    ];
 
     // 3. Robust check for local development origins (localhost, 127.0.0.1, [::1], or private network IPs)
     // Updated regex to include IPv6 loopback [::1]

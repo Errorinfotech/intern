@@ -67,10 +67,11 @@ router.post('/submit', async (req, res) => {
       success: true
     });
   } catch (error) {
-    console.error('Error submitting form:', error);
+    console.error('❌ Error submitting form:', error);
     res.status(500).json({
       message: 'Error submitting form',
-      error: error.message,
+      error: error.message || 'Internal Server Error',
+      details: process.env.NODE_ENV === 'development' ? error.stack : undefined,
       success: false
     });
   }

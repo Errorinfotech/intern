@@ -396,25 +396,29 @@ const initFormSubmission = () => {
             };
 
             // Bulletproof API URL Detection and Sequential Retry
-            const endpoints = [];
-            const hostname = window.location.hostname;
-            const protocol = window.location.protocol;
+            // const endpoints = [];
+            // const hostname = window.location.hostname;
+            // const protocol = window.location.protocol;
 
-            if (protocol === 'file:') {
-                endpoints.push('http://127.0.0.1:5002', 'http://localhost:5002');
-            } else if (hostname === 'localhost' || hostname === '127.0.0.1') {
-                endpoints.push(`http://${hostname}:5002`);
-                endpoints.push(hostname === 'localhost' ? 'http://127.0.0.1:5002' : 'http://localhost:5002');
-            } else if (hostname) {
-                // Check if we are running on port 3000 (Vite)
-                if (window.location.port === '3000') {
-                    endpoints.push(`${protocol}//${hostname}:5002`);
-                }
-                endpoints.push(`${protocol}//${hostname}:5002`);
-                endpoints.push('http://127.0.0.1:5002', 'http://localhost:5002');
-            } else {
-                endpoints.push('http://127.0.0.1:5002', 'http://localhost:5002');
-            }
+            // if (protocol === 'file:') {
+            //     endpoints.push('http://127.0.0.1:5002', 'http://localhost:5002');
+            // } else if (hostname === 'localhost' || hostname === '127.0.0.1') {
+            //     endpoints.push(`http://${hostname}:5002`);
+            //     endpoints.push(hostname === 'localhost' ? 'http://127.0.0.1:5002' : 'http://localhost:5002');
+            // } else if (hostname) {
+            //     // Check if we are running on port 3000 (Vite)
+            //     if (window.location.port === '3000') {
+            //         endpoints.push(`${protocol}//${hostname}:5002`);
+            //     }
+            //     endpoints.push(`${protocol}//${hostname}:5002`);
+            //     endpoints.push('http://127.0.0.1:5002', 'http://localhost:5002');
+            // } else {
+            //     endpoints.push('http://127.0.0.1:5002', 'http://localhost:5002');
+            // }
+
+            const endpoints = [
+                `${window.location.origin}`
+            ];
 
             // Remove duplicates
             const uniqueEndpoints = [...new Set(endpoints)];
@@ -431,7 +435,7 @@ const initFormSubmission = () => {
 
                 try {
                     const controller = new AbortController();
-                    const timeoutId = setTimeout(() => controller.abort(), 5000); // 5s timeout
+                    const timeoutId = setTimeout(() => controller.abort(), 5002); // 5s timeout
 
                     const response = await fetch(`${baseUrl}${formConfig.endpoint}`, {
                         method: 'POST',
