@@ -396,32 +396,27 @@ const initFormSubmission = () => {
             };
 
             // Bulletproof API URL Detection and Sequential Retry
-            // const endpoints = [];
-            // const hostname = window.location.hostname;
-            // const protocol = window.location.protocol;
+            const endpoints = [];
+            const hostname = window.location.hostname;
+            const protocol = window.location.protocol;
 
-            // if (protocol === 'file:') {
-            //     endpoints.push('http://127.0.0.1:5002', 'http://localhost:5002');
-            // } else if (hostname === 'localhost' || hostname === '127.0.0.1') {
-            //     endpoints.push(`http://${hostname}:5002`);
-            //     endpoints.push(hostname === 'localhost' ? 'http://127.0.0.1:5002' : 'http://localhost:5002');
-            // } else if (hostname) {
-            //     // Check if we are running on port 3000 (Vite)
-            //     if (window.location.port === '3000') {
-            //         endpoints.push(`${protocol}//${hostname}:5002`);
-            //     }
-            //     endpoints.push(`${protocol}//${hostname}:5002`);
-            //     endpoints.push('http://127.0.0.1:5002', 'http://localhost:5002');
-            // } else {
-            //     endpoints.push('http://127.0.0.1:5002', 'http://localhost:5002');
-            // }
+            // 1. Current Origin
+            endpoints.push(window.location.origin);
 
-            const endpoints = [
-                `${window.location.origin}`
-            ];
+            // 2. Common Localhost/Alternative Endpoints
+            if (protocol === 'file:') {
+                endpoints.push('http://127.0.0.1:5002', 'http://localhost:5002');
+            } else if (hostname === 'localhost' || hostname === '127.0.0.1') {
+                endpoints.push(`http://${hostname}:5002`);
+                endpoints.push(hostname === 'localhost' ? 'http://127.0.0.1:5002' : 'http://localhost:5002');
+            } else if (hostname) {
+                // If on production, maybe the backend is explicitly on 5002
+                endpoints.push(`${protocol}//${hostname}:5002`);
+                endpoints.push('http://127.0.0.1:5002', 'http://localhost:5002');
+            }
 
-            // Remove duplicates
-            const uniqueEndpoints = [...new Set(endpoints)];
+            // Remove duplicates and filter empty
+            const uniqueEndpoints = [...new Set(endpoints)].filter(e => e);
 
             console.log('🚀 Sequential connection strategy:', uniqueEndpoints);
 
@@ -435,7 +430,7 @@ const initFormSubmission = () => {
 
                 try {
                     const controller = new AbortController();
-                    const timeoutId = setTimeout(() => controller.abort(), 5002); // 5s timeout
+                    const timeoutId = setTimeout(() => controller.abort(), 6000); // 6s timeout
 
                     const response = await fetch(`${baseUrl}${formConfig.endpoint}`, {
                         method: 'POST',
@@ -452,10 +447,19 @@ const initFormSubmission = () => {
 
                     if (!response.ok) {
                         let errorDetail = response.status;
+                        let errData;
                         try {
-                            const errData = await response.json();
+                            errData = await response.json();
                             errorDetail = errData.message || response.status;
                         } catch (e) { }
+
+                        // If it's a 404 or 500, we might be hitting the wrong server/config
+                        // let's try the next endpoint in the list
+                        if (response.status === 404 || response.status === 500) {
+                            console.warn(`⚠️ [Attempt ${index + 1}] Server returned ${response.status}. Trying next endpoint...`);
+                            return attemptSubmission(index + 1);
+                        }
+
                         throw new Error(`Server returned ${errorDetail}`);
                     }
 
@@ -463,11 +467,12 @@ const initFormSubmission = () => {
                 } catch (error) {
                     console.warn(`⚠️ [Attempt ${index + 1}] Failed:`, error.message);
 
-                    // If it was a network error or timeout, try the next one
+                    // If it was a network error, timeout, or aborted, try the next one
                     if (error.name === 'AbortError' ||
                         error.message.includes('fetch') ||
                         error.message.includes('Failed to fetch') ||
-                        error.message.includes('NetworkError')) {
+                        error.message.includes('NetworkError') ||
+                        error.message.includes('ECONNREFUSED')) {
                         return attemptSubmission(index + 1);
                     }
 
