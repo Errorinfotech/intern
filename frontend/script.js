@@ -400,37 +400,42 @@ const initFormSubmission = () => {
             const hostname = window.location.hostname;
             const protocol = window.location.protocol;
 
-            // 1. Current Origin
+            // 1. Relative path (Best for production proxies like intern.errorinfotech.in/api)
+            endpoints.push('');
+
+            // 2. Current Origin
             endpoints.push(window.location.origin);
 
-            // 2. Common Localhost/Alternative Endpoints
+            // 3. Current Host with port 5002
+            if (hostname && hostname !== 'localhost' && hostname !== '127.0.0.1') {
+                endpoints.push(`${protocol}//${hostname}:5002`);
+            }
+
+            // 4. Common Localhost/Alternative Endpoints
             if (protocol === 'file:') {
                 endpoints.push('http://127.0.0.1:5002', 'http://localhost:5002');
             } else if (hostname === 'localhost' || hostname === '127.0.0.1') {
                 endpoints.push(`http://${hostname}:5002`);
                 endpoints.push(hostname === 'localhost' ? 'http://127.0.0.1:5002' : 'http://localhost:5002');
-            } else if (hostname) {
-                // If on production, maybe the backend is explicitly on 5002
-                endpoints.push(`${protocol}//${hostname}:5002`);
-                endpoints.push('http://127.0.0.1:5002', 'http://localhost:5002');
             }
 
-            // Remove duplicates and filter empty
-            const uniqueEndpoints = [...new Set(endpoints)].filter(e => e);
+            // Remove duplicates and filter empty strings (keep '' for relative)
+            const uniqueEndpoints = [...new Set(endpoints)];
 
             console.log('🚀 Sequential connection strategy:', uniqueEndpoints);
 
             const attemptSubmission = async (index = 0) => {
                 const baseUrl = uniqueEndpoints[index];
-                if (!baseUrl) {
-                    throw new Error('All connection attempts failed. Please ensure your backend is running on port 5002.');
+                if (index >= uniqueEndpoints.length) {
+                    const attemptedStr = uniqueEndpoints.map(u => u || '(relative)').join(', ');
+                    throw new Error(`All connection attempts failed. Tried: ${attemptedStr}. Please ensure your backend is running on port 5002.`);
                 }
 
                 console.log(`📡 [Attempt ${index + 1}] Trying: ${baseUrl}${formConfig.endpoint}`);
 
                 try {
                     const controller = new AbortController();
-                    const timeoutId = setTimeout(() => controller.abort(), 6000); // 6s timeout
+                    const timeoutId = setTimeout(() => controller.abort(), 12000); // Increased to 12s
 
                     const response = await fetch(`${baseUrl}${formConfig.endpoint}`, {
                         method: 'POST',
@@ -453,9 +458,8 @@ const initFormSubmission = () => {
                             errorDetail = errData.message || response.status;
                         } catch (e) { }
 
-                        // If it's a 404 or 500, we might be hitting the wrong server/config
-                        // let's try the next endpoint in the list
-                        if (response.status === 404 || response.status === 500) {
+                        // If it's a 404, 502, 503, or 504, try next endpoint
+                        if ([404, 500, 502, 503, 504].includes(response.status)) {
                             console.warn(`⚠️ [Attempt ${index + 1}] Server returned ${response.status}. Trying next endpoint...`);
                             return attemptSubmission(index + 1);
                         }
