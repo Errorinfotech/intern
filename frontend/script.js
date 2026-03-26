@@ -401,8 +401,7 @@ const initFormSubmission = () => {
             // ==========================================
             // 🔴 IMPORTANT CONFIGURE THIS FOR LIVE SITE 🔴
             // ==========================================
-            // Replace this with your actual live backend URL (e.g. https://api.errorinfotech.in)
-            // Leave empty if backend is hosted on the same domain or if using relative proxies.
+            // Replace this with your actual live backend URL (e.g. 'https://api.errorinfotech.in')
             const LIVE_BACKEND_URL = '';
 
             if (LIVE_BACKEND_URL) {
@@ -470,8 +469,9 @@ const initFormSubmission = () => {
                             errorDetail = errData.message || errData.error || response.status;
                         } catch (e) { }
 
-                        // If it's a 404, 502, 503, 504, or 500, log specific error and try next endpoint
-                        if ([404, 500, 502, 503, 504].includes(response.status)) {
+                        // If it's a 400, 404, 405, 500, 502, 503, 504, log specific error and try next endpoint
+                        // Static hosts like Hostinger or Vercel often return 400 or 405 for POSTs to static pages.
+                        if ([400, 404, 405, 500, 502, 503, 504].includes(response.status)) {
                             console.warn(`⚠️ [Attempt ${index + 1}] Server returned ${response.status} (${errorDetail}). Trying next endpoint...`);
                             return attemptSubmission(index + 1);
                         }
@@ -515,7 +515,12 @@ const initFormSubmission = () => {
                 })
                 .catch(error => {
                     console.error('❌ Final Failure:', error);
-                    showMessage('error', error.message || 'Could not connect to the server. Please ensure your backend is running on port 5002.');
+                    let errorMsg = error.message || 'Could not connect to the server.';
+                    if (!LIVE_BACKEND_URL && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+                        errorMsg = 'CRITICAL ERROR: Please configure LIVE_BACKEND_URL in script.js to point to your deployed backend (e.g. https://api.errorinfotech.in). Form cannot submit on a live site without it!';
+                        alert(errorMsg);
+                    }
+                    showMessage('error', errorMsg);
                 })
                 .finally(() => {
                     isSubmitting = false;
