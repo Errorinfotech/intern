@@ -397,10 +397,22 @@ const initFormSubmission = () => {
 
             // Bulletproof API URL Detection and Sequential Retry
             const endpoints = [];
+
+            // ==========================================
+            // 🔴 IMPORTANT CONFIGURE THIS FOR LIVE SITE 🔴
+            // ==========================================
+            // Replace this with your actual live backend URL (e.g. https://api.errorinfotech.in)
+            // Leave empty if backend is hosted on the same domain or if using relative proxies.
+            const LIVE_BACKEND_URL = '';
+
+            if (LIVE_BACKEND_URL) {
+                endpoints.push(LIVE_BACKEND_URL);
+            }
+
             const hostname = window.location.hostname;
             const protocol = window.location.protocol;
 
-            // 1. Relative path (Best for production proxies like intern.errorinfotech.in/api)
+            // 1. Relative path (Best for production proxies where frontend and backend are on same domain)
             endpoints.push('');
 
             // 2. Current Origin
@@ -419,8 +431,8 @@ const initFormSubmission = () => {
                 endpoints.push(hostname === 'localhost' ? 'http://127.0.0.1:5002' : 'http://localhost:5002');
             }
 
-            // Remove duplicates and filter empty strings (keep '' for relative)
-            const uniqueEndpoints = [...new Set(endpoints)];
+            // Remove duplicates and filter out trailing slashes
+            const uniqueEndpoints = [...new Set(endpoints)].map(e => e ? e.replace(/\/$/, '') : e);
 
             console.log('🚀 Sequential connection strategy:', uniqueEndpoints);
 
@@ -455,12 +467,12 @@ const initFormSubmission = () => {
                         let errData;
                         try {
                             errData = await response.json();
-                            errorDetail = errData.message || response.status;
+                            errorDetail = errData.message || errData.error || response.status;
                         } catch (e) { }
 
-                        // If it's a 404, 502, 503, or 504, try next endpoint
+                        // If it's a 404, 502, 503, 504, or 500, log specific error and try next endpoint
                         if ([404, 500, 502, 503, 504].includes(response.status)) {
-                            console.warn(`⚠️ [Attempt ${index + 1}] Server returned ${response.status}. Trying next endpoint...`);
+                            console.warn(`⚠️ [Attempt ${index + 1}] Server returned ${response.status} (${errorDetail}). Trying next endpoint...`);
                             return attemptSubmission(index + 1);
                         }
 
