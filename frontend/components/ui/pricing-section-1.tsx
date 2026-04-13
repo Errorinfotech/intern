@@ -44,11 +44,11 @@ const PricingSwitch = ({
       <div
         role="button"
         tabIndex={0}
-        onClick={(e) => { 
+        onClick={(e) => {
           console.log('Pricing Pro Clicked');
-          e.preventDefault(); 
-          e.stopPropagation(); 
-          handleSwitch("0"); 
+          e.preventDefault();
+          e.stopPropagation();
+          handleSwitch("0");
         }}
         className={cn(
           "relative z-10 w-full sm:h-14 h-10 rounded-full sm:px-6 px-3 sm:py-2 py-1 font-medium transition-colors cursor-pointer text-center flex items-center justify-center",
@@ -70,11 +70,11 @@ const PricingSwitch = ({
       <div
         role="button"
         tabIndex={0}
-        onClick={(e) => { 
+        onClick={(e) => {
           console.log('Pricing Ent Clicked');
-          e.preventDefault(); 
-          e.stopPropagation(); 
-          handleSwitch("1"); 
+          e.preventDefault();
+          e.stopPropagation();
+          handleSwitch("1");
         }}
         className={cn(
           "relative z-10 w-full sm:h-14 h-10 flex-shrink-0 rounded-full sm:px-6 px-3 sm:py-2 py-1 font-medium transition-colors cursor-pointer text-center flex items-center justify-center",
@@ -117,14 +117,14 @@ const timelineVaraints = {
   hidden: { filter: "blur(10px)", y: -20, opacity: 0 },
 };
 
-export default function PricingSection2({ 
-  mode = 3, 
+export default function PricingSection2({
+  mode = 3,
   onModeChange,
-  customPrices 
-}: { 
-  mode?: 3 | 6, 
+  customPrices
+}: {
+  mode?: 3 | 6,
   onModeChange?: (mode: 3 | 6) => void,
-  customPrices?: { pro: number, ent: number, originalPro: number, originalEnt: number } 
+  customPrices?: { pro: number, ent: number, originalPro: number, originalEnt: number }
 }) {
   const isEnterprise = mode === 6;
   const pricingRef = useRef<HTMLDivElement>(null);
@@ -191,7 +191,7 @@ export default function PricingSection2({
             <span className="text-[#bb734b] font-medium tracking-wide">Investment In Your Career</span>
           </TimelineContent>
 
-          <h1 className="md:text-5xl sm:text-4xl text-3xl font-semibold text-white mb-4 leading-[120%]">
+          <h1 className="md:text-5xl sm:text-4xl text-3xl font-semibold text-white mb-4 leading-tight pb-4">
             <VerticalCutReveal
               splitBy="words"
               staggerDuration={0.15}
@@ -256,8 +256,8 @@ export default function PricingSection2({
             </div>
 
             <div className="space-y-8 p-8 rounded-3xl bg-[#130f0c] border border-white/5 relative overflow-hidden">
-               <div className="absolute top-0 right-0 w-64 h-64 bg-[#bb734b]/10 blur-[80px] rounded-full point-events-none" />
-              
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[#bb734b]/10 blur-[80px] rounded-full point-events-none" />
+
               <TimelineContent
                 as="div"
                 animationNum={3}
@@ -301,7 +301,7 @@ export default function PricingSection2({
                     ₹{originalPrice.toLocaleString()}
                   </span>
                 </div>
-                
+
                 <TimelineContent
                   as="div"
                   role="button"
@@ -309,9 +309,9 @@ export default function PricingSection2({
                   animationNum={6}
                   timelineRef={pricingRef}
                   customVariants={revealVariants}
-                  onClick={(e) => { 
-                    e.preventDefault(); 
-                    e.stopPropagation(); 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
                     const experienceSelect = document.getElementById('experience') as HTMLSelectElement;
                     if (experienceSelect) {
                       experienceSelect.value = isEnterprise ? "6" : "3";
