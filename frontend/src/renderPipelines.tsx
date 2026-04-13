@@ -160,7 +160,7 @@ const PipelineApp = ({ pageName }: { pageName: string }) => {
                     <div className="flex bg-white/5 p-2 gap-3 rounded-2xl border border-white/10 mb-40 relative z-20 backdrop-blur-sm">
                         <button
                             onClick={() => handleModeChange(3)}
-                            className={`w-64 py-4 rounded-xl font-bold transition-all duration-300 text-sm ${mode === 3
+                            className={`w-64 py-[18px] rounded-xl font-bold transition-all duration-300 text-sm ${mode === 3
                                 ? 'bg-[#bb734b] text-white shadow-[0_0_20px_rgba(187,115,75,0.3)]'
                                 : 'text-white/40 hover:text-white/70'
                                 }`}
@@ -169,7 +169,7 @@ const PipelineApp = ({ pageName }: { pageName: string }) => {
                         </button>
                         <button
                             onClick={() => handleModeChange(6)}
-                            className={`w-64 py-4 rounded-xl font-bold transition-all duration-300 text-sm ${mode === 6
+                            className={`w-64 py-[18px] rounded-xl font-bold transition-all duration-300 text-sm ${mode === 6
                                 ? 'bg-[#bb734b] text-white shadow-[0_0_20px_rgba(187,115,75,0.3)]'
                                 : 'text-white/40 hover:text-white/70'
                                 }`}
