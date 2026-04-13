@@ -157,10 +157,10 @@ const PipelineApp = ({ pageName }: { pageName: string }) => {
         <div className="w-full flex justify-center items-center py-10 px-4">
             <div className="max-w-7xl mx-auto flex flex-col items-center w-full">
                 {!isAIML && (
-                    <div className="flex bg-white/5 p-1 rounded-2xl border border-white/10 mb-32 relative z-20 backdrop-blur-sm">
+                    <div className="flex bg-white/5 p-2 gap-3 rounded-2xl border border-white/10 mb-40 relative z-20 backdrop-blur-sm">
                         <button
                             onClick={() => handleModeChange(3)}
-                            className={`px-8 py-3 rounded-xl font-bold transition-all duration-300 text-sm ${mode === 3
+                            className={`w-64 py-4 rounded-xl font-bold transition-all duration-300 text-sm ${mode === 3
                                 ? 'bg-[#bb734b] text-white shadow-[0_0_20px_rgba(187,115,75,0.3)]'
                                 : 'text-white/40 hover:text-white/70'
                                 }`}
@@ -169,7 +169,7 @@ const PipelineApp = ({ pageName }: { pageName: string }) => {
                         </button>
                         <button
                             onClick={() => handleModeChange(6)}
-                            className={`px-8 py-3 width-100 rounded-xl font-bold transition-all duration-300 text-sm ${mode === 6
+                            className={`w-64 py-4 rounded-xl font-bold transition-all duration-300 text-sm ${mode === 6
                                 ? 'bg-[#bb734b] text-white shadow-[0_0_20px_rgba(187,115,75,0.3)]'
                                 : 'text-white/40 hover:text-white/70'
                                 }`}
