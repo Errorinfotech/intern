@@ -157,21 +157,21 @@ const PipelineApp = ({ pageName }: { pageName: string }) => {
         <div className="w-full flex justify-center items-center py-10 px-4">
             <div className="max-w-7xl mx-auto flex flex-col items-center w-full">
                 {!isAIML && (
-                    <div className="flex p-1.5 gap-2 rounded-2xl border border-white/10 mb-40 relative z-20">
+                    <div className="flex p-1.5 gap-3 rounded-full border border-white/10 mb-40 relative z-20">
                         <button
                             onClick={() => handleModeChange(3)}
-                            className={`w-52 py-4 rounded-xl font-bold transition-all duration-300 text-sm ${mode === 3
+                            className={`w-48 py-3.5 rounded-full font-bold transition-all duration-300 text-sm ${mode === 3
                                 ? 'bg-[#bb734b] text-white shadow-[0_4px_20px_rgba(187,115,75,0.4)]'
-                                : 'text-white/40 hover:text-white border border-white/10'
+                                : 'text-white/30 hover:text-white/50 border border-white/10'
                                 }`}
                         >
                             3 Month (Pro)
                         </button>
                         <button
                             onClick={() => handleModeChange(6)}
-                            className={`w-52 py-4 rounded-xl font-bold transition-all duration-300 text-sm ${mode === 6
+                            className={`w-48 py-3.5 rounded-full font-bold transition-all duration-300 text-sm ${mode === 6
                                 ? 'bg-[#bb734b] text-white shadow-[0_4px_20px_rgba(187,115,75,0.4)]'
-                                : 'text-white/40 hover:text-white border border-white/10'
+                                : 'text-white/30 hover:text-white/50 border border-white/10'
                                 }`}
                         >
                             6 Month (Enterprise)
