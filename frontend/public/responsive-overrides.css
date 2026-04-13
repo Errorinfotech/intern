@@ -102,12 +102,10 @@
     }
 
     .hero-header {
-        min-height: 70vh !important;
-        padding: 14rem 1rem 4rem !important;
-    }
-
-    .hero-logo {
-        margin-top: 3rem !important;
+        min-height: 85vh !important;
+        display: flex !important;
+        align-items: flex-start !important;
+        padding: 10rem 1rem 4rem !important;
     }
 
     .hero-header h1 {
