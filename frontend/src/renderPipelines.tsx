@@ -166,9 +166,9 @@ const PipelineApp = ({ pageName }: { pageName: string }) => {
                             ></div>
                             <button
                                 role="button"
-                                className={`group relative inline-flex items-center justify-center text-sm md:text-base rounded-xl px-8 md:px-12 py-3 md:py-4 font-bold text-white transition-all duration-300 whitespace-nowrap ${mode === 3
-                                    ? 'bg-[#bb734b] shadow-lg -translate-y-0.5 shadow-[#bb734b]/30'
-                                    : 'bg-gray-900 border border-white/10 hover:bg-gray-800'
+                                className={`group relative inline-flex items-center justify-center text-sm md:text-base rounded-xl px-8 md:px-12 py-3 md:py-4 font-bold transition-all duration-300 whitespace-nowrap ${mode === 3
+                                    ? 'bg-[#bb734b] text-white shadow-lg -translate-y-0.5 shadow-[#bb734b]/30'
+                                    : 'bg-gray-200 text-black border border-black/10 hover:bg-white'
                                     }`}
                             >
                                 3 Month (Pro)
@@ -178,7 +178,7 @@ const PipelineApp = ({ pageName }: { pageName: string }) => {
                                     height="10"
                                     width="10"
                                     fill="none"
-                                    className="mt-0.5 ml-2 -mr-1 stroke-white stroke-2"
+                                    className={`mt-0.5 ml-2 -mr-1 stroke-2 ${mode === 3 ? 'stroke-white' : 'stroke-black'}`}
                                 >
                                     <path
                                         d="M0 5h7"
@@ -200,9 +200,9 @@ const PipelineApp = ({ pageName }: { pageName: string }) => {
                             ></div>
                             <button
                                 role="button"
-                                className={`group relative inline-flex items-center justify-center text-sm md:text-base rounded-xl px-8 md:px-12 py-3 md:py-4 font-bold text-white transition-all duration-300 whitespace-nowrap ${mode === 6
-                                    ? 'bg-[#bb734b] shadow-lg -translate-y-0.5 shadow-[#bb734b]/30'
-                                    : 'bg-gray-900 border border-white/10 hover:bg-gray-800'
+                                className={`group relative inline-flex items-center justify-center text-sm md:text-base rounded-xl px-8 md:px-12 py-3 md:py-4 font-bold transition-all duration-300 whitespace-nowrap ${mode === 6
+                                    ? 'bg-[#bb734b] text-white shadow-lg -translate-y-0.5 shadow-[#bb734b]/30'
+                                    : 'bg-gray-200 text-black border border-black/10 hover:bg-white'
                                     }`}
                             >
                                 6 Month (Enterprise)
@@ -212,7 +212,7 @@ const PipelineApp = ({ pageName }: { pageName: string }) => {
                                     height="10"
                                     width="10"
                                     fill="none"
-                                    className="mt-0.5 ml-2 -mr-1 stroke-white stroke-2"
+                                    className={`mt-0.5 ml-2 -mr-1 stroke-2 ${mode === 6 ? 'stroke-white' : 'stroke-black'}`}
                                 >
                                     <path
                                         d="M0 5h7"
