@@ -13,6 +13,9 @@ dotenv.config();
 
 const app = express();
 
+// Trust Nginx proxy
+app.set('trust proxy', 1);
+
 app.use(cookieParser());
 
 // Security Middlewares
