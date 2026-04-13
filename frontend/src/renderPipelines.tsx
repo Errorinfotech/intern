@@ -157,21 +157,21 @@ const PipelineApp = ({ pageName }: { pageName: string }) => {
         <div className="w-full flex justify-center items-center py-10 px-4">
             <div className="max-w-7xl mx-auto flex flex-col items-center w-full">
                 {!isAIML && (
-                    <div className="flex p-1.5 gap-4 rounded-full border border-white/10 mb-44 relative z-20 backdrop-blur-md">
+                    <div className="flex p-2 gap-3 rounded-2xl border border-white/10 mb-44 relative z-20 backdrop-blur-sm">
                         <button
                             onClick={() => handleModeChange(3)}
-                            className={`w-56 py-6 rounded-full font-bold transition-all duration-300 text-sm uppercase tracking-wider ${mode === 3
-                                ? 'bg-[#bb734b] text-white shadow-[0_10px_25px_rgba(187,115,75,0.4)]'
-                                : 'text-white/30 hover:text-white/50'
+                            className={`w-56 py-6 rounded-xl font-bold transition-all duration-300 text-sm ${mode === 3
+                                ? 'bg-[#bb734b] text-white shadow-[0_0_20px_rgba(187,115,75,0.3)]'
+                                : 'text-white/40 hover:text-white/70 border border-white/20'
                                 }`}
                         >
                             3 Month (Pro)
                         </button>
                         <button
                             onClick={() => handleModeChange(6)}
-                            className={`w-56 py-6 rounded-full font-bold transition-all duration-300 text-sm uppercase tracking-wider ${mode === 6
-                                ? 'bg-[#bb734b] text-white shadow-[0_10px_25px_rgba(187,115,75,0.4)]'
-                                : 'text-white/30 hover:text-white/50'
+                            className={`w-56 py-6 rounded-xl font-bold transition-all duration-300 text-sm ${mode === 6
+                                ? 'bg-[#bb734b] text-white shadow-[0_0_20px_rgba(187,115,75,0.3)]'
+                                : 'text-white/40 hover:text-white/70 border border-white/20'
                                 }`}
                         >
                             6 Month (Enterprise)
