@@ -157,25 +157,38 @@ const PipelineApp = ({ pageName }: { pageName: string }) => {
         <div className="w-full flex justify-center items-center py-10 px-4">
             <div className="max-w-7xl mx-auto flex flex-col items-center w-full">
                 {!isAIML && (
-                    <div className="flex flex-row flex-wrap justify-center p-4 gap-6 md:gap-10 mb-20 md:mb-36 relative z-20">
-                        <button
-                            onClick={() => handleModeChange(3)}
-                            className={`min-w-[180px] md:min-w-[260px] px-10 md:px-14 py-4 md:py-5 rounded-full font-bold transition-all duration-300 text-base md:text-lg whitespace-nowrap shadow-xl ${mode === 3
-                                ? 'bg-[#bb734b] text-white shadow-[#bb734b]/40 scale-105'
-                                : 'bg-black/20 text-white/70 border-2 border-white/20 hover:border-white/40 hover:bg-black/40'
-                                }`}
-                        >
-                            3 Month (Pro)
-                        </button>
-                        <button
-                            onClick={() => handleModeChange(6)}
-                            className={`min-w-[180px] md:min-w-[260px] px-10 md:px-14 py-4 md:py-5 rounded-full font-bold transition-all duration-300 text-base md:text-lg whitespace-nowrap shadow-xl ${mode === 6
-                                ? 'bg-[#bb734b] text-white shadow-[#bb734b]/40 scale-105'
-                                : 'bg-black/20 text-white/70 border-2 border-white/20 hover:border-white/40 hover:bg-black/40'
-                                }`}
-                        >
-                            6 Month (Enterprise)
-                        </button>
+                    <div className="flex flex-row flex-wrap justify-center p-4 gap-6 md:gap-14 mb-20 md:mb-32 relative z-20">
+                        {/* 3 Month Button */}
+                        <div className="relative group">
+                            {mode === 3 && (
+                                <div className="absolute inset-x-0 -inset-y-2 bg-gradient-to-r from-[#bb734b] via-pink-500 to-yellow-400 rounded-full blur-lg opacity-60 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
+                            )}
+                            <button
+                                onClick={() => handleModeChange(3)}
+                                className={`relative min-w-[180px] md:min-w-[260px] px-10 md:px-14 py-4 md:py-5 rounded-full font-bold transition-all duration-300 text-base md:text-lg whitespace-nowrap ${mode === 3
+                                    ? 'bg-[#bb734b] text-white shadow-xl scale-105'
+                                    : 'bg-black/20 text-white/70 border-2 border-white/10 hover:border-white/30 hover:bg-black/40'
+                                    }`}
+                            >
+                                3 Month (Pro)
+                            </button>
+                        </div>
+
+                        {/* 6 Month Button */}
+                        <div className="relative group">
+                            {mode === 6 && (
+                                <div className="absolute inset-x-0 -inset-y-2 bg-gradient-to-r from-[#bb734b] via-pink-500 to-yellow-400 rounded-full blur-lg opacity-60 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
+                            )}
+                            <button
+                                onClick={() => handleModeChange(6)}
+                                className={`relative min-w-[180px] md:min-w-[260px] px-10 md:px-14 py-4 md:py-5 rounded-full font-bold transition-all duration-300 text-base md:text-lg whitespace-nowrap ${mode === 6
+                                    ? 'bg-[#bb734b] text-white shadow-xl scale-105'
+                                    : 'bg-black/20 text-white/70 border-2 border-white/10 hover:border-white/30 hover:bg-black/40'
+                                    }`}
+                            >
+                                6 Month (Enterprise)
+                            </button>
+                        </div>
                     </div>
                 )}
                 <br />
