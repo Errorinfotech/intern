@@ -172,7 +172,7 @@ const VerticalCutReveal = forwardRef<VerticalCutRevealRef, TextProps>(
             <span
               key={wordIndex}
               aria-hidden="true"
-              className={cn("inline-flex overflow-hidden pb-2 -mb-2", wordLevelClassName)}
+              className={cn("inline-flex overflow-hidden pb-4 -mb-4", wordLevelClassName)}
             >
               {(wordObj as any).characters.map((char: string, charIndex: number) => (
                 <span

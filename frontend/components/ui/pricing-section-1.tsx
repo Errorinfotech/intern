@@ -191,7 +191,7 @@ export default function PricingSection2({
             <span className="text-[#bb734b] font-medium tracking-wide">Investment In Your Career</span>
           </TimelineContent>
 
-          <h1 className="md:text-5xl sm:text-4xl text-3xl font-semibold text-white mb-4 leading-tight pb-4">
+          <h1 className="md:text-5xl sm:text-4xl text-3xl font-semibold text-white mb-4 leading-relaxed pb-8">
             <VerticalCutReveal
               splitBy="words"
               staggerDuration={0.15}
