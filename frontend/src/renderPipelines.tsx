@@ -157,10 +157,10 @@ const PipelineApp = ({ pageName }: { pageName: string }) => {
         <div className="w-full flex justify-center items-center py-10 px-4">
             <div className="max-w-7xl mx-auto flex flex-col items-center w-full">
                 {!isAIML && (
-                    <div className="flex p-2 gap-6 rounded-full border border-white/10 mb-40 relative z-20 bg-white/5 backdrop-blur-sm">
+                    <div className="flex p-1.5 md:p-2 gap-3 md:gap-6 rounded-full border border-white/10 mb-20 md:mb-40 relative z-20 bg-white/5 backdrop-blur-sm">
                         <button
                             onClick={() => handleModeChange(3)}
-                            className={`w-64 min-h-[52px] py-3.5 rounded-full font-bold transition-all duration-300 text-sm whitespace-nowrap ${mode === 3
+                            className={`w-36 md:w-64 min-h-[44px] md:min-h-[52px] py-2 md:py-3.5 rounded-full font-bold transition-all duration-300 text-xs md:text-sm whitespace-nowrap ${mode === 3
                                 ? 'bg-[#bb734b] text-white shadow-[0_4px_20px_rgba(187,115,75,0.4)]'
                                 : 'text-white/30 hover:text-white/50 border border-white/10'
                                 }`}
@@ -169,7 +169,7 @@ const PipelineApp = ({ pageName }: { pageName: string }) => {
                         </button>
                         <button
                             onClick={() => handleModeChange(6)}
-                            className={`w-64 min-h-[52px] py-3.5 rounded-full font-bold transition-all duration-300 text-sm whitespace-nowrap ${mode === 6
+                            className={`w-36 md:w-64 min-h-[44px] md:min-h-[52px] py-2 md:py-3.5 rounded-full font-bold transition-all duration-300 text-xs md:text-sm whitespace-nowrap ${mode === 6
                                 ? 'bg-[#bb734b] text-white shadow-[0_4px_20px_rgba(187,115,75,0.4)]'
                                 : 'text-white/30 hover:text-white/50 border border-white/10'
                                 }`}
