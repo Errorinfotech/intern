@@ -157,21 +157,21 @@ const PipelineApp = ({ pageName }: { pageName: string }) => {
         <div className="w-full flex justify-center items-center py-10 px-4">
             <div className="max-w-7xl mx-auto flex flex-col items-center w-full">
                 {!isAIML && (
-                    <div className="flex flex-row p-2 gap-4 md:gap-8 mb-16 md:mb-32 relative z-20">
+                    <div className="flex flex-row flex-wrap justify-center p-4 gap-6 md:gap-10 mb-20 md:mb-36 relative z-20">
                         <button
                             onClick={() => handleModeChange(3)}
-                            className={`min-w-[160px] md:min-w-[240px] px-8 py-3.5 md:py-4 rounded-full font-bold transition-all duration-300 text-sm md:text-base whitespace-nowrap ${mode === 3
-                                ? 'bg-[#bb734b] text-white shadow-[0_10px_25px_-5px_rgba(187,115,75,0.4)] scale-105'
-                                : 'bg-white/5 text-white/60 border border-white/10 hover:border-white/30 hover:bg-white/10'
+                            className={`min-w-[180px] md:min-w-[260px] px-10 md:px-14 py-4 md:py-5 rounded-full font-bold transition-all duration-300 text-base md:text-lg whitespace-nowrap shadow-xl ${mode === 3
+                                ? 'bg-[#bb734b] text-white shadow-[#bb734b]/40 scale-105'
+                                : 'bg-black/20 text-white/70 border-2 border-white/20 hover:border-white/40 hover:bg-black/40'
                                 }`}
                         >
                             3 Month (Pro)
                         </button>
                         <button
                             onClick={() => handleModeChange(6)}
-                            className={`min-w-[160px] md:min-w-[240px] px-8 py-3.5 md:py-4 rounded-full font-bold transition-all duration-300 text-sm md:text-base whitespace-nowrap ${mode === 6
-                                ? 'bg-[#bb734b] text-white shadow-[0_10px_25px_-5px_rgba(187,115,75,0.4)] scale-105'
-                                : 'bg-white/5 text-white/60 border border-white/10 hover:border-white/30 hover:bg-white/10'
+                            className={`min-w-[180px] md:min-w-[260px] px-10 md:px-14 py-4 md:py-5 rounded-full font-bold transition-all duration-300 text-base md:text-lg whitespace-nowrap shadow-xl ${mode === 6
+                                ? 'bg-[#bb734b] text-white shadow-[#bb734b]/40 scale-105'
+                                : 'bg-black/20 text-white/70 border-2 border-white/20 hover:border-white/40 hover:bg-black/40'
                                 }`}
                         >
                             6 Month (Enterprise)
