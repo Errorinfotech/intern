@@ -166,19 +166,19 @@ const PipelineApp = ({ pageName }: { pageName: string }) => {
                             ></div>
                             <button
                                 role="button"
-                                className={`group relative inline-flex items-center justify-center text-sm md:text-base rounded-xl px-8 md:px-12 py-3 md:py-4 font-bold transition-all duration-300 whitespace-nowrap ${mode === 3
+                                className={`group relative inline-flex items-center justify-center text-sm md:text-base rounded-xl px-12 md:px-20 py-3 md:py-4 font-bold transition-all duration-300 min-w-[200px] md:min-w-[320px] whitespace-nowrap ${mode === 3
                                     ? 'bg-[#bb734b] text-white shadow-lg -translate-y-0.5 shadow-[#bb734b]/30'
                                     : 'bg-gray-200 text-black border border-black/10 hover:bg-white'
                                     }`}
                             >
-                                3 Month (Pro)
+                                <span className="flex-1 text-center">3 Month (Pro)</span>
                                 <svg
                                     aria-hidden="true"
                                     viewBox="0 0 10 10"
                                     height="10"
                                     width="10"
                                     fill="none"
-                                    className={`mt-0.5 ml-2 -mr-1 stroke-2 ${mode === 3 ? 'stroke-white' : 'stroke-black'}`}
+                                    className={`mt-0.5 ml-2 -mr-1 stroke-2 transition-transform duration-300 ${mode === 3 ? 'stroke-white translate-x-1' : 'stroke-black group-hover:translate-x-1'}`}
                                 >
                                     <path
                                         d="M0 5h7"
@@ -186,7 +186,6 @@ const PipelineApp = ({ pageName }: { pageName: string }) => {
                                     ></path>
                                     <path
                                         d="M1 1l4 4-4 4"
-                                        className={`transition duration-300 ${mode === 3 ? 'translate-x-[3px]' : 'group-hover:translate-x-[3px]'}`}
                                     ></path>
                                 </svg>
                             </button>
@@ -200,19 +199,19 @@ const PipelineApp = ({ pageName }: { pageName: string }) => {
                             ></div>
                             <button
                                 role="button"
-                                className={`group relative inline-flex items-center justify-center text-sm md:text-base rounded-xl px-8 md:px-12 py-3 md:py-4 font-bold transition-all duration-300 whitespace-nowrap ${mode === 6
+                                className={`group relative inline-flex items-center justify-center text-sm md:text-base rounded-xl px-12 md:px-20 py-3 md:py-4 font-bold transition-all duration-300 min-w-[200px] md:min-w-[320px] whitespace-nowrap ${mode === 6
                                     ? 'bg-[#bb734b] text-white shadow-lg -translate-y-0.5 shadow-[#bb734b]/30'
                                     : 'bg-gray-200 text-black border border-black/10 hover:bg-white'
                                     }`}
                             >
-                                6 Month (Enterprise)
+                                <span className="flex-1 text-center">6 Month (Enterprise)</span>
                                 <svg
                                     aria-hidden="true"
                                     viewBox="0 0 10 10"
                                     height="10"
                                     width="10"
                                     fill="none"
-                                    className={`mt-0.5 ml-2 -mr-1 stroke-2 ${mode === 6 ? 'stroke-white' : 'stroke-black'}`}
+                                    className={`mt-0.5 ml-2 -mr-1 stroke-2 transition-transform duration-300 ${mode === 6 ? 'stroke-white translate-x-1' : 'stroke-black group-hover:translate-x-1'}`}
                                 >
                                     <path
                                         d="M0 5h7"
@@ -220,7 +219,6 @@ const PipelineApp = ({ pageName }: { pageName: string }) => {
                                     ></path>
                                     <path
                                         d="M1 1l4 4-4 4"
-                                        className={`transition duration-300 ${mode === 6 ? 'translate-x-[3px]' : 'group-hover:translate-x-[3px]'}`}
                                     ></path>
                                 </svg>
                             </button>
