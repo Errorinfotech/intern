@@ -197,6 +197,15 @@ const initValidation = () => {
             requiredMsg: "Please select an answer.",
             invalidMsg: "Please select your commitment.",
             validate: (val) => val !== "" && (val === 'Yes' || val === 'No')
+        },
+        terms: {
+            el: document.getElementById('terms'),
+            requiredMsg: "Please agree to the terms and conditions.",
+            invalidMsg: "Please agree to the terms and conditions.",
+            validate: (val) => {
+                const termsEl = document.getElementById('terms');
+                return termsEl ? termsEl.checked : false;
+            }
         }
     };
 
@@ -229,10 +238,10 @@ const initValidation = () => {
         field.el.addEventListener('change', () => validateField(field));
     });
 
-    // Terms checkbox listener is now handled by pure HTML/Label
-    if (termsLabel) {
-        termsLabel.addEventListener('click', () => {
-            // Logic removed as checkbox is now always enabled
+    // Terms checkbox listener
+    if (termsCheckbox) {
+        termsCheckbox.addEventListener('change', () => {
+            validateField(fields.terms);
         });
     }
 

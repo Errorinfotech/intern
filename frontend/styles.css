@@ -1399,9 +1399,10 @@ body {
 }
 
 .checkbox-label input {
-    width: auto;
+    width: 18px;
+    height: 18px;
     margin: 0;
-    display: none;
+    cursor: pointer;
 }
 
 .checkmark {
