@@ -11,20 +11,26 @@
         rel="stylesheet">
     <style>
         :root {
-            --primary: #bb734b;           /* Copper Accent as Primary */
-            --primary-light: #d6956f;     /* Lighter Copper */
-            --secondary: #bb734b;         
-            --secondary-hover: #a5613a;   
-            --bg-body: #0d0a08;           /* Near Black-Brown */
-            --bg-section: #1a1410;        /* Deep Dark Brown */
-            --text-main: #ffffff;         /* Pure White */
-            --text-muted: #a1a1aa;        /* Muted Light Gray */
+            --primary: #bb734b;
+            /* Copper Accent as Primary */
+            --primary-light: #d6956f;
+            /* Lighter Copper */
+            --secondary: #bb734b;
+            --secondary-hover: #a5613a;
+            --bg-body: #0d0a08;
+            /* Near Black-Brown */
+            --bg-section: #1a1410;
+            /* Deep Dark Brown */
+            --text-main: #ffffff;
+            /* Pure White */
+            --text-muted: #a1a1aa;
+            /* Muted Light Gray */
             --border-color: rgba(187, 115, 75, 0.15);
             --border-focus: #bb734b;
-            
+
             --success: #38a169;
             --warning: #e53e3e;
-            
+
             --shadow-sm: 0 2px 8px rgba(61, 44, 34, 0.04);
             --shadow-md: 0 8px 24px rgba(61, 44, 34, 0.08);
             --shadow-hover: 0 12px 32px rgba(187, 115, 75, 0.12);
@@ -79,7 +85,7 @@
             position: absolute;
             inset: 0;
             background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.05) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(244, 63, 94, 0.05) 0%, transparent 50%);
+                radial-gradient(circle at 80% 20%, rgba(244, 63, 94, 0.05) 0%, transparent 50%);
             filter: blur(80px);
             z-index: 0;
         }
@@ -112,13 +118,27 @@
         }
 
         @keyframes shape-entrance {
-            from { opacity: 0; transform: translateY(-150px) rotate(-15deg); }
-            to { opacity: 1; transform: translateY(0) rotate(var(--rotate)); }
+            from {
+                opacity: 0;
+                transform: translateY(-150px) rotate(-15deg);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) rotate(var(--rotate));
+            }
         }
 
         @keyframes shape-float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(15px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(15px);
+            }
         }
 
         /* Fade Up Animation */
@@ -129,7 +149,10 @@
         }
 
         @keyframes fade-up {
-            to { opacity: 1; transform: translateY(0); }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .hero-container {
@@ -199,7 +222,7 @@
 
         .hero-badge {
             display: inline-block;
-            background-color: rgba(187,115,75,0.1);
+            background-color: rgba(187, 115, 75, 0.1);
             color: var(--secondary);
             padding: 6px 18px;
             border-radius: 30px;
@@ -208,17 +231,17 @@
             letter-spacing: 0.5px;
             text-transform: uppercase;
             margin-bottom: 1.5rem;
-            border: 1px solid rgba(187,115,75,0.2);
+            border: 1px solid rgba(187, 115, 75, 0.2);
         }
 
         .hero-logo {
             height: 95px;
             width: auto;
             margin-bottom: 1.5rem;
-            filter: brightness(0) drop-shadow(0 4px 6px rgba(0,0,0,0.05));
+            filter: brightness(0) drop-shadow(0 4px 6px rgba(0, 0, 0, 0.05));
             transition: transform 0.3s ease;
         }
-        
+
         .hero-logo:hover {
             transform: scale(1.02);
         }
@@ -237,13 +260,13 @@
             position: relative;
             display: inline-block;
         }
-        
+
         .hero-highlight::after {
             content: '';
             position: absolute;
             width: 100%;
             height: 8px;
-            background-color: rgba(187,115,75,0.2);
+            background-color: rgba(187, 115, 75, 0.2);
             bottom: 8px;
             left: 0;
             z-index: -1;
@@ -257,14 +280,14 @@
             margin: 0 auto 2.5rem;
             max-width: 600px;
         }
-        
+
         .hero-actions {
             display: flex;
             gap: 1rem;
             justify-content: center;
             align-items: center;
         }
-        
+
         .hero-btn-primary {
             background-color: var(--secondary);
             color: white;
@@ -275,14 +298,14 @@
             transition: var(--transition);
             box-shadow: 0 4px 15px rgba(187, 115, 75, 0.3);
         }
-        
+
         .hero-btn-primary:hover {
             background-color: var(--primary);
             box-shadow: 0 6px 20px rgba(61, 44, 34, 0.2);
             transform: translateY(-2px);
             color: white;
         }
-        
+
         .hero-btn-outline {
             background-color: transparent;
             color: var(--primary);
@@ -293,18 +316,20 @@
             transition: var(--transition);
             border: 2px solid var(--border-color);
         }
-        
+
         .hero-btn-outline:hover {
             border-color: var(--primary);
-            background-color: rgba(61,44,34,0.05);
+            background-color: rgba(61, 44, 34, 0.05);
             transform: translateY(-2px);
         }
 
         /* Section Global */
-        .programs-section, .contact-section {
+        .programs-section,
+        .contact-section {
             padding: 3rem 2rem;
             background-color: transparent;
-            margin-bottom: 3rem; /* Added margin for separation */
+            margin-bottom: 3rem;
+            /* Added margin for separation */
         }
 
         .section-header {
@@ -335,15 +360,18 @@
             width: 100%;
             overflow: hidden;
             position: relative;
-            padding: 1rem 0; /* Reduced vertical padding */
+            padding: 1rem 0;
+            /* Reduced vertical padding */
         }
 
         .programs-grid {
             display: flex !important;
             flex-wrap: nowrap !important;
-            gap: 1.5rem; /* Slightly reduced gap */
+            gap: 1.5rem;
+            /* Slightly reduced gap */
             overflow-x: auto;
-            scroll-behavior: auto; /* Changed from smooth to auto for JS control */
+            scroll-behavior: auto;
+            /* Changed from smooth to auto for JS control */
             -ms-overflow-style: none;
             scrollbar-width: none;
             cursor: grab;
@@ -369,7 +397,8 @@
             /* Dimensions matching the React aspect ratio card */
             min-height: 27rem;
             min-width: 300px;
-            width: 360px; /* On large screens */
+            width: 360px;
+            /* On large screens */
             flex-shrink: 0;
             border: none;
             text-decoration: none;
@@ -395,7 +424,7 @@
             position: absolute;
             inset: 0;
             height: 100%;
-            background: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 40%, rgba(0,0,0,0.85) 100%);
+            background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 0.85) 100%);
             z-index: -1;
             transition: opacity 0.3s ease;
         }
@@ -416,14 +445,14 @@
 
         .program-title {
             font-size: 1.35rem;
-            color: #ffffff; 
+            color: #ffffff;
             font-weight: 700;
             margin-bottom: 0.8rem;
             letter-spacing: -0.3px;
         }
 
         .program-description {
-            color: rgba(255,255,255,0.85);
+            color: rgba(255, 255, 255, 0.85);
             margin-bottom: 1.5rem;
             font-size: 0.95rem;
             line-height: 1.6;
@@ -463,7 +492,8 @@
         .contact-form-container {
             max-width: 650px;
             margin: 0 auto;
-            background: rgba(13, 10, 8, 0.7); backdrop-filter: blur(10px);
+            background: rgba(13, 10, 8, 0.7);
+            backdrop-filter: blur(10px);
             padding: 2.5rem;
             border-radius: var(--radius-lg);
             box-shadow: var(--shadow-md);
@@ -526,9 +556,9 @@
             font-size: 1.1rem;
             transition: var(--transition);
         }
-        
-        .input-icon-wrapper input:focus + i,
-        .input-icon-wrapper select:focus + i {
+
+        .input-icon-wrapper input:focus+i,
+        .input-icon-wrapper select:focus+i {
             color: var(--secondary);
         }
 
@@ -576,13 +606,13 @@
             font-size: 0.9rem;
             color: var(--text-muted);
         }
-        
+
         .checkbox-label {
             cursor: pointer;
             display: flex;
             align-items: center;
         }
-        
+
         .checkbox-label input {
             accent-color: var(--secondary);
             margin-right: 10px;
@@ -652,7 +682,7 @@
             margin-bottom: 0.5rem;
             font-size: 1.1rem;
         }
-        
+
         .faq-item p {
             color: var(--text-muted);
             font-size: 0.95rem;
@@ -661,20 +691,23 @@
         /* Modern Contact Card (Kokonut UI) */
         .contact-card-modern {
             position: relative;
-            background: rgba(13, 10, 8, 0.7); backdrop-filter: blur(10px);
+            background: rgba(13, 10, 8, 0.7);
+            backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: var(--radius-lg);
             display: grid;
             grid-template-columns: 1fr;
             overflow: hidden;
             box-shadow: var(--shadow-md);
-            margin: 1rem auto 0; /* Reduced from 3rem */
+            margin: 1rem auto 0;
+            /* Reduced from 3rem */
             max-width: 1024px;
         }
 
         @media (min-width: 1024px) {
             .contact-card-modern {
-                grid-template-columns: 1fr 1.6fr; /* Give form significantly more space */
+                grid-template-columns: 1fr 1.6fr;
+                /* Give form significantly more space */
             }
         }
 
@@ -689,20 +722,40 @@
             justify-content: center;
         }
 
-        .plus-icon i { font-size: 1.2rem; }
-        .plus-top-left { top: -12px; left: -12px; }
-        .plus-top-right { top: -12px; right: -12px; }
-        .plus-bottom-left { bottom: -12px; left: -12px; }
-        .plus-bottom-right { bottom: -12px; right: -12px; }
+        .plus-icon i {
+            font-size: 1.2rem;
+        }
+
+        .plus-top-left {
+            top: -12px;
+            left: -12px;
+        }
+
+        .plus-top-right {
+            top: -12px;
+            right: -12px;
+        }
+
+        .plus-bottom-left {
+            bottom: -12px;
+            left: -12px;
+        }
+
+        .plus-bottom-right {
+            bottom: -12px;
+            right: -12px;
+        }
 
         .contact-card-left {
-            padding: 1.5rem 2.5rem; /* Reduced top padding */
+            padding: 1.5rem 2.5rem;
+            /* Reduced top padding */
             display: flex;
             flex-direction: column;
         }
 
         .contact-card-left .info-intro {
-            margin-bottom: 1.2rem; /* Reduced margin */
+            margin-bottom: 1.2rem;
+            /* Reduced margin */
             color: rgba(255, 255, 255, 0.6);
             font-size: 0.95rem;
             line-height: 1.6;
@@ -745,7 +798,7 @@
         }
 
         .contact-info-label {
-            font-size: 0.6rem; 
+            font-size: 0.6rem;
             color: rgba(255, 255, 255, 0.4);
             text-transform: uppercase;
             letter-spacing: 0.8px;
@@ -755,7 +808,8 @@
         .contact-info-value {
             font-weight: 500;
             color: rgba(255, 255, 255, 0.9);
-            font-size: 0.75rem; /* Reduced from 0.85 */
+            font-size: 0.75rem;
+            /* Reduced from 0.85 */
             word-break: break-all;
         }
 
@@ -766,13 +820,15 @@
         }
 
         .form-group-modern {
-            margin-bottom: 0.6rem; /* Ultra-tight spacing */
+            margin-bottom: 0.6rem;
+            /* Ultra-tight spacing */
             position: relative;
         }
 
         .form-group-modern label {
             display: block;
-            font-size: 0.65rem; /* Reduced from 0.7 */
+            font-size: 0.65rem;
+            /* Reduced from 0.7 */
             font-weight: 600;
             color: rgba(255, 255, 255, 0.4);
             margin-bottom: 0.2rem;
@@ -785,9 +841,11 @@
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 4px;
-            padding: 0.5rem 0.7rem; /* Even tighter padding */
+            padding: 0.5rem 0.7rem;
+            /* Even tighter padding */
             color: white;
-            font-size: 0.8rem; /* Reduced from 0.9 */
+            font-size: 0.8rem;
+            /* Reduced from 0.9 */
             font-family: inherit;
             transition: all 0.2s ease;
         }
@@ -803,13 +861,15 @@
         .error-message-box {
             display: none !important;
         }
-        
+
         /* Dropdown Visibility Fix */
         .form-input-modern option {
-            background-color: #1a1410; /* Dark background to match card */
-            color: white; /* White text */
+            background-color: #1a1410;
+            /* Dark background to match card */
+            color: white;
+            /* White text */
         }
-        
+
         /* Safari/Chrome specific fix for dropdown legibility */
         select.form-input-modern {
             -webkit-appearance: none;
@@ -832,28 +892,39 @@
 
 <body>
     <div class="hero-header">
-        
-        
+
+
         <!-- Elegant Floating Shapes -->
-        <div class="elegant-shape" style="--rotate: 12deg; width: 600px; height: 140px; left: -10%; top: 15%; animation-delay: 0.3s;">
-            <div class="shape-inner" style="background: linear-gradient(to right, rgba(99, 102, 241, 0.15), transparent);"></div>
+        <div class="elegant-shape"
+            style="--rotate: 12deg; width: 600px; height: 140px; left: -10%; top: 15%; animation-delay: 0.3s;">
+            <div class="shape-inner"
+                style="background: linear-gradient(to right, rgba(99, 102, 241, 0.15), transparent);"></div>
         </div>
-        <div class="elegant-shape" style="--rotate: -15deg; width: 500px; height: 120px; right: -5%; top: 70%; animation-delay: 0.5s;">
-            <div class="shape-inner" style="background: linear-gradient(to right, rgba(244, 63, 94, 0.15), transparent);"></div>
+        <div class="elegant-shape"
+            style="--rotate: -15deg; width: 500px; height: 120px; right: -5%; top: 70%; animation-delay: 0.5s;">
+            <div class="shape-inner"
+                style="background: linear-gradient(to right, rgba(244, 63, 94, 0.15), transparent);"></div>
         </div>
-        <div class="elegant-shape" style="--rotate: -8deg; width: 300px; height: 80px; left: 5%; bottom: 5%; animation-delay: 0.4s;">
-            <div class="shape-inner" style="background: linear-gradient(to right, rgba(139, 92, 246, 0.15), transparent);"></div>
+        <div class="elegant-shape"
+            style="--rotate: -8deg; width: 300px; height: 80px; left: 5%; bottom: 5%; animation-delay: 0.4s;">
+            <div class="shape-inner"
+                style="background: linear-gradient(to right, rgba(139, 92, 246, 0.15), transparent);"></div>
         </div>
-        <div class="elegant-shape" style="--rotate: 20deg; width: 200px; height: 60px; right: 15%; top: 10%; animation-delay: 0.6s;">
-            <div class="shape-inner" style="background: linear-gradient(to right, rgba(245, 158, 11, 0.15), transparent);"></div>
+        <div class="elegant-shape"
+            style="--rotate: 20deg; width: 200px; height: 60px; right: 15%; top: 10%; animation-delay: 0.6s;">
+            <div class="shape-inner"
+                style="background: linear-gradient(to right, rgba(245, 158, 11, 0.15), transparent);"></div>
         </div>
-        <div class="elegant-shape" style="--rotate: -25deg; width: 150px; height: 40px; left: 20%; top: 5%; animation-delay: 0.7s;">
-            <div class="shape-inner" style="background: linear-gradient(to right, rgba(6, 182, 212, 0.15), transparent);"></div>
+        <div class="elegant-shape"
+            style="--rotate: -25deg; width: 150px; height: 40px; left: 20%; top: 5%; animation-delay: 0.7s;">
+            <div class="shape-inner"
+                style="background: linear-gradient(to right, rgba(6, 182, 212, 0.15), transparent);"></div>
         </div>
 
         <div class="hero-container">
             <div class="fade-up" style="animation-delay: 0.5s;">
-                <img src="image/logo4.png" alt="Error Infotech Logo" class="hero-logo" style="height: 80px; filter: brightness(0) invert(1); margin-bottom: 2.5rem;" />
+                <img src="image/logo4.png" alt="Error Infotech Logo" class="hero-logo"
+                    style="height: 80px; filter: brightness(0) invert(1); margin-bottom: 2.5rem;" />
             </div>
 
             <div class="fade-up" style="animation-delay: 0.7s;">
@@ -863,14 +934,18 @@
 
             <div class="fade-up" style="animation-delay: 0.9s;">
                 <p class="hero-subtitle" style="color: rgba(255,255,255,0.7);">
-                    Gain hands-on experience, work on real-world projects, and elevate your skills with our structured, industry-leading operations.
+                    Gain hands-on experience, work on real-world projects, and elevate your skills with our structured,
+                    industry-leading operations.
                 </p>
             </div>
 
             <div class="fade-up" style="animation-delay: 1.1s;">
                 <div style="display: flex; gap: 1rem; justify-content: center;">
-                    <a href="#programs" class="submit-btn" style="text-decoration: none; padding: 1rem 2rem; border-radius: 9999px;">Explore Programs</a>
-                    <a href="#apply" class="submit-btn" style="text-decoration: none; padding: 1rem 2rem; border-radius: 9999px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">Apply Now</a>
+                    <a href="#programs" class="submit-btn"
+                        style="text-decoration: none; padding: 1rem 2rem; border-radius: 9999px;">Explore Programs</a>
+                    <a href="#apply" class="submit-btn"
+                        style="text-decoration: none; padding: 1rem 2rem; border-radius: 9999px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">Apply
+                        Now</a>
                 </div>
             </div>
         </div>
@@ -887,110 +962,130 @@
                 <div class="programs-grid" id="auto-slider">
                     <!-- 1. AI-ML Dev -->
                     <a href="ai-ml internship.html" class="program-card group">
-                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=500&h=400&fit=crop" alt="AI-ML Dev" class="program-card-img" />
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=500&h=400&fit=crop"
+                            alt="AI-ML Dev" class="program-card-img" />
                         <div class="program-card-overlay"></div>
                         <div class="program-card-content">
                             <h3 class="program-title">AI-ML Dev</h3>
-                            <p class="program-description">Master production-grade AI models, Neural Networks, and LLM integration for enterprise-level intelligence.</p>
+                            <p class="program-description">Master production-grade AI models, Neural Networks, and LLM
+                                integration for enterprise-level intelligence.</p>
                             <div class="view-program">View Program</div>
                         </div>
                     </a>
 
                     <!-- 2. Frontend Dev -->
                     <a href="frontend-dev.html" class="program-card group">
-                        <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=500&h=400&fit=crop" alt="Frontend Dev with AI" class="program-card-img" />
+                        <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=500&h=400&fit=crop"
+                            alt="Frontend Dev with AI" class="program-card-img" />
                         <div class="program-card-overlay"></div>
                         <div class="program-card-content">
                             <h3 class="program-title">Frontend Dev with AI</h3>
-                            <p class="program-description">Build high-performance UIs faster using v0, Bolt.new, and AI-driven component architecture.</p>
+                            <p class="program-description">Build high-performance UIs faster using v0, Bolt.new, and
+                                AI-driven component architecture.</p>
                             <div class="view-program">View Program</div>
                         </div>
                     </a>
 
                     <!-- 3. Backend Dev -->
                     <a href="backend-dev.html" class="program-card group">
-                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&h=400&fit=crop" alt="Backend Dev with AI" class="program-card-img" />
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&h=400&fit=crop"
+                            alt="Backend Dev with AI" class="program-card-img" />
                         <div class="program-card-overlay"></div>
                         <div class="program-card-content">
                             <h3 class="program-title">Backend Dev with AI</h3>
-                            <p class="program-description">Develop scalable server-side systems with AI-optimized SQL, GitHub Copilot, and automated API generation.</p>
+                            <p class="program-description">Develop scalable server-side systems with AI-optimized SQL,
+                                GitHub Copilot, and automated API generation.</p>
                             <div class="view-program">View Program</div>
                         </div>
                     </a>
 
                     <!-- 4. Marketing -->
                     <a href="digital bussiness management.html" class="program-card group">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=400&fit=crop" alt="Marketing with AI" class="program-card-img" />
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=400&fit=crop"
+                            alt="Marketing with AI" class="program-card-img" />
                         <div class="program-card-overlay"></div>
                         <div class="program-card-content">
                             <h3 class="program-title">Marketing with AI</h3>
-                            <p class="program-description">Execute viral campaigns using AI lead gen, automated content scheduling, and performance analytics.</p>
+                            <p class="program-description">Execute viral campaigns using AI lead gen, automated content
+                                scheduling, and performance analytics.</p>
                             <div class="view-program">View Program</div>
                         </div>
                     </a>
 
                     <!-- 5. Content Writing -->
                     <a href="content-creator.html" class="program-card group">
-                        <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=500&h=400&fit=crop" alt="Content Writing with AI" class="program-card-img" />
+                        <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=500&h=400&fit=crop"
+                            alt="Content Writing with AI" class="program-card-img" />
                         <div class="program-card-overlay"></div>
                         <div class="program-card-content">
                             <h3 class="program-title">Content Writing with AI</h3>
-                            <p class="program-description">Scale professional copywriting and SEO using Jasper, ChatGPT-4, and AI-driven narrative research.</p>
+                            <p class="program-description">Scale professional copywriting and SEO using Jasper,
+                                ChatGPT-4, and AI-driven narrative research.</p>
                             <div class="view-program">View Program</div>
                         </div>
                     </a>
 
                     <!-- 6. Data Analysis -->
                     <a href="data-analysis.html" class="program-card group">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=400&fit=crop" alt="Data Analysis with AI" class="program-card-img" />
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=400&fit=crop"
+                            alt="Data Analysis with AI" class="program-card-img" />
                         <div class="program-card-overlay"></div>
                         <div class="program-card-content">
                             <h3 class="program-title">Data Analysis with AI</h3>
-                            <p class="program-description">Extract predictive insights using Pandas AI, automated data cleaning, and AI-powered visualization.</p>
+                            <p class="program-description">Extract predictive insights using Pandas AI, automated data
+                                cleaning, and AI-powered visualization.</p>
                             <div class="view-program">View Program</div>
                         </div>
                     </a>
 
                     <!-- 7. QA Testing -->
                     <a href="qa-testing.html" class="program-card group">
-                        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&h=400&fit=crop" alt="QA Testing with AI" class="program-card-img" />
+                        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&h=400&fit=crop"
+                            alt="QA Testing with AI" class="program-card-img" />
                         <div class="program-card-overlay"></div>
                         <div class="program-card-content">
                             <h3 class="program-title">QA Testing with AI</h3>
-                            <p class="program-description">Implement AI-driven test case generation and automated visual regression testing.</p>
+                            <p class="program-description">Implement AI-driven test case generation and automated visual
+                                regression testing.</p>
                             <div class="view-program">View Program</div>
                         </div>
                     </a>
 
                     <!-- 8. Graphic Design -->
                     <a href="graphic-designer-operations.html" class="program-card group">
-                        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=500&h=400&fit=crop" alt="Graphic Design with AI" class="program-card-img" />
+                        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=500&h=400&fit=crop"
+                            alt="Graphic Design with AI" class="program-card-img" />
                         <div class="program-card-overlay"></div>
                         <div class="program-card-content">
                             <h3 class="program-title">Graphic Design with AI</h3>
-                            <p class="program-description">Master Firefly, Midjourney, and Canva Magic to deliver elite-level visual concepts.</p>
+                            <p class="program-description">Master Firefly, Midjourney, and Canva Magic to deliver
+                                elite-level visual concepts.</p>
                             <div class="view-program">View Program</div>
                         </div>
                     </a>
 
                     <!-- 9. BDE & Sales -->
                     <a href="bde-operations.html" class="program-card group">
-                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=500&h=400&fit=crop" alt="BDE & Sales with AI" class="program-card-img" />
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=500&h=400&fit=crop"
+                            alt="BDE & Sales with AI" class="program-card-img" />
                         <div class="program-card-overlay"></div>
                         <div class="program-card-content">
                             <h3 class="program-title">BDE & Sales with AI</h3>
-                            <p class="program-description">Automate lead acquisition and strategic outreach using advanced Sales AI automation tools.</p>
+                            <p class="program-description">Automate lead acquisition and strategic outreach using
+                                advanced Sales AI automation tools.</p>
                             <div class="view-program">View Program</div>
                         </div>
                     </a>
 
                     <!-- 10. Product Photography and Videography -->
                     <a href="product photography-videography.html" class="program-card group">
-                        <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=500&h=400&fit=crop" alt="Product Photography & Videography with AI" class="program-card-img" />
+                        <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=500&h=400&fit=crop"
+                            alt="Product Photography & Videography with AI" class="program-card-img" />
                         <div class="program-card-overlay"></div>
                         <div class="program-card-content">
                             <h3 class="program-title">Product Photography & AI Post-Production</h3>
-                            <p class="program-description">Elevate visual storytelling with AI-driven color grading and automated product retouching.</p>
+                            <p class="program-description">Elevate visual storytelling with AI-driven color grading and
+                                automated product retouching.</p>
                             <div class="view-program">View Program</div>
                         </div>
                     </a>
@@ -1006,11 +1101,12 @@
                 <h2>Apply for Internship</h2>
                 <p>Join our elite program and accelerate your career with hands-on corporate experience.</p>
             </div>
-            
+
             <div class="contact-card-modern">
                 <div class="contact-card-left">
                     <div class="info-intro">
-                        If you have any questions regarding our programs or need help, please fill out the form here. We do our best to respond within 1 business day.
+                        If you have any questions regarding our programs or need help, please fill out the form here. We
+                        do our best to respond within 1 business day.
                     </div>
 
                     <div class="contact-info-grid">
@@ -1042,15 +1138,18 @@
                     <form id="internshipForm" class="contact-form">
                         <div class="form-group-modern">
                             <label>Full Name</label>
-                            <input type="text" id="fullName" name="fullName" class="form-input-modern" placeholder="Surname Name Fathername" required>
+                            <input type="text" id="fullName" name="fullName" class="form-input-modern"
+                                placeholder="Surname Name Fathername" required>
                         </div>
                         <div class="form-group-modern">
                             <label>Email Address</label>
-                            <input type="email" id="email" name="email" class="form-input-modern" placeholder="example@email.com" required>
+                            <input type="email" id="email" name="email" class="form-input-modern"
+                                placeholder="example@email.com" required>
                         </div>
                         <div class="form-group-modern">
                             <label>Phone Number</label>
-                            <input type="tel" id="phone" name="phone" class="form-input-modern" placeholder="+91-8128704400" required>
+                            <input type="tel" id="phone" name="phone" class="form-input-modern"
+                                placeholder="+91-8128704400" required>
                         </div>
                         <div class="form-group-modern">
                             <label>Internship Program</label>
@@ -1077,12 +1176,15 @@
                             </select>
                         </div>
                         <div class="form-group checkbox-group" style="margin-top: 1rem;">
-                            <label class="checkbox-label" for="terms" style="font-size: 0.85rem; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 8px; cursor: pointer;">
-                                <input type="checkbox" id="terms" name="terms" required style="width: 18px; height: 18px; cursor: pointer;">
+                            <label class="checkbox-label" for="terms"
+                                style="font-size: 0.85rem; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                <input type="checkbox" id="terms" name="terms" required
+                                    style="width: 18px; height: 18px; cursor: pointer;">
                                 I agree to the terms and conditions *
                             </label>
                         </div>
-                        <button type="submit" class="submit-btn" style="width: 100%; margin-top: 1rem;">Submit Application</button>
+                        <button type="submit" class="submit-btn" style="width: 100%; margin-top: 1rem;">Submit
+                            Application</button>
                     </form>
                 </div>
             </div>
@@ -1090,7 +1192,7 @@
     </section>
 
     <!-- Modular Accordion Footer -->
-    <footer class="footer">
+    <footer class="footer" id="company">
         <div class="footer-container">
             <!-- Brand & Contact Section -->
             <div class="footer-brand-section">
@@ -1101,15 +1203,25 @@
 
                 <!-- Centered content -->
                 <div class="footer-center-content">
-                    <p class="footer-description">Leading digital solutions provider transforming businesses through innovation and excellence. Your trusted partner for professional growth.</p>
+                    <p class="footer-description">Leading digital solutions provider transforming businesses through
+                        innovation and excellence. Your trusted partner for professional growth.</p>
 
                     <div class="footer-contact-icons">
-                        <a href="mailto:errorinfotech404@gmail.com" class="footer-icon-btn email" data-label="Email"><i class="fas fa-envelope"></i></a>
-                        <a href="tel:+918128704400" class="footer-icon-btn phone" data-label="Call Us"><i class="fas fa-phone-alt"></i></a>
-                        <a href="https://maps.google.com/maps?q=Malviya+Coins,+Dr+Yagnik+Rd,+Rajkot,+Gujarat+360002" target="_blank" class="footer-icon-btn location" data-label="Location"><i class="fas fa-map-marker-alt"></i></a>
-                        <a href="https://wa.me/918128704400" target="_blank" class="footer-icon-btn whatsapp" data-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                        <a href="https://www.linkedin.com/in/error-infotech-1947b9381/" target="_blank" class="footer-icon-btn linkedin" data-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.instagram.com/errorinfotech_pvt.ltd" target="_blank" class="footer-icon-btn instagram" data-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="mailto:errorinfotech404@gmail.com" class="footer-icon-btn email" data-label="Email"><i
+                                class="fas fa-envelope"></i></a>
+                        <a href="tel:+918128704400" class="footer-icon-btn phone" data-label="Call Us"><i
+                                class="fas fa-phone-alt"></i></a>
+                        <a href="https://maps.google.com/maps?q=Malviya+Coins,+Dr+Yagnik+Rd,+Rajkot,+Gujarat+360002"
+                            target="_blank" class="footer-icon-btn location" data-label="Location"><i
+                                class="fas fa-map-marker-alt"></i></a>
+                        <a href="https://wa.me/918128704400" target="_blank" class="footer-icon-btn whatsapp"
+                            data-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.linkedin.com/in/error-infotech-1947b9381/" target="_blank"
+                            class="footer-icon-btn linkedin" data-label="LinkedIn"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/errorinfotech_pvt.ltd" target="_blank"
+                            class="footer-icon-btn instagram" data-label="Instagram"><i
+                                class="fab fa-instagram"></i></a>
                     </div>
                     <p class="footer-address">302 - Malviya Coins, Dr Yagnik Rd, Rajkot, Gujarat 360002</p>
                 </div>
@@ -1122,16 +1234,12 @@
                 <div class="footer-map-wrapper">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.3020788360077!2d70.80177727526163!3d22.30382577968585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959ca10b5fc42bd%3A0xcb1a8b1ee7c8082f!2sMalviya%20Coins%2C%20Dr%20Yagnik%20Rd%2C%20Rajkot%2C%20Gujarat%20360002!5e0!3m2!1sen!2sin!4v1712494000000!5m2!1sen!2sin"
-                        width="100%"
-                        height="100%"
-                        style="border:0;"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                        class="footer-map-iframe">
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade" class="footer-map-iframe">
                     </iframe>
                     <div class="footer-map-overlay">
-                        <a href="https://maps.google.com/maps?q=Malviya+Coins,+Dr+Yagnik+Rd,+Rajkot,+Gujarat+360002" target="_blank" class="footer-map-link">
+                        <a href="https://maps.google.com/maps?q=Malviya+Coins,+Dr+Yagnik+Rd,+Rajkot,+Gujarat+360002"
+                            target="_blank" class="footer-map-link">
                             <i class="fas fa-map-marker-alt"></i> Open in Google Maps
                         </a>
                     </div>
@@ -1452,10 +1560,10 @@
             slider.addEventListener('mouseleave', () => isPaused = false);
             slider.addEventListener('touchstart', () => isPaused = true);
             slider.addEventListener('touchend', () => isPaused = false);
-            
+
             // Clone items and prepend/append for infinite loop behavior
             const cloneContent = slider.innerHTML;
-            slider.innerHTML = cloneContent + cloneContent; 
+            slider.innerHTML = cloneContent + cloneContent;
 
             function smoothScroll() {
                 if (!isPaused) {
@@ -1472,7 +1580,7 @@
 
         // Vertical Footer Ticker Autoscroll
         const ticker = document.querySelector('.footer-programs-ticker-wrapper');
-        if(ticker) {
+        if (ticker) {
             let tickerPaused = false;
             ticker.addEventListener('mouseenter', () => tickerPaused = true);
             ticker.addEventListener('mouseleave', () => tickerPaused = false);
