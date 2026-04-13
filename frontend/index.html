@@ -11,17 +11,26 @@
         rel="stylesheet">
     <style>
         :root {
-            --primary: #304c64;
-            --primary-light: #446884;
-            --secondary: #26788e;
-            --accent: #26788e;
-            --dark: #1e293b;
-            --light: #f8fafc;
-            --gray: #94a3b8;
-            --gray-light: #e2e8f0;
-            --white: #ffffff;
-            --text-white: #ffffff;
+            --primary: #bb734b;           /* Copper Accent as Primary */
+            --primary-light: #d6956f;     /* Lighter Copper */
+            --secondary: #bb734b;         
+            --secondary-hover: #a5613a;   
+            --bg-body: #0d0a08;           /* Near Black-Brown */
+            --bg-section: #1a1410;        /* Deep Dark Brown */
+            --text-main: #ffffff;         /* Pure White */
+            --text-muted: #a1a1aa;        /* Muted Light Gray */
+            --border-color: rgba(187, 115, 75, 0.15);
+            --border-focus: #bb734b;
+            
+            --success: #38a169;
+            --warning: #e53e3e;
+            
+            --shadow-sm: 0 2px 8px rgba(61, 44, 34, 0.04);
+            --shadow-md: 0 8px 24px rgba(61, 44, 34, 0.08);
+            --shadow-hover: 0 12px 32px rgba(187, 115, 75, 0.12);
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --radius-md: 12px;
+            --radius-lg: 20px;
         }
 
         * {
@@ -32,187 +41,451 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            color: #1e293b;
+            background-color: #0d0a08;
+            background-image:
+                radial-gradient(circle at 15% 25%, rgba(187, 115, 75, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 85% 75%, rgba(187, 115, 75, 0.05) 0%, transparent 40%),
+                linear-gradient(45deg, rgba(187, 115, 75, 0.03) 25%, transparent 25%, transparent 75%, rgba(187, 115, 75, 0.03) 75%, rgba(187, 115, 75, 0.03) 75%),
+                linear-gradient(135deg, rgba(187, 115, 75, 0.03) 25%, transparent 25%, transparent 75%, rgba(187, 115, 75, 0.03) 75%, rgba(187, 115, 75, 0.03) 75%);
+            background-attachment: fixed;
+            background-size: 100% 100%, 100% 100%, 80px 80px, 80px 80px;
+            color: var(--text-main);
             min-height: 100vh;
+            line-height: 1.6;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 1rem 2rem;
         }
 
-        .header {
-            background: linear-gradient(135deg, #304c64 0%, #26788e 100%);
-            color: white;
-            padding: 3rem 0;
-            border-radius: 15px;
-            margin-bottom: 2rem;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        /* Beautiful Unique Hero Section */
+        /* Kokonut UI Inspired Geometric Background */
+        .hero-header {
+            position: relative;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-color: transparent;
+            margin-bottom: 0;
+            padding: 4rem 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+        .hero-bg-accent {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(244, 63, 94, 0.05) 0%, transparent 50%);
+            filter: blur(80px);
+            z-index: 0;
         }
 
-        .header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 600px;
+        /* Elegant Floating Shapes */
+        .elegant-shape {
+            position: absolute;
+            z-index: 1;
+            opacity: 0;
+            animation: shape-entrance 2.4s cubic-bezier(0.23, 0.86, 0.39, 0.96) forwards;
+        }
+
+        .shape-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 9999px;
+            backdrop-filter: blur(2px);
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.1);
+            position: relative;
+            animation: shape-float 12s ease-in-out infinite;
+        }
+
+        .shape-inner::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 9999px;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.2), transparent 70%);
+        }
+
+        @keyframes shape-entrance {
+            from { opacity: 0; transform: translateY(-150px) rotate(-15deg); }
+            to { opacity: 1; transform: translateY(0) rotate(var(--rotate)); }
+        }
+
+        @keyframes shape-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(15px); }
+        }
+
+        /* Fade Up Animation */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fade-up 1s cubic-bezier(0.25, 0.4, 0.25, 1) forwards;
+        }
+
+        @keyframes fade-up {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
             margin: 0 auto;
+            text-align: center;
         }
 
-        /* Operations Color Variables */
-        :root {
-            --primary: #304c64;
-            --primary-light: #26788e;
-            --primary-dark: #223647;
-            --secondary: #26788e;
-            --accent: #26788e;
-            --accent-light: #304c64;
-            --corporate: #5a6e7f;
-            --success: #38a169;
-            --warning: #e53e3e;
-            --dark: #1e293b;
-            --darker: #0f172a;
-            --light: #f8fafc;
-            --lighter: #ffffff;
-            --gray: #94a3b8;
-            --gray-light: #e2e8f0;
-            --gray-dark: #475569;
-            --white: #ffffff;
-            --text-primary: #1e293b;
-            --text-secondary: #475569;
-            --text-light: #64748b;
-            --text-white: #ffffff;
-            --gradient-primary: linear-gradient(135deg, var(--primary), var(--secondary));
-            --gradient-accent: linear-gradient(135deg, var(--secondary), var(--accent));
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-md: 0 6px 12px -2px rgba(0, 0, 0, 0.15);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.25);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --border-radius: 12px;
-            --border-radius-lg: 18px;
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 9999px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.875rem;
+            margin-bottom: 2rem;
         }
 
-        /* Programs Grid */
-        .programs-section {
-            padding: 4rem 2rem;
-            background: linear-gradient(135deg, var(--light) 0%, #e9ecef 100%);
-            min-height: 100vh;
+        .hero-badge .dot {
+            width: 8px;
+            height: 8px;
+            background: #f43f5e;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(244, 63, 94, 0.8);
+        }
+
+        .hero-header h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .title-white {
+            background: linear-gradient(to bottom, #ffffff, rgba(255, 255, 255, 0.8));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .title-gradient {
+            background: linear-gradient(to right, #a5b4fc, #ffffff, #fda4af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: rgba(255, 255, 255, 0.4);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background-color: rgba(187,115,75,0.1);
+            color: var(--secondary);
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(187,115,75,0.2);
+        }
+
+        .hero-logo {
+            height: 95px;
+            width: auto;
+            margin-bottom: 1.5rem;
+            filter: brightness(0) drop-shadow(0 4px 6px rgba(0,0,0,0.05));
+            transition: transform 0.3s ease;
+        }
+        
+        .hero-logo:hover {
+            transform: scale(1.02);
+        }
+
+        .hero-header h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.2rem;
+            color: var(--primary);
+            letter-spacing: -1px;
+        }
+
+        .hero-highlight {
+            color: var(--secondary);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .hero-highlight::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 8px;
+            background-color: rgba(187,115,75,0.2);
+            bottom: 8px;
+            left: 0;
+            z-index: -1;
+            border-radius: 4px;
+        }
+
+        .hero-header p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin: 0 auto 2.5rem;
+            max-width: 600px;
+        }
+        
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero-btn-primary {
+            background-color: var(--secondary);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(187, 115, 75, 0.3);
+        }
+        
+        .hero-btn-primary:hover {
+            background-color: var(--primary);
+            box-shadow: 0 6px 20px rgba(61, 44, 34, 0.2);
+            transform: translateY(-2px);
+            color: white;
+        }
+        
+        .hero-btn-outline {
+            background-color: transparent;
+            color: var(--primary);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            border: 2px solid var(--border-color);
+        }
+        
+        .hero-btn-outline:hover {
+            border-color: var(--primary);
+            background-color: rgba(61,44,34,0.05);
+            transform: translateY(-2px);
+        }
+
+        /* Section Global */
+        .programs-section, .contact-section {
+            padding: 3rem 2rem;
+            background-color: transparent;
+            margin-bottom: 3rem; /* Added margin for separation */
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
 
         .section-header h2 {
-            font-size: 2.5rem;
-            color: var(--darker);
-            margin-bottom: 1rem;
+            font-size: 2.8rem;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #a5b4fc, #ffffff, #fda4af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
         }
 
         .section-header p {
-            font-size: 1.2rem;
-            color: var(--gray-dark);
+            font-size: 1.1rem;
+            color: var(--text-muted);
             max-width: 600px;
             margin: 0 auto;
         }
 
+        /* Programs Grid */
+        .programs-grid-wrapper {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            padding: 1rem 0; /* Reduced vertical padding */
+        }
+
         .programs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            display: flex !important;
+            flex-wrap: nowrap !important;
+            gap: 1.5rem; /* Slightly reduced gap */
+            overflow-x: auto;
+            scroll-behavior: auto; /* Changed from smooth to auto for JS control */
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            cursor: grab;
+            padding: 0.5rem 0;
+            margin: 0 !important;
+        }
+
+        .programs-grid::-webkit-scrollbar {
+            display: none;
         }
 
         .program-card {
-            background: white;
-            padding: 2rem;
-            border-radius: var(--border-radius-lg);
+            background: #000;
+            border-radius: var(--radius-lg);
             box-shadow: var(--shadow-md);
-            text-align: center;
+            text-align: left;
             transition: var(--transition);
-            border: 1px solid var(--gray-light);
             cursor: pointer;
+            display: block;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            /* Dimensions matching the React aspect ratio card */
+            min-height: 27rem;
+            min-width: 300px;
+            width: 360px; /* On large screens */
+            flex-shrink: 0;
+            border: none;
+            text-decoration: none;
         }
 
-        .program-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--secondary);
+        .program-card-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.4s ease;
+            z-index: -2;
         }
 
-        .program-icon {
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
+        .program-card:hover .program-card-img {
+            transform: scale(1.05);
+        }
+
+        .program-card-overlay {
+            position: absolute;
+            inset: 0;
+            height: 100%;
+            background: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 40%, rgba(0,0,0,0.85) 100%);
+            z-index: -1;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Recreate the text container at the bottom */
+        .program-card-content {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 1.5rem;
+            color: #ffffff;
+            z-index: 10;
         }
 
         .program-title {
-            font-size: 1.5rem;
-            color: var(--darker);
-            margin-bottom: 1rem;
+            font-size: 1.35rem;
+            color: #ffffff; 
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            letter-spacing: -0.3px;
         }
 
         .program-description {
-            color: var(--gray-dark);
+            color: rgba(255,255,255,0.85);
             margin-bottom: 1.5rem;
+            font-size: 0.95rem;
             line-height: 1.6;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
         .view-program {
-            display: inline-block;
-            background: var(--gradient-primary);
-            color: white;
-            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            color: #ffffff;
             text-decoration: none;
-            border-radius: 30px;
             font-weight: 600;
+            font-size: 0.95rem;
             transition: var(--transition);
-            border: 2px solid transparent;
+            border: none;
+            background: transparent;
+            padding: 0;
         }
 
-        .view-program:hover {
-            background: linear-gradient(135deg, var(--secondary), var(--primary));
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
+        .view-program::after {
+            content: '→';
+            margin-left: 0.5rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: transform 0.3s ease;
         }
 
-
-
-        /* Contact Form Styles */
-        .contact-section {
-            padding: 4rem 2rem;
-            background: linear-gradient(135deg, var(--lighter) 0%, var(--light) 100%);
-            margin-top: 2rem;
+        .program-card:hover .view-program::after {
+            transform: translateX(5px);
         }
 
+        /* Minimal Form Styles */
         .contact-form-container {
-            max-width: 700px;
+            max-width: 650px;
             margin: 0 auto;
-            background: white;
+            background: rgba(13, 10, 8, 0.7); backdrop-filter: blur(10px);
             padding: 2.5rem;
-            border-radius: var(--border-radius-lg);
-            box-shadow: var(--shadow-lg);
-            position: relative;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .contact-form {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 1.8rem;
         }
 
         .form-group {
             position: relative;
-            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.6rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--primary);
         }
 
         .input-icon-wrapper {
@@ -225,10 +498,12 @@
         .input-icon-wrapper textarea {
             width: 100%;
             padding: 1rem 1rem 1rem 3.2rem;
-            border: 2px solid var(--gray-light);
-            border-radius: var(--border-radius);
-            font-size: 1rem;
+            background-color: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-md);
+            font-size: 0.95rem;
             font-family: 'Poppins', sans-serif;
+            color: var(--text-main);
             transition: var(--transition);
         }
 
@@ -236,7 +511,9 @@
         .input-icon-wrapper select:focus,
         .input-icon-wrapper textarea:focus {
             outline: none;
-            border-color: var(--secondary);
+            border-color: var(--border-focus);
+            background-color: transparent;
+            box-shadow: 0 0 0 4px rgba(187, 115, 75, 0.1);
         }
 
         .input-icon-wrapper i {
@@ -244,11 +521,15 @@
             left: 1.2rem;
             top: 50%;
             transform: translateY(-50%);
-            color: var(--gray);
+            color: var(--text-muted);
             pointer-events: none;
             font-size: 1.1rem;
-            z-index: 5;
             transition: var(--transition);
+        }
+        
+        .input-icon-wrapper input:focus + i,
+        .input-icon-wrapper select:focus + i {
+            color: var(--secondary);
         }
 
         .input-icon-wrapper textarea {
@@ -261,49 +542,53 @@
             transform: none;
         }
 
-
         .submit-btn {
-            background: var(--gradient-primary);
+            background-color: var(--secondary);
             color: white;
             border: none;
-            padding: 1rem;
-            font-size: 1.1rem;
+            padding: 1.1rem;
+            font-size: 1rem;
             font-weight: 600;
-            border-radius: var(--border-radius);
+            border-radius: var(--radius-md);
             cursor: pointer;
             transition: var(--transition);
-            margin-top: 0.5rem;
+            margin-top: 1rem;
         }
 
         .submit-btn:hover {
+            background-color: var(--secondary-hover);
             transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-sm);
         }
 
         .submit-btn:disabled {
-            opacity: 0.7;
+            opacity: 0.6;
             cursor: not-allowed;
             transform: none;
         }
 
-        .form-message {
-            padding: 1rem;
-            border-radius: var(--border-radius);
-            margin-top: 1rem;
-            text-align: center;
-            display: none;
+        /* Checkbox styling */
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
         }
-
-        .form-message.success {
-            background: rgba(56, 161, 105, 0.2);
-            color: var(--success);
-            display: block;
+        
+        .checkbox-label {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
         }
-
-        .form-message.error {
-            background: rgba(229, 62, 62, 0.2);
-            color: var(--warning);
-            display: block;
+        
+        .checkbox-label input {
+            accent-color: var(--secondary);
+            margin-right: 10px;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
         }
 
         /* Modal Styles */
@@ -315,104 +600,279 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(5px);
+            background-color: rgba(43, 31, 24, 0.7);
+            backdrop-filter: blur(8px);
         }
 
         .modal-content {
-            background-color: var(--lighter);
+            background-color: transparent;
             margin: 5% auto;
-            padding: 2rem;
-            border-radius: 12px;
+            padding: 3rem;
+            border-radius: var(--radius-lg);
             width: 90%;
-            max-width: 800px;
+            max-width: 700px;
             max-height: 85vh;
             overflow-y: auto;
             position: relative;
-            box-shadow: var(--shadow-xl);
+            box-shadow: var(--shadow-hover);
         }
 
         .close {
             position: absolute;
-            right: 1rem;
-            top: 1rem;
-            color: var(--gray-dark);
-            font-size: 2rem;
-            font-weight: bold;
+            right: 1.5rem;
+            top: 1.5rem;
+            color: var(--text-muted);
+            font-size: 1.5rem;
             cursor: pointer;
-            z-index: 1001;
-            background: var(--gray-light);
             width: 40px;
             height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            background: var(--bg-body);
+            transition: var(--transition);
         }
 
         .close:hover {
-            background: var(--gray);
-            color: var(--darker);
+            background: var(--primary);
+            color: white;
         }
 
         .faq-item {
             margin-bottom: 1.5rem;
-            padding: 1rem;
-            background: var(--gray-light);
-            border-radius: 8px;
+            padding: 1.5rem;
+            background: var(--bg-body);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .faq-item h3 {
             color: var(--primary);
             margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .faq-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
         }
 
-        .contact-details {
+        /* Modern Contact Card (Kokonut UI) */
+        .contact-card-modern {
+            position: relative;
+            background: rgba(13, 10, 8, 0.7); backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-lg);
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: 1fr;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            margin: 1rem auto 0; /* Reduced from 3rem */
+            max-width: 1024px;
         }
 
-
-        .terms-content h3,
-        .privacy-content h3 {
-            color: var(--primary);
-            margin: 1.5rem 0 0.5rem 0;
+        @media (min-width: 1024px) {
+            .contact-card-modern {
+                grid-template-columns: 1fr 1.6fr; /* Give form significantly more space */
+            }
         }
 
-        .terms-content p,
-        .privacy-content p {
-            margin-bottom: 1rem;
+        .plus-icon {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            color: var(--secondary);
+            z-index: 5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .plus-icon i { font-size: 1.2rem; }
+        .plus-top-left { top: -12px; left: -12px; }
+        .plus-top-right { top: -12px; right: -12px; }
+        .plus-bottom-left { bottom: -12px; left: -12px; }
+        .plus-bottom-right { bottom: -12px; right: -12px; }
+
+        .contact-card-left {
+            padding: 1.5rem 2.5rem; /* Reduced top padding */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-card-left .info-intro {
+            margin-bottom: 1.2rem; /* Reduced margin */
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
             line-height: 1.6;
         }
 
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2rem;
-            }
+        .contact-info-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
 
-            .programs-grid {
-                grid-template-columns: 1fr;
-            }
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            padding: 1.2rem 1.5rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.2s ease;
+        }
 
-            .modal-content {
-                margin: 10% auto;
-                width: 95%;
-                padding: 1.5rem;
-            }
+        .contact-info-item:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
 
-            .contact-details {
-                grid-template-columns: 1fr;
-            }
+        .contact-info-item i {
+            font-size: 1.1rem;
+            color: var(--secondary);
+            background: rgba(187, 115, 75, 0.1);
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+
+        .contact-info-label {
+            font-size: 0.6rem; 
+            color: rgba(255, 255, 255, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 1px;
+        }
+
+        .contact-info-value {
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.75rem; /* Reduced from 0.85 */
+            word-break: break-all;
+        }
+
+        .contact-card-right {
+            background: rgba(255, 255, 255, 0.01);
+            border-left: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 1.5rem 2rem;
+        }
+
+        .form-group-modern {
+            margin-bottom: 0.6rem; /* Ultra-tight spacing */
+            position: relative;
+        }
+
+        .form-group-modern label {
+            display: block;
+            font-size: 0.65rem; /* Reduced from 0.7 */
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 0.2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-input-modern {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            padding: 0.5rem 0.7rem; /* Even tighter padding */
+            color: white;
+            font-size: 0.8rem; /* Reduced from 0.9 */
+            font-family: inherit;
+            transition: all 0.2s ease;
+        }
+
+        .form-input-modern:focus {
+            outline: none;
+            border-color: var(--secondary);
+            background: rgba(255, 255, 255, 0.06);
+            box-shadow: 0 0 0 2px rgba(187, 115, 75, 0.2);
+        }
+
+        /* Completely Hide Error Boxes */
+        .error-message-box {
+            display: none !important;
+        }
+        
+        /* Dropdown Visibility Fix */
+        .form-input-modern option {
+            background-color: #1a1410; /* Dark background to match card */
+            color: white; /* White text */
+        }
+        
+        /* Safari/Chrome specific fix for dropdown legibility */
+        select.form-input-modern {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1em;
+            padding-right: 2.5rem;
+        }
+
+        /* Subtle field error highlight */
+        .input-invalid {
+            border-color: #ef4444 !important;
+            background: rgba(239, 68, 68, 0.02) !important;
         }
     </style>
 </head>
 
 <body>
-    <div class="header">
-        <div class="container">
-            <h1><img src="image/logo4.png" alt="Error Infotech Logo" style="height: 90px; width: auto;" /></h1>
-            <p>All Paid Internship Programs - Click on any program to view details</p>
+    <div class="hero-header">
+        
+        
+        <!-- Elegant Floating Shapes -->
+        <div class="elegant-shape" style="--rotate: 12deg; width: 600px; height: 140px; left: -10%; top: 15%; animation-delay: 0.3s;">
+            <div class="shape-inner" style="background: linear-gradient(to right, rgba(99, 102, 241, 0.15), transparent);"></div>
+        </div>
+        <div class="elegant-shape" style="--rotate: -15deg; width: 500px; height: 120px; right: -5%; top: 70%; animation-delay: 0.5s;">
+            <div class="shape-inner" style="background: linear-gradient(to right, rgba(244, 63, 94, 0.15), transparent);"></div>
+        </div>
+        <div class="elegant-shape" style="--rotate: -8deg; width: 300px; height: 80px; left: 5%; bottom: 5%; animation-delay: 0.4s;">
+            <div class="shape-inner" style="background: linear-gradient(to right, rgba(139, 92, 246, 0.15), transparent);"></div>
+        </div>
+        <div class="elegant-shape" style="--rotate: 20deg; width: 200px; height: 60px; right: 15%; top: 10%; animation-delay: 0.6s;">
+            <div class="shape-inner" style="background: linear-gradient(to right, rgba(245, 158, 11, 0.15), transparent);"></div>
+        </div>
+        <div class="elegant-shape" style="--rotate: -25deg; width: 150px; height: 40px; left: 20%; top: 5%; animation-delay: 0.7s;">
+            <div class="shape-inner" style="background: linear-gradient(to right, rgba(6, 182, 212, 0.15), transparent);"></div>
+        </div>
+
+        <div class="hero-container">
+            <div class="fade-up" style="animation-delay: 0.5s;">
+                <img src="image/logo4.png" alt="Error Infotech Logo" class="hero-logo" style="height: 80px; filter: brightness(0) invert(1); margin-bottom: 2.5rem;" />
+            </div>
+
+            <div class="fade-up" style="animation-delay: 0.7s;">
+                <h1 class="title-gradient">Accelerate Your Career with</h1>
+                <h1 class="title-gradient">Premium Internships</h1>
+            </div>
+
+            <div class="fade-up" style="animation-delay: 0.9s;">
+                <p class="hero-subtitle" style="color: rgba(255,255,255,0.7);">
+                    Gain hands-on experience, work on real-world projects, and elevate your skills with our structured, industry-leading operations.
+                </p>
+            </div>
+
+            <div class="fade-up" style="animation-delay: 1.1s;">
+                <div style="display: flex; gap: 1rem; justify-content: center;">
+                    <a href="#programs" class="submit-btn" style="text-decoration: none; padding: 1rem 2rem; border-radius: 9999px;">Explore Programs</a>
+                    <a href="#apply" class="submit-btn" style="text-decoration: none; padding: 1rem 2rem; border-radius: 9999px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">Apply Now</a>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -423,321 +883,306 @@
                 <p>Choose from our comprehensive paid internship programs with 60-80 structured operations</p>
             </div>
 
-            <div class="programs-grid">
-                <div class="program-card" onclick="window.location.href='ai-ml internship.html'">
-                    <div class="program-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3 class="program-title">AI/ML Internship</h3>
-                    <p class="program-description">Artificial Intelligence and Machine Learning internship with advanced
-                        operations and practical projects.</p>
-                    <a href="ai-ml internship.html" class="view-program">View Program</a>
+            <div class="programs-grid-wrapper">
+                <div class="programs-grid" id="auto-slider">
+                    <!-- 1. AI-ML Dev -->
+                    <a href="ai-ml internship.html" class="program-card group">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=500&h=400&fit=crop" alt="AI-ML Dev" class="program-card-img" />
+                        <div class="program-card-overlay"></div>
+                        <div class="program-card-content">
+                            <h3 class="program-title">AI-ML Dev</h3>
+                            <p class="program-description">Master production-grade AI models, Neural Networks, and LLM integration for enterprise-level intelligence.</p>
+                            <div class="view-program">View Program</div>
+                        </div>
+                    </a>
+
+                    <!-- 2. Frontend Dev -->
+                    <a href="frontend-dev.html" class="program-card group">
+                        <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=500&h=400&fit=crop" alt="Frontend Dev with AI" class="program-card-img" />
+                        <div class="program-card-overlay"></div>
+                        <div class="program-card-content">
+                            <h3 class="program-title">Frontend Dev with AI</h3>
+                            <p class="program-description">Build high-performance UIs faster using v0, Bolt.new, and AI-driven component architecture.</p>
+                            <div class="view-program">View Program</div>
+                        </div>
+                    </a>
+
+                    <!-- 3. Backend Dev -->
+                    <a href="backend-dev.html" class="program-card group">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&h=400&fit=crop" alt="Backend Dev with AI" class="program-card-img" />
+                        <div class="program-card-overlay"></div>
+                        <div class="program-card-content">
+                            <h3 class="program-title">Backend Dev with AI</h3>
+                            <p class="program-description">Develop scalable server-side systems with AI-optimized SQL, GitHub Copilot, and automated API generation.</p>
+                            <div class="view-program">View Program</div>
+                        </div>
+                    </a>
+
+                    <!-- 4. Marketing -->
+                    <a href="digital bussiness management.html" class="program-card group">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=400&fit=crop" alt="Marketing with AI" class="program-card-img" />
+                        <div class="program-card-overlay"></div>
+                        <div class="program-card-content">
+                            <h3 class="program-title">Marketing with AI</h3>
+                            <p class="program-description">Execute viral campaigns using AI lead gen, automated content scheduling, and performance analytics.</p>
+                            <div class="view-program">View Program</div>
+                        </div>
+                    </a>
+
+                    <!-- 5. Content Writing -->
+                    <a href="content-creator.html" class="program-card group">
+                        <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=500&h=400&fit=crop" alt="Content Writing with AI" class="program-card-img" />
+                        <div class="program-card-overlay"></div>
+                        <div class="program-card-content">
+                            <h3 class="program-title">Content Writing with AI</h3>
+                            <p class="program-description">Scale professional copywriting and SEO using Jasper, ChatGPT-4, and AI-driven narrative research.</p>
+                            <div class="view-program">View Program</div>
+                        </div>
+                    </a>
+
+                    <!-- 6. Data Analysis -->
+                    <a href="data-analysis.html" class="program-card group">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=400&fit=crop" alt="Data Analysis with AI" class="program-card-img" />
+                        <div class="program-card-overlay"></div>
+                        <div class="program-card-content">
+                            <h3 class="program-title">Data Analysis with AI</h3>
+                            <p class="program-description">Extract predictive insights using Pandas AI, automated data cleaning, and AI-powered visualization.</p>
+                            <div class="view-program">View Program</div>
+                        </div>
+                    </a>
+
+                    <!-- 7. QA Testing -->
+                    <a href="qa-testing.html" class="program-card group">
+                        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&h=400&fit=crop" alt="QA Testing with AI" class="program-card-img" />
+                        <div class="program-card-overlay"></div>
+                        <div class="program-card-content">
+                            <h3 class="program-title">QA Testing with AI</h3>
+                            <p class="program-description">Implement AI-driven test case generation and automated visual regression testing.</p>
+                            <div class="view-program">View Program</div>
+                        </div>
+                    </a>
+
+                    <!-- 8. Graphic Design -->
+                    <a href="graphic-designer-operations.html" class="program-card group">
+                        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=500&h=400&fit=crop" alt="Graphic Design with AI" class="program-card-img" />
+                        <div class="program-card-overlay"></div>
+                        <div class="program-card-content">
+                            <h3 class="program-title">Graphic Design with AI</h3>
+                            <p class="program-description">Master Firefly, Midjourney, and Canva Magic to deliver elite-level visual concepts.</p>
+                            <div class="view-program">View Program</div>
+                        </div>
+                    </a>
+
+                    <!-- 9. BDE & Sales -->
+                    <a href="bde-operations.html" class="program-card group">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=500&h=400&fit=crop" alt="BDE & Sales with AI" class="program-card-img" />
+                        <div class="program-card-overlay"></div>
+                        <div class="program-card-content">
+                            <h3 class="program-title">BDE & Sales with AI</h3>
+                            <p class="program-description">Automate lead acquisition and strategic outreach using advanced Sales AI automation tools.</p>
+                            <div class="view-program">View Program</div>
+                        </div>
+                    </a>
+
+                    <!-- 10. Product Photography and Videography -->
+                    <a href="product photography-videography.html" class="program-card group">
+                        <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=500&h=400&fit=crop" alt="Product Photography & Videography with AI" class="program-card-img" />
+                        <div class="program-card-overlay"></div>
+                        <div class="program-card-content">
+                            <h3 class="program-title">Product Photography & AI Post-Production</h3>
+                            <p class="program-description">Elevate visual storytelling with AI-driven color grading and automated product retouching.</p>
+                            <div class="view-program">View Program</div>
+                        </div>
+                    </a>
                 </div>
-
-                <div class="program-card" onclick="window.location.href='bde-operations.html'">
-                    <div class="program-icon">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <h3 class="program-title">BDE Operation</h3>
-                    <p class="program-description">Business development executive</p>
-                    <a href="bde-operations.html" class="view-program">View Program</a>
-                </div>
-
-
-
-                <div class="program-card" onclick="window.location.href='content-creator.html'">
-                    <div class="program-icon">
-                        <i class="fas fa-user-edit"></i>
-                    </div>
-                    <h3 class="program-title">Content Creator</h3>
-                    <p class="program-description">Advanced content creation with SEO optimization and audience
-                        engagement strategies.</p>
-                    <a href="content-creator.html" class="view-program">View Program</a>
-                </div>
-
-                <div class="program-card" onclick="window.location.href='creative-services.html'">
-                    <div class="program-icon">
-                        <i class="fas fa-video"></i>
-                    </div>
-                    <h3 class="program-title">Creative Services</h3>
-                    <p class="program-description">Graphic Design and Video Editing operations with professional
-                        creative tools.</p>
-                    <a href="creative-services.html" class="view-program">View Program</a>
-                </div>
-
-                <div class="program-card" onclick="window.location.href='digital bussiness management.html'">
-                    <div class="program-icon">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <h3 class="program-title">Digital Marketing</h3>
-                    <p class="program-description">Comprehensive digital marketing operations with browser automation
-                        and campaigns.</p>
-                    <a href="digital bussiness management.html" class="view-program">View Program</a>
-                </div>
-
-                <div class="program-card" onclick="window.location.href='full-stack development.html'">
-                    <div class="program-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3 class="program-title">Full Stack Development</h3>
-                    <p class="program-description">Complete web development with frontend and backend technologies and
-                        deployment.</p>
-                    <a href="full-stack development.html" class="view-program">View Program</a>
-                </div>
-
-                <div class="program-card" onclick="window.location.href='graphic-designer-operations.html'">
-                    <div class="program-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3 class="program-title">Graphic Designer</h3>
-                    <p class="program-description">Professional graphic design with creative tools and brand identity
-                        development.</p>
-                    <a href="graphic-designer-operations.html" class="view-program">View Program</a>
-                </div>
-
-                <div class="program-card" onclick="window.location.href='photo-video-editing.html'">
-                    <div class="program-icon">
-                        <i class="fas fa-ad"></i>
-                    </div>
-                    <h3 class="program-title">Video Editing / Photo Editing</h3>
-                    <p class="program-description">Traditional and physical marketing operations with design and
-                        promotional materials.</p>
-                    <a href="photo-video-editing.html" class="view-program">View Program</a>
-                </div>
-
-                <div class="program-card" onclick="window.location.href='hr-management.html'">
-                    <div class="program-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3 class="program-title">HR Management</h3>
-                    <p class="program-description">Human Resources management with recruitment, training, and employee
-                        relations.</p>
-                    <a href="hr-management.html" class="view-program">View Program</a>
-                </div>
-
-                <div class="program-card" onclick="window.location.href='long-short-content-writer.html'">
-                    <div class="program-icon">
-                        <i class="fas fa-book-open"></i>
-                    </div>
-                    <h3 class="program-title">Long / Short Content Writer</h3>
-                    <p class="program-description">In-depth content creation for blogs, articles, and long-form
-                        publications.</p>
-                    <a href="long-short-content-writer.html" class="view-program">View Program</a>
-                </div>
-
-                <div class="program-card" onclick="window.location.href='performance-marketing.html'">
-                    <div class="program-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3 class="program-title">Performance Marketing</h3>
-                    <p class="program-description">Data-driven marketing with analytics, optimization, and ROI-focused
-                        campaigns.</p>
-                    <a href="performance-marketing.html" class="view-program">View Program</a>
-                </div>
-
-                <div class="program-card" onclick="window.location.href='product photography-videography.html'">
-                    <div class="program-icon">
-                        <i class="fas fa-camera"></i>
-                    </div>
-                    <h3 class="program-title">Product Photography & Videography</h3>
-                    <p class="program-description">Product photography and visual presentation for e-commerce and
-                        marketing.</p>
-                    <a href="product photography-videography.html" class="view-program">View Program</a>
-                </div>
-
-
-
-
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="contact-section">
+    <section class="contact-section" id="apply">
         <div class="container">
             <div class="section-header">
                 <h2>Apply for Internship</h2>
-                <p>Fill out the form below and our team will contact you shortly</p>
+                <p>Join our elite program and accelerate your career with hands-on corporate experience.</p>
             </div>
-
-            <div class="contact-form-container">
-                <form id="internshipForm" class="contact-form">
-                    <div class="form-group">
-                        <div class="input-icon-wrapper">
-                            <input type="text" id="fullName" name="fullName" placeholder="Surname Name Fathername"
-                                required>
-                            <i class="fas fa-user"></i>
-                        </div>
+            
+            <div class="contact-card-modern">
+                <div class="contact-card-left">
+                    <div class="info-intro">
+                        If you have any questions regarding our programs or need help, please fill out the form here. We do our best to respond within 1 business day.
                     </div>
 
-                    <div class="form-group">
-                        <div class="input-icon-wrapper">
-                            <input type="email" id="email" name="email" placeholder="example@email.com" required>
+                    <div class="contact-info-grid">
+                        <div class="contact-info-item">
                             <i class="fas fa-envelope"></i>
+                            <div>
+                                <p class="contact-info-label">Email</p>
+                                <p class="contact-info-value">errorinfotech404@gmail.com</p>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="input-icon-wrapper">
-                            <input type="tel" id="phone" name="phone" placeholder="+91-8128704400" required>
+                        <div class="contact-info-item">
                             <i class="fas fa-phone"></i>
+                            <div>
+                                <p class="contact-info-label">Phone</p>
+                                <p class="contact-info-value">+91 8128704400</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <p class="contact-info-label">Address</p>
+                                <p class="contact-info-value">Rajkot, Gujarat, India</p>
+                            </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="form-group">
-                        <div class="input-icon-wrapper">
-                            <select id="experience" name="experience" required>
-                                <option value="">Select Internship Duration</option>
-                                <option value="1.5">1.5 Month Internship (6 Weeks)</option>
-                                <option value="3">3 Month Internship (12 Weeks)</option>
-                                <option value="6">6 Month Internship (24 Weeks)</option>
-                            </select>
-                            <i class="fas fa-briefcase"></i>
+                <div class="contact-card-right">
+                    <form id="internshipForm" class="contact-form">
+                        <div class="form-group-modern">
+                            <label>Full Name</label>
+                            <input type="text" id="fullName" name="fullName" class="form-input-modern" placeholder="Surname Name Fathername" required>
                         </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="input-icon-wrapper">
-                            <select id="program" name="program" required>
+                        <div class="form-group-modern">
+                            <label>Email Address</label>
+                            <input type="email" id="email" name="email" class="form-input-modern" placeholder="example@email.com" required>
+                        </div>
+                        <div class="form-group-modern">
+                            <label>Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-input-modern" placeholder="+91-8128704400" required>
+                        </div>
+                        <div class="form-group-modern">
+                            <label>Internship Program</label>
+                            <select id="program" name="program" class="form-input-modern" required>
                                 <option value="">Select Internship Program</option>
-                                <option value="AI/ML Internship">AI/ML Internship</option>
-                                <option value="Creative-Service">Creative-Service</option>
-                                <option value="Full Stack Development">Full Stack Development</option>
-                                <option value="Graphic Design">Graphic Designer</option>
-                                <option value="Graphic Design Physical marketing">Graphic Designer Physical Marketing
-                                </option>
-                                <option value="Performance Marketing">Performance Marketing</option>
-                                <option value="HR Management">HR Management</option>
-                                <option value="BDE operation">BDE Operation</option>
-                                <option value="Content-Creator">Content Creator</option>
-                                <option value="Photo-Video-Editing">Photography & Video Editing</option>
-                                <option value="Digital Business Development">Digital Business Development</option>
-                                <option value="Product Photography-Videography">Product Photography & Video Editing
-                                </option>
+                                <option value="AI-ML Dev">AI-ML Dev</option>
+                                <option value="Frontend Dev with AI">Frontend Dev with AI</option>
+                                <option value="Backend Dev with AI">Backend Dev with AI</option>
+                                <option value="Marketing with AI">Marketing with AI</option>
+                                <option value="Content Writing with AI">Content Writing with AI</option>
+                                <option value="Data Analysis with AI">Data Analysis with AI</option>
+                                <option value="QA Testing with AI">QA Testing with AI</option>
+                                <option value="Graphic Design with AI">Graphic Design with AI</option>
+                                <option value="BDE & Sales with AI">BDE & Sales with AI</option>
+                                <option value="Product Photography with AI">Product Photography with AI</option>
                             </select>
-                            <i class="fas fa-graduation-cap"></i>
                         </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="input-icon-wrapper">
-                            <select id="package" name="package" required>
-                                <option value="">Select Preferred Package</option>
-                                <option value="Basic">Basic Package (1.5 Months)</option>
-                                <option value="Pro">Pro Package (3 Months)</option>
-                                <option value="Enterprise">Enterprise Package (6 Months)</option>
+                        <div class="form-group-modern">
+                            <label>Internship Duration</label>
+                            <select id="experience" name="experience" class="form-input-modern" required>
+                                <option value="">Select Duration</option>
+                                <option value="3">3 Month with AI (Pro)</option>
+                                <option value="6">6 Month with AI (Enterprise)</option>
                             </select>
-                            <i class="fas fa-box"></i>
                         </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="readyToCommit">Ready to commit to the selected internship duration and start
-                            immediately? *</label>
-                        <div class="input-icon-wrapper">
-                            <select id="readyToCommit" name="readyToCommit" required>
-                                <option value="">Select Yes/No</option>
-                                <option value="Yes">Yes</option>
-                                <option value="No">No</option>
-                            </select>
-                            <i class="fas fa-calendar-check"></i>
+                        <div class="form-group checkbox-group" style="margin-top: 1rem;">
+                            <label class="checkbox-label" for="terms" style="font-size: 0.85rem; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                <input type="checkbox" id="terms" name="terms" required style="width: 18px; height: 18px; cursor: pointer;">
+                                I agree to the terms and conditions *
+                            </label>
                         </div>
-                    </div>
-
-                    <div class="form-group checkbox-group">
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="terms" name="terms" required>
-                            <span class="checkmark"></span>
-                            I agree to the terms and conditions *
-                        </label>
-                    </div>
-
-                    <button type="submit" class="submit-btn">Submit Application</button>
-                </form>
+                        <button type="submit" class="submit-btn" style="width: 100%; margin-top: 1rem;">Submit Application</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Enhanced Modern Footer -->
+    <!-- Modular Accordion Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-top">
-                    <div class="footer-brand">
-                        <div class="footer-logo">
-                            <img src="./image/logo4.png" alt="Error Infotech Logo" class="footer-logo-img">
+        <div class="footer-container">
+            <!-- Brand & Contact Section -->
+            <div class="footer-brand-section">
+                <!-- Logo top-left -->
+                <div class="footer-logo-row">
+                    <img src="image/logo4.png" alt="Error Infotech Logo" class="footer-logo-img">
+                </div>
+
+                <!-- Centered content -->
+                <div class="footer-center-content">
+                    <p class="footer-description">Leading digital solutions provider transforming businesses through innovation and excellence. Your trusted partner for professional growth.</p>
+
+                    <div class="footer-contact-icons">
+                        <a href="mailto:errorinfotech404@gmail.com" class="footer-icon-btn email" data-label="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="tel:+918128704400" class="footer-icon-btn phone" data-label="Call Us"><i class="fas fa-phone-alt"></i></a>
+                        <a href="https://maps.google.com/maps?q=Malviya+Coins,+Dr+Yagnik+Rd,+Rajkot,+Gujarat+360002" target="_blank" class="footer-icon-btn location" data-label="Location"><i class="fas fa-map-marker-alt"></i></a>
+                        <a href="https://wa.me/918128704400" target="_blank" class="footer-icon-btn whatsapp" data-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.linkedin.com/in/error-infotech-1947b9381/" target="_blank" class="footer-icon-btn linkedin" data-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/errorinfotech_pvt.ltd" target="_blank" class="footer-icon-btn instagram" data-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <p class="footer-address">302 - Malviya Coins, Dr Yagnik Rd, Rajkot, Gujarat 360002</p>
+                </div>
+            </div>
+
+            <!-- Map + Navigation Layout -->
+            <div class="footer-map-nav-grid">
+
+                <!-- Left: Embedded Map -->
+                <div class="footer-map-wrapper">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.3020788360077!2d70.80177727526163!3d22.30382577968585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959ca10b5fc42bd%3A0xcb1a8b1ee7c8082f!2sMalviya%20Coins%2C%20Dr%20Yagnik%20Rd%2C%20Rajkot%2C%20Gujarat%20360002!5e0!3m2!1sen!2sin!4v1712494000000!5m2!1sen!2sin"
+                        width="100%"
+                        height="100%"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        class="footer-map-iframe">
+                    </iframe>
+                    <div class="footer-map-overlay">
+                        <a href="https://maps.google.com/maps?q=Malviya+Coins,+Dr+Yagnik+Rd,+Rajkot,+Gujarat+360002" target="_blank" class="footer-map-link">
+                            <i class="fas fa-map-marker-alt"></i> Open in Google Maps
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Accordion Buttons stacked vertically -->
+                <div class="footer-accordion-stack">
+                    <!-- Program / Services -->
+                    <div class="accordion-item" id="services-accordion">
+                        <div class="accordion-header" onclick="toggleFooterAccordion('services-accordion')">
+                            <div class="header-icon"><i class="fas fa-briefcase"></i></div>
+                            <span>OUR PROGRAMS</span>
+                            <i class="fas fa-chevron-right arrow"></i>
                         </div>
-                        <p class="footer-tagline">Leading digital solutions provider transforming businesses through
-                            innovation and excellence.</p>
-
-
+                        <div class="accordion-content">
+                            <div class="accordion-links-grid">
+                                <a href="#operations">Operations</a>
+                                <a href="#packages">Internship Packages</a>
+                                <a href="#company">About Us</a>
+                                <a href="#apply">Apply Now</a>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="footer-navigation">
-                        <div class="footer-column">
-                            <h4>Program</h4>
-                            <ul>
-                                <li><a href="#operations"><i class="fas fa-chevron-right"></i> Operations</a></li>
-                                <li><a href="#packages"><i class="fas fa-chevron-right"></i> Packages</a></li>
-                                <li><a href="#company"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                                <li><a href="#contact"><i class="fas fa-chevron-right"></i> Apply Now</a></li>
-                            </ul>
+                    <!-- Support & Legal -->
+                    <div class="accordion-item" id="support-accordion">
+                        <div class="accordion-header" onclick="toggleFooterAccordion('support-accordion')">
+                            <div class="header-icon"><i class="fas fa-question-circle"></i></div>
+                            <span>SUPPORT & LEGAL</span>
+                            <i class="fas fa-chevron-right arrow"></i>
                         </div>
-
-                        <div class="footer-column">
-                            <h4>Support</h4>
-                            <ul>
-                                <li><a href="#" onclick="openModal('faqModal'); return false;"><i
-                                            class="fas fa-chevron-right"></i> FAQ</a></li>
-                                <li><a href="#" onclick="openModal('contactModal'); return false;"><i
-                                            class="fas fa-chevron-right"></i> Contact</a></li>
-                                <li><a href="#" onclick="openModal('termsModal'); return false;"><i
-                                            class="fas fa-chevron-right"></i> Terms of Service</a></li>
-                                <li><a href="#" onclick="openModal('privacyModal'); return false;"><i
-                                            class="fas fa-chevron-right"></i> Privacy Policy</a></li>
-                            </ul>
-                        </div>
-
-
-                    </div>
-
-                    <div class="contact-info">
-                        <h4>Get In Touch</h4>
-                        <div class="contact-list">
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <a href="mailto:errorinfotech404@gmail.com">errorinfotech404@gmail.com</a>
+                        <div class="accordion-content">
+                            <div class="accordion-links-grid">
+                                <a href="#" onclick="openModal('faqModal'); return false;">Help & FAQ</a>
+                                <a href="#" onclick="openModal('contactModal'); return false;">Contact Support</a>
+                                <a href="#" onclick="openModal('termsModal'); return false;">Terms of Service</a>
+                                <a href="#" onclick="openModal('privacyModal'); return false;">Privacy Policy</a>
                             </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone-alt"></i>
-                                <a href="tel:+918128704400">+91 8128704400</a>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Rajkot, India</span>
-                            </div>
-                        </div>
-
-                        <div class="social-links">
-                            <a href="https://www.facebook.com/share/1Gt9Ec4B2A/" class="social-link"
-                                aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.instagram.com/errorinfotech_pvt.ltd?igsh=NzVhOWU2Njc4YWV2"
-                                class="social-link" aria-label="Instagram" target="_blank"><i
-                                    class="fab fa-instagram"></i></a>
-                            <a href="https://www.linkedin.com/in/error-infotech-1947b9381/" class="social-link"
-                                aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" class="social-link" aria-label="GitHub" target="_blank"><i
-                                    class="fab fa-github"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="footer-bottom">
-                <div class="footer-bottom-content">
-                    <div class="footer-copyright">
-                        &copy; 2026 Error Infotech. All rights reserved.
-                    </div>
+            <!-- Bottom Section -->
+            <div class="footer-bottom-v2">
+                <p>&copy; 2026 Error Infotech Pvt. Ltd. All rights reserved.</p>
+                <div class="footer-bottom-socials">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
         </div>
@@ -756,7 +1201,7 @@
             </div>
             <div class="faq-item">
                 <h3>Q: How long are the internship programs?</h3>
-                <p>A: Our programs range from 1.5 months (Basic) to 3 months (Pro) to 6 months (Enterprise), depending
+                <p>A: Our programs range from 3 months (Pro) to 6 months (Enterprise), depending
                     on the package you choose.</p>
             </div>
             <div class="faq-item">
@@ -953,9 +1398,11 @@
         }
 
         .faq-item h3 {
-            color: #304c64;
+            color: #3d2c22;
             margin-bottom: 0.5rem;
         }
+
+
 
         .contact-details {
             display: grid;
@@ -965,7 +1412,7 @@
 
         .terms-content h3,
         .privacy-content h3 {
-            color: #304c64;
+            color: #3d2c22;
             margin: 1.5rem 0 0.5rem 0;
         }
 
@@ -995,7 +1442,74 @@
             }
         }
 
+        // Smooth Auto-scroll functionality for programs
+        const slider = document.getElementById('auto-slider');
+        let isPaused = false;
+        let step = 0.5; // Slower, smoother speed
 
+        if (slider) {
+            slider.addEventListener('mouseenter', () => isPaused = true);
+            slider.addEventListener('mouseleave', () => isPaused = false);
+            slider.addEventListener('touchstart', () => isPaused = true);
+            slider.addEventListener('touchend', () => isPaused = false);
+            
+            // Clone items and prepend/append for infinite loop behavior
+            const cloneContent = slider.innerHTML;
+            slider.innerHTML = cloneContent + cloneContent; 
+
+            function smoothScroll() {
+                if (!isPaused) {
+                    slider.scrollLeft += step;
+                    // If we've scrolled past half the content, reset to start
+                    if (slider.scrollLeft >= slider.scrollWidth / 2) {
+                        slider.scrollLeft = 0;
+                    }
+                }
+                requestAnimationFrame(smoothScroll);
+            }
+            smoothScroll();
+        }
+
+        // Vertical Footer Ticker Autoscroll
+        const ticker = document.querySelector('.footer-programs-ticker-wrapper');
+        if(ticker) {
+            let tickerPaused = false;
+            ticker.addEventListener('mouseenter', () => tickerPaused = true);
+            ticker.addEventListener('mouseleave', () => tickerPaused = false);
+
+            function autoScrollTicker() {
+                if (!tickerPaused) {
+                    ticker.scrollTop += 0.4;
+                    if (ticker.scrollTop >= (ticker.scrollHeight - ticker.clientHeight)) {
+                        ticker.scrollTop = 0;
+                    }
+                }
+                requestAnimationFrame(autoScrollTicker);
+            }
+            requestAnimationFrame(autoScrollTicker);
+        }
+
+        // Footer Accordion Toggle
+        function toggleFooterAccordion(accordionId) {
+            const footerAccordions = document.querySelectorAll('.footer .accordion-item');
+            const targetItem = document.getElementById(accordionId);
+            const wasActive = targetItem.classList.contains('active');
+
+            footerAccordions.forEach(item => {
+                if (item.id === accordionId) {
+                    item.classList.toggle('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+
+            // Auto-scroll into view when opening
+            if (!wasActive && targetItem) {
+                setTimeout(() => {
+                    targetItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 350); // wait for CSS transition to start
+            }
+        }
     </script>
 
     <script src="script.js"></script>

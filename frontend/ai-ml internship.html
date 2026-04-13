@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -17,7 +17,7 @@
     <meta property="og:title" content="AI & ML Operations | Scalable MLOps & AI Solutions - Error Infotech" />
     <meta property="og:description"
         content="Accelerate AI innovation with robust MLOps, model deployment, monitoring, and automation services by Error Infotech." />
-    <meta property="og:image" content="https://yourwebsite.com/images/ai-ml-operations.jpg" />
+    
     <meta property="og:url" content="https://yourwebsite.com/ai-ml-operations" />
     <meta property="og:site_name" content="Error Infotech" />
 
@@ -26,11 +26,878 @@
     <meta name="twitter:title" content="AI & ML Operations Services | MLOps Experts - Error Infotech" />
     <meta name="twitter:description"
         content="Deploy, monitor, and scale AI models efficiently with advanced MLOps solutions from Error Infotech." />
-    <meta name="twitter:image" content="https://yourwebsite.com/images/ai-ml-operations.jpg" />
+    
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+
+<style>
+:root {
+            --primary: #bb734b;           /* Copper Accent as Primary */
+            --primary-light: #d6956f;     /* Lighter Copper */
+            --secondary: #bb734b;         
+            --secondary-hover: #a5613a;   
+            --bg-body: #0d0a08;           /* Near Black-Brown */
+            --bg-section: #1a1410;        /* Deep Dark Brown */
+            --text-main: #ffffff;         /* Pure White */
+            --text-muted: #a1a1aa;        /* Muted Light Gray */
+            --border-color: rgba(187, 115, 75, 0.15);
+            --border-focus: #bb734b;
+            
+            --success: #38a169;
+            --warning: #e53e3e;
+            
+            --shadow-sm: 0 2px 8px rgba(61, 44, 34, 0.04);
+            --shadow-md: 0 8px 24px rgba(61, 44, 34, 0.08);
+            --shadow-hover: 0 12px 32px rgba(187, 115, 75, 0.12);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --radius-md: 12px;
+            --radius-lg: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0d0a08;
+            background-image:
+                radial-gradient(circle at 15% 25%, rgba(187, 115, 75, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 85% 75%, rgba(187, 115, 75, 0.05) 0%, transparent 40%),
+                linear-gradient(45deg, rgba(187, 115, 75, 0.03) 25%, transparent 25%, transparent 75%, rgba(187, 115, 75, 0.03) 75%, rgba(187, 115, 75, 0.03) 75%),
+                linear-gradient(135deg, rgba(187, 115, 75, 0.03) 25%, transparent 25%, transparent 75%, rgba(187, 115, 75, 0.03) 75%, rgba(187, 115, 75, 0.03) 75%);
+            background-attachment: fixed;
+            background-size: 100% 100%, 100% 100%, 80px 80px, 80px 80px;
+            color: var(--text-main);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+
+        /* Beautiful Unique Hero Section */
+        /* Kokonut UI Inspired Geometric Background */
+        .hero-header {
+            position: relative;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-color: #0d0a08;
+            background-image:
+                radial-gradient(circle at 15% 25%, rgba(187, 115, 75, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 85% 75%, rgba(187, 115, 75, 0.05) 0%, transparent 40%),
+                linear-gradient(45deg, rgba(187, 115, 75, 0.03) 25%, transparent 25%, transparent 75%, rgba(187, 115, 75, 0.03) 75%, rgba(187, 115, 75, 0.03) 75%),
+                linear-gradient(135deg, rgba(187, 115, 75, 0.03) 25%, transparent 25%, transparent 75%, rgba(187, 115, 75, 0.03) 75%, rgba(187, 115, 75, 0.03) 75%);
+            background-attachment: fixed;
+            background-size: 100% 100%, 100% 100%, 80px 80px, 80px 80px;
+            margin-bottom: 0;
+            padding: 4rem 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .hero-bg-accent {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(244, 63, 94, 0.05) 0%, transparent 50%);
+            filter: blur(80px);
+            z-index: 0;
+        }
+
+        /* Elegant Floating Shapes */
+        .elegant-shape {
+            position: absolute;
+            z-index: 1;
+            opacity: 0;
+            animation: shape-entrance 2.4s cubic-bezier(0.23, 0.86, 0.39, 0.96) forwards;
+        }
+
+        .shape-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 9999px;
+            backdrop-filter: blur(2px);
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.1);
+            position: relative;
+            animation: shape-float 12s ease-in-out infinite;
+        }
+
+        .shape-inner::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 9999px;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.2), transparent 70%);
+        }
+
+        @keyframes shape-entrance {
+            from { opacity: 0; transform: translateY(-150px) rotate(-15deg); }
+            to { opacity: 1; transform: translateY(0) rotate(var(--rotate)); }
+        }
+
+        @keyframes shape-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(15px); }
+        }
+
+        /* Fade Up Animation */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fade-up 1s cubic-bezier(0.25, 0.4, 0.25, 1) forwards;
+        }
+
+        @keyframes fade-up {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 9999px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.875rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero-badge .dot {
+            width: 8px;
+            height: 8px;
+            background: #f43f5e;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(244, 63, 94, 0.8);
+        }
+
+        .hero-header h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .title-white {
+            background: linear-gradient(to bottom, #ffffff, rgba(255, 255, 255, 0.8));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .title-gradient {
+            background: linear-gradient(to right, #a5b4fc, #ffffff, #fda4af);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: rgba(255, 255, 255, 0.4);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background-color: rgba(187,115,75,0.1);
+            color: var(--secondary);
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(187,115,75,0.2);
+        }
+
+        .hero-logo {
+            height: 95px;
+            width: auto;
+            margin-bottom: 1.5rem;
+            filter: brightness(0) drop-shadow(0 4px 6px rgba(0,0,0,0.05));
+            transition: transform 0.3s ease;
+        }
+        
+        .hero-logo:hover {
+            transform: scale(1.02);
+        }
+
+        .hero-header h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.2rem;
+            color: var(--primary);
+            letter-spacing: -1px;
+        }
+
+        .hero-highlight {
+            color: var(--secondary);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .hero-highlight::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 8px;
+            background-color: rgba(187,115,75,0.2);
+            bottom: 8px;
+            left: 0;
+            z-index: -1;
+            border-radius: 4px;
+        }
+
+        .hero-header p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin: 0 auto 2.5rem;
+            max-width: 600px;
+        }
+        
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero-btn-primary {
+            background-color: var(--secondary);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(187, 115, 75, 0.3);
+        }
+        
+        .hero-btn-primary:hover {
+            background-color: var(--primary);
+            box-shadow: 0 6px 20px rgba(61, 44, 34, 0.2);
+            transform: translateY(-2px);
+            color: white;
+        }
+        
+        .hero-btn-outline {
+            background-color: #0d0a08;
+            background-image:
+                radial-gradient(circle at 15% 25%, rgba(187, 115, 75, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 85% 75%, rgba(187, 115, 75, 0.05) 0%, transparent 40%),
+                linear-gradient(45deg, rgba(187, 115, 75, 0.03) 25%, transparent 25%, transparent 75%, rgba(187, 115, 75, 0.03) 75%, rgba(187, 115, 75, 0.03) 75%),
+                linear-gradient(135deg, rgba(187, 115, 75, 0.03) 25%, transparent 25%, transparent 75%, rgba(187, 115, 75, 0.03) 75%, rgba(187, 115, 75, 0.03) 75%);
+            background-attachment: fixed;
+            background-size: 100% 100%, 100% 100%, 80px 80px, 80px 80px;
+            color: var(--primary);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            border: 2px solid var(--border-color);
+        }
+        
+        .hero-btn-outline:hover {
+            border-color: var(--primary);
+            background-color: rgba(61,44,34,0.05);
+            transform: translateY(-2px);
+        }
+
+        /* Section Global */
+        .programs-section, .contact-section {
+            padding: 3rem 2rem;
+            background-color: #0d0a08;
+            background-image:
+                radial-gradient(circle at 15% 25%, rgba(187, 115, 75, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 85% 75%, rgba(187, 115, 75, 0.05) 0%, transparent 40%),
+                linear-gradient(45deg, rgba(187, 115, 75, 0.03) 25%, transparent 25%, transparent 75%, rgba(187, 115, 75, 0.03) 75%, rgba(187, 115, 75, 0.03) 75%),
+                linear-gradient(135deg, rgba(187, 115, 75, 0.03) 25%, transparent 25%, transparent 75%, rgba(187, 115, 75, 0.03) 75%, rgba(187, 115, 75, 0.03) 75%);
+            background-attachment: fixed;
+            background-size: 100% 100%, 100% 100%, 80px 80px, 80px 80px;
+            margin-bottom: 3rem; /* Added margin for separation */
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.8rem;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #a5b4fc, #ffffff, #fda4af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Programs Grid */
+        .programs-grid-wrapper {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            padding: 1rem 0; /* Reduced vertical padding */
+        }
+
+        .programs-grid {
+            display: flex !important;
+            flex-wrap: nowrap !important;
+            gap: 1.5rem; /* Slightly reduced gap */
+            overflow-x: auto;
+            scroll-behavior: auto; /* Changed from smooth to auto for JS control */
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            cursor: grab;
+            padding: 0.5rem 0;
+            margin: 0 !important;
+        }
+
+        .programs-grid::-webkit-scrollbar {
+            display: none;
+        }
+
+        .program-card {
+            background: #000;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            text-align: left;
+            transition: var(--transition);
+            cursor: pointer;
+            display: block;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            /* Dimensions matching the React aspect ratio card */
+            min-height: 27rem;
+            min-width: 300px;
+            width: 360px; /* On large screens */
+            flex-shrink: 0;
+            border: none;
+            text-decoration: none;
+        }
+
+        .program-card-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.4s ease;
+            z-index: -2;
+        }
+
+        .program-card:hover .program-card-img {
+            transform: scale(1.05);
+        }
+
+        .program-card-overlay {
+            position: absolute;
+            inset: 0;
+            height: 100%;
+            background: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 40%, rgba(0,0,0,0.85) 100%);
+            z-index: -1;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Recreate the text container at the bottom */
+        .program-card-content {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 1.5rem;
+            color: #ffffff;
+            z-index: 10;
+        }
+
+        .program-title {
+            font-size: 1.35rem;
+            color: #ffffff; 
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            letter-spacing: -0.3px;
+        }
+
+        .program-description {
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .view-program {
+            display: flex;
+            align-items: center;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            border: none;
+            background: transparent;
+            padding: 0;
+        }
+
+        .view-program::after {
+            content: '→';
+            margin-left: 0.5rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .program-card:hover .view-program::after {
+            transform: translateX(5px);
+        }
+
+        /* Minimal Form Styles */
+        .contact-form-container {
+            max-width: 650px;
+            margin: 0 auto;
+            background: rgba(13, 10, 8, 0.7); backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.6rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        .input-icon-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        .input-icon-wrapper input,
+        .input-icon-wrapper select,
+        .input-icon-wrapper textarea {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3.2rem;
+            background-color: #0d0a08;
+            background-image:
+                radial-gradient(circle at 15% 25%, rgba(187, 115, 75, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 85% 75%, rgba(187, 115, 75, 0.05) 0%, transparent 40%),
+                linear-gradient(45deg, rgba(187, 115, 75, 0.03) 25%, transparent 25%, transparent 75%, rgba(187, 115, 75, 0.03) 75%, rgba(187, 115, 75, 0.03) 75%),
+                linear-gradient(135deg, rgba(187, 115, 75, 0.03) 25%, transparent 25%, transparent 75%, rgba(187, 115, 75, 0.03) 75%, rgba(187, 115, 75, 0.03) 75%);
+            background-attachment: fixed;
+            background-size: 100% 100%, 100% 100%, 80px 80px, 80px 80px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-md);
+            font-size: 0.95rem;
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-main);
+            transition: var(--transition);
+        }
+
+        .input-icon-wrapper input:focus,
+        .input-icon-wrapper select:focus,
+        .input-icon-wrapper textarea:focus {
+            outline: none;
+            border-color: var(--border-focus);
+            background-color: #0d0a08;
+            background-image:
+                radial-gradient(circle at 15% 25%, rgba(187, 115, 75, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 85% 75%, rgba(187, 115, 75, 0.05) 0%, transparent 40%),
+                linear-gradient(45deg, rgba(187, 115, 75, 0.03) 25%, transparent 25%, transparent 75%, rgba(187, 115, 75, 0.03) 75%, rgba(187, 115, 75, 0.03) 75%),
+                linear-gradient(135deg, rgba(187, 115, 75, 0.03) 25%, transparent 25%, transparent 75%, rgba(187, 115, 75, 0.03) 75%, rgba(187, 115, 75, 0.03) 75%);
+            background-attachment: fixed;
+            background-size: 100% 100%, 100% 100%, 80px 80px, 80px 80px;
+            box-shadow: 0 0 0 4px rgba(187, 115, 75, 0.1);
+        }
+
+        .input-icon-wrapper i {
+            position: absolute;
+            left: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            pointer-events: none;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+        
+        .input-icon-wrapper input:focus + i,
+        .input-icon-wrapper select:focus + i {
+            color: var(--secondary);
+        }
+
+        .input-icon-wrapper textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .input-icon-wrapper textarea~i {
+            top: 1.6rem;
+            transform: none;
+        }
+
+        .submit-btn {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            padding: 1.1rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 1rem;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--secondary-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Checkbox styling */
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        
+        .checkbox-label {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        
+        .checkbox-label input {
+            accent-color: var(--secondary);
+            margin-right: 10px;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(43, 31, 24, 0.7);
+            backdrop-filter: blur(8px);
+        }
+
+        .modal-content {
+            background-color: #0d0a08;
+            background-image:
+                radial-gradient(circle at 15% 25%, rgba(187, 115, 75, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 85% 75%, rgba(187, 115, 75, 0.05) 0%, transparent 40%),
+                linear-gradient(45deg, rgba(187, 115, 75, 0.03) 25%, transparent 25%, transparent 75%, rgba(187, 115, 75, 0.03) 75%, rgba(187, 115, 75, 0.03) 75%),
+                linear-gradient(135deg, rgba(187, 115, 75, 0.03) 25%, transparent 25%, transparent 75%, rgba(187, 115, 75, 0.03) 75%, rgba(187, 115, 75, 0.03) 75%);
+            background-attachment: fixed;
+            background-size: 100% 100%, 100% 100%, 80px 80px, 80px 80px;
+            margin: 5% auto;
+            padding: 3rem;
+            border-radius: var(--radius-lg);
+            width: 90%;
+            max-width: 700px;
+            max-height: 85vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: var(--shadow-hover);
+        }
+
+        .close {
+            position: absolute;
+            right: 1.5rem;
+            top: 1.5rem;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-body);
+            transition: var(--transition);
+        }
+
+        .close:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: var(--bg-body);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .faq-item h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .faq-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Modern Contact Card (Kokonut UI) */
+        .contact-card-modern {
+            position: relative;
+            background: rgba(13, 10, 8, 0.7); backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-lg);
+            display: grid;
+            grid-template-columns: 1fr;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            margin: 1rem auto 0; /* Reduced from 3rem */
+            max-width: 1024px;
+        }
+
+        @media (min-width: 1024px) {
+            .contact-card-modern {
+                grid-template-columns: 1fr 1.6fr; /* Give form significantly more space */
+            }
+        }
+
+        .plus-icon {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            color: var(--secondary);
+            z-index: 5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .plus-icon i { font-size: 1.2rem; }
+        .plus-top-left { top: -12px; left: -12px; }
+        .plus-top-right { top: -12px; right: -12px; }
+        .plus-bottom-left { bottom: -12px; left: -12px; }
+        .plus-bottom-right { bottom: -12px; right: -12px; }
+
+        .contact-card-left {
+            padding: 1.5rem 2.5rem; /* Reduced top padding */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-card-left .info-intro {
+            margin-bottom: 1.2rem; /* Reduced margin */
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .contact-info-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            padding: 1.2rem 1.5rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.2s ease;
+        }
+
+        .contact-info-item:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-info-item i {
+            font-size: 1.1rem;
+            color: var(--secondary);
+            background: rgba(187, 115, 75, 0.1);
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+
+        .contact-info-label {
+            font-size: 0.6rem; 
+            color: rgba(255, 255, 255, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 1px;
+        }
+
+        .contact-info-value {
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.75rem; /* Reduced from 0.85 */
+            word-break: break-all;
+        }
+
+        .contact-card-right {
+            background: rgba(255, 255, 255, 0.01);
+            border-left: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 1.5rem 2rem;
+        }
+
+        .form-group-modern {
+            margin-bottom: 0.6rem; /* Ultra-tight spacing */
+            position: relative;
+        }
+
+        .form-group-modern label {
+            display: block;
+            font-size: 0.65rem; /* Reduced from 0.7 */
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 0.2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-input-modern {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            padding: 0.5rem 0.7rem; /* Even tighter padding */
+            color: white;
+            font-size: 0.8rem; /* Reduced from 0.9 */
+            font-family: inherit;
+            transition: all 0.2s ease;
+        }
+
+        .form-input-modern:focus {
+            outline: none;
+            border-color: var(--secondary);
+            background: rgba(255, 255, 255, 0.06);
+            box-shadow: 0 0 0 2px rgba(187, 115, 75, 0.2);
+        }
+
+        /* Completely Hide Error Boxes */
+        .error-message-box {
+            display: none !important;
+        }
+        
+        /* Dropdown Visibility Fix */
+        .form-input-modern option {
+            background-color: #1a1410; /* Dark background to match card */
+            color: white; /* White text */
+        }
+        
+        /* Safari/Chrome specific fix for dropdown legibility */
+        select.form-input-modern {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1em;
+            padding-right: 2.5rem;
+        }
+
+        /* Subtle field error highlight */
+        .input-invalid {
+            border-color: #ef4444 !important;
+            background: rgba(239, 68, 68, 0.02) !important;
+        }
+    
+</style>
+
 </head>
 
 <body>
@@ -45,7 +912,7 @@
                     <li><a href="#operations">Operations</a></li>
                     <li><a href="#packages">Packages</a></li>
                     <li><a href="#company">Company</a></li>
-                    <li><a href="#contact">Apply Now</a></li>
+                    <li><a href="#apply">Apply Now</a></li>
                 </ul>
                 <div class="menu-toggle">
                     <i class="fas fa-bars"></i>
@@ -55,7 +922,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" style="background-image: url('image/ai-ml-hero.png');">
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title">
@@ -66,557 +933,203 @@
                     Comprehensive 6-month AI & ML operational framework.
                     Master everything from problem framing and data preparation to model deployment and scaling.
                 </p>
-                <a href="#contact" class="cta-button">
+                <a href="#apply" class="cta-button">
                     <i class="fas fa-brain"></i>
                     Start AI/ML Internship
                 </a>
-            </div>
-            <div class="hero-image">
-                <div class="floating-card card-1">
-                    <i class="fas fa-robot"></i>
-                    <h4>Core AI</h4>
-                </div>
-                <div class="floating-card card-2">
-                    <i class="fas fa-microchip"></i>
-                    <h4>Model Dev</h4>
-                </div>
-                <div class="floating-card card-3">
-                    <i class="fas fa-network-wired"></i>
-                    <h4>Deployment</h4>
-                </div>
             </div>
         </div>
     </section>
 
     <!-- Operations Overview -->
-    <section id="operations" class="operations-section">
-        <div class="framework-container">
-            <div class="framework-header">
-                <h2>AI & ML Operations Framework</h2>
-                <p>A Professional End-to-End Artificial Intelligence Lifecycle</p>
-            </div>
-
-            <div class="framework-overview">
-                <h3>A Professional AI & Machine Learning Operations Framework</h3>
-                <p>Building an AI model is a technical skill. Creating measurable business impact through AI is
-                    professional excellence. This framework covers 8 core operations required to transform business
-                    problems into high-performing AI solutions.</p>
-
-                <div class="framework-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">5</span>
-                        <span class="stat-label">Core AI Ops</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">3</span>
-                        <span class="stat-label">Post-Model Ops</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">8</span>
-                        <span class="stat-label">Total Master Ops</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label">Impact</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Comprehensive Operations Framework -->
-            <div class="operations-framework">
-                <div class="framework-stages">
-                    <!-- 1. Problem Understanding & Requirement Analysis Operation -->
-                    <div class="stage-section" id="problem-analysis">
-                        <div class="stage-header">
-                            <div class="stage-icon">1️</div>
-                            <div>
-                                <h3 class="stage-title">Problem Understanding & Requirement Analysis Operation</h3>
-                                <h4 class="stage-subtitle">Understand the business problem clearly before building any
-                                    model</h4>
-                            </div>
-                        </div>
-                        <div class="stage-description">
-                            <p>Objective: Define the scope and feasibility of the AI solution to ensure alignment with
-                                business goals.</p>
-                        </div>
-
-                        <div class="operation-group">
-                            <h4>Key Responsibilities:</h4>
-                            <div class="operation-item">Define the business problem</div>
-                            <div class="operation-item">Identify relevant use cases</div>
-                            <div class="operation-item">Assess data availability</div>
-                            <div class="operation-item">Define success metrics (KPIs)</div>
-                            <div class="operation-item">Conduct feasibility analysis</div>
-                        </div>
-
-                        <div class="operation-group">
-                            <h4>Training Focus:</h4>
-                            <div class="operation-item">Problem framing techniques</div>
-                            <div class="operation-item">AI vs ML vs Automation clarity</div>
-                            <div class="operation-item">Mapping business goals to technical solutions</div>
-                            <div class="operation-item">KPI definition</div>
-                        </div>
-                    </div>
-
-                    <!-- 2. Data Collection & Preparation Operation -->
-                    <div class="stage-section" id="data-preparation">
-                        <div class="stage-header">
-                            <div class="stage-icon">2️</div>
-                            <div>
-                                <h3 class="stage-title">Data Collection & Preparation Operation</h3>
-                                <h4 class="stage-subtitle">Prepare clean, structured, and usable data for model
-                                    development</h4>
-                            </div>
-                        </div>
-                        <div class="stage-description">
-                            <p>Objective: Create a high-quality dataset which is the foundation of any successful AI
-                                model.</p>
-                        </div>
-
-                        <div class="operation-group">
-                            <h4>Includes:</h4>
-                            <div class="operation-item">Dataset collection</div>
-                            <div class="operation-item">Data cleaning and preprocessing</div>
-                            <div class="operation-item">Handling missing values</div>
-                            <div class="operation-item">Feature selection</div>
-                            <div class="operation-item">Data transformation and encoding</div>
-                        </div>
-
-                        <div class="operation-group">
-                            <h4>Tools Used:</h4>
-                            <div class="operation-item"><i class="fab fa-python"></i> Python</div>
-                            <div class="operation-item"><i class="fas fa-table"></i> Pandas</div>
-                            <div class="operation-item"><i class="fas fa-calculator"></i> NumPy</div>
-                        </div>
-                    </div>
-
-                    <!-- 3. Model Selection & Algorithm Strategy Operation -->
-                    <div class="stage-section" id="model-selection">
-                        <div class="stage-header">
-                            <div class="stage-icon">3️</div>
-                            <div>
-                                <h3 class="stage-title">Model Selection & Algorithm Strategy Operation</h3>
-                                <h4 class="stage-subtitle">Select the most suitable algorithm based on the problem type
-                                </h4>
-                            </div>
-                        </div>
-                        <div class="stage-description">
-                            <p>Objective: Match the right mathematical approach to the specific business requirement.
-                            </p>
-                        </div>
-
-                        <div class="operation-group">
-                            <h4>Includes:</h4>
-                            <div class="operation-item">Regression models</div>
-                            <div class="operation-item">Classification models</div>
-                            <div class="operation-item">Clustering techniques</div>
-                            <div class="operation-item">Basic NLP models</div>
-                            <div class="operation-item">Algorithm comparison and evaluation</div>
-                        </div>
-
-                        <div class="operation-group">
-                            <h4>Training Focus:</h4>
-                            <div class="operation-item">Overfitting vs Underfitting</div>
-                            <div class="operation-item">Bias-Variance tradeoff</div>
-                            <div class="operation-item">Model selection logic</div>
-                        </div>
-                    </div>
-
-                    <!-- 4. Model Training & Testing Operation -->
-                    <div class="stage-section" id="model-training">
-                        <div class="stage-header">
-                            <div class="stage-icon">4️</div>
-                            <div>
-                                <h3 class="stage-title">Model Training & Testing Operation</h3>
-                                <h4 class="stage-subtitle">Train the model effectively and validate its performance</h4>
-                            </div>
-                        </div>
-                        <div class="stage-description">
-                            <p>Objective: Build a model that generalizes well to new, unseen data.</p>
-                        </div>
-
-                        <div class="operation-group">
-                            <h4>Includes:</h4>
-                            <div class="operation-item">Train-test split strategy</div>
-                            <div class="operation-item">Cross-validation</div>
-                            <div class="operation-item">Accuracy evaluation</div>
-                            <div class="operation-item">Precision, Recall, F1-score</div>
-                            <div class="operation-item">Performance metric analysis</div>
-                        </div>
-
-                        <div class="operation-group">
-                            <h4>Tools Used:</h4>
-                            <div class="operation-item">Scikit-learn</div>
-                            <div class="operation-item">TensorFlow (Basics)</div>
-                            <div class="operation-item">Keras</div>
-                        </div>
-                    </div>
-
-                    <!-- 5. Model Optimization & Performance Improvement Operation -->
-                    <div class="stage-section" id="model-optimization">
-                        <div class="stage-header">
-                            <div class="stage-icon">5️</div>
-                            <div>
-                                <h3 class="stage-title">Model Optimization & Performance Improvement Operation</h3>
-                                <h4 class="stage-subtitle">Enhance model performance and reliability</h4>
-                            </div>
-                        </div>
-                        <div class="stage-description">
-                            <p>Objective: Fine-tune the model to achieve the highest possible accuracy and robustness.
-                            </p>
-                        </div>
-
-                        <div class="operation-group">
-                            <h4>Includes:</h4>
-                            <div class="operation-item">Hyperparameter tuning</div>
-                            <div class="operation-item">Advanced feature engineering</div>
-                            <div class="operation-item">Model comparison</div>
-                            <div class="operation-item">Error analysis</div>
-                        </div>
-                    </div>
-
-                    <!-- 6. Deployment & System Integration Operation -->
-                    <div class="stage-section" id="deployment-integration">
-                        <div class="stage-header">
-                            <div class="stage-icon">6️</div>
-                            <div>
-                                <h3 class="stage-title">Deployment & System Integration Operation</h3>
-                                <h4 class="stage-subtitle">Deploy the trained model into a live production environment
-                                </h4>
-                            </div>
-                        </div>
-                        <div class="stage-description">
-                            <p>Objective: Transition from a training environment to a functional business application.
-                            </p>
-                        </div>
-
-                        <div class="operation-group">
-                            <h4>Includes:</h4>
-                            <div class="operation-item">API development</div>
-                            <div class="operation-item">Backend integration</div>
-                            <div class="operation-item">Basic deployment strategies</div>
-                            <div class="operation-item">Hosting and system connectivity</div>
-                        </div>
-                    </div>
-
-                    <!-- 7. Monitoring & Performance Tracking Operation -->
-                    <div class="stage-section" id="monitoring-performance">
-                        <div class="stage-header">
-                            <div class="stage-icon">7️</div>
-                            <div>
-                                <h3 class="stage-title">Monitoring & Performance Tracking Operation</h3>
-                                <h4 class="stage-subtitle">Continuously monitor and maintain model performance after
-                                    deployment</h4>
-                            </div>
-                        </div>
-                        <div class="stage-description">
-                            <p>Objective: Ensure the model remains accurate as real-world data evolves.</p>
-                        </div>
-
-                        <div class="operation-group">
-                            <h4>Includes:</h4>
-                            <div class="operation-item">Real-time performance monitoring</div>
-                            <div class="operation-item">Data drift detection</div>
-                            <div class="operation-item">Periodic model retraining</div>
-                            <div class="operation-item">Reporting and analytics</div>
-                        </div>
-                    </div>
-
-                    <!-- 8. Scaling & Business Impact Optimization Operation -->
-                    <div class="stage-section" id="scaling-impact">
-                        <div class="stage-header">
-                            <div class="stage-icon">8️</div>
-                            <div>
-                                <h3 class="stage-title">Scaling & Business Impact Optimization Operation</h3>
-                                <h4 class="stage-subtitle">Leverage AI to drive measurable business impact</h4>
-                            </div>
-                        </div>
-                        <div class="stage-description">
-                            <p>Objective: Maximize value and ensure long-term scalability of AI initiatives.</p>
-                        </div>
-
-                        <div class="operation-group">
-                            <h4>Includes:</h4>
-                            <div class="operation-item">Automation integration</div>
-                            <div class="operation-item">Cost-efficiency analysis</div>
-                            <div class="operation-item">AI scaling strategy</div>
-                            <div class="operation-item">ROI measurement</div>
-                            <div class="operation-item">Future enhancement planning</div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
+        <div class="react-pipeline-root" data-page="ai-ml internship"></div>
 
     <!-- Packages Section -->
-    <section id="packages" class="packages-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>6-Month Compulsory Mastery Program</h2>
-                <p>A professional internship designed for future AI & ML leaders</p>
-            </div>
-            <div class="packages-grid">
-                <div class="package-card pro featured" style="max-width: 500px; margin: 0 auto; grid-column: 1 / -1;">
-                    <div class="package-badge">COMPLETE PROGRAM</div>
-                    <div class="package-header">
-                        <h3>AI & ML Advanced Track</h3>
-                        <div class="price">
-                            <span class="amount">₹26,999</span>
-                            <span class="duration">Full Program</span>
-                        </div>
-                    </div>
-                    <ul class="package-features">
-                        <li><i class="fas fa-check-circle"></i> 5 Core AI Operations</li>
-                        <li><i class="fas fa-check-circle"></i> 3 Post-Model Operations</li>
-                        <li><i class="fas fa-check-circle"></i> 6 Months Compulsory Internship</li>
-                        <li><i class="fas fa-check-circle"></i> Live Project Development</li>
-                        <li><i class="fas fa-check-circle"></i> Deployment & System Integration</li>
-                        <li><i class="fas fa-check-circle"></i> Advanced Feature Engineering</li>
-                        <li><i class="fas fa-check-circle"></i> Monitoring & Maintenance Training</li>
-                        <li><i class="fas fa-check-circle"></i> Business ROI Analysis</li>
-                    </ul>
-                    <button class="package-button">Apply for Mastery</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Company Section -->
-    <section id="company" class="company-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>About Error Infotech</h2>
-                <p>AI, ML, and Data Science Excellence</p>
-            </div>
-            <div class="company-content">
-                <div class="company-highlights">
-                    <div class="highlight-card">
-                        <i class="fas fa-code-branch"></i>
-                        <div>
-                            <h3>5+ Years Experience</h3>
-                            <p>In AI implementation</p>
-                        </div>
-                    </div>
-                    <div class="highlight-card">
-                        <i class="fas fa-database"></i>
-                        <div>
-                            <h3>500+ Projects</h3>
-                            <p>Data-driven success</p>
-                        </div>
-                    </div>
-                    <div class="highlight-card">
-                        <i class="fas fa-user-graduate"></i>
-                        <div>
-                            <h3>100+ Interns</h3>
-                            <p>Trained and scaling</p>
-                        </div>
-                    </div>
-                    <div class="highlight-card">
-                        <i class="fas fa-server"></i>
-                        <div>
-                            <h3>Robust Systems</h3>
-                            <p>High-performance infra</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="company-mission">
-                    <div class="mission-content">
-                        <h3>Our AI Vision</h3>
-                        <p>To lead the industry by providing systematic AI/ML frameworks that solve real-world problems
-                            and drive measurable business impact through professional operational excellence.</p>
-                    </div>
-                    <div class="mission-content">
-                        <h3>Our AI Mission</h3>
-                        <p>Empowering the next generation of AI engineers through 8 core operations, bridging the gap
-                            between technical code and professional business solutions.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        <!-- Packages Section -->
 
     <!-- Contact Form Section -->
-    <section id="contact" class="contact-section">
+    <!-- Contact Section -->
+    <section class="contact-section" id="apply">
         <div class="container">
             <div class="section-header">
-                <h2>Apply for AI/ML Internship</h2>
-                <p>Start your 6-month journey to becoming an AI Mastery expert</p>
+                <h2>Apply for Internship</h2>
+                <p>Join our elite program and accelerate your career with hands-on corporate experience.</p>
             </div>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Get Started Today</h3>
-                    <p>Enroll in our 6-month compulsory internship and master the professional side of Artificial
-                        Intelligence.</p>
+            
+            <div class="contact-card-modern">
+                <div class="contact-card-left">
+                    <div class="info-intro">
+                        If you have any questions regarding our programs or need help, please fill out the form here. We do our best to respond within 1 business day.
+                    </div>
 
-                    <div class="contact-features">
-                        <div class="feature-item">
-                            <i class="fas fa-microchip"></i>
+                    <div class="contact-info-grid">
+                        <div class="contact-info-item">
+                            <i class="fas fa-envelope"></i>
                             <div>
-                                <h4>Hands-on Training</h4>
-                                <p>Real-world modeling & tools</p>
+                                <p class="contact-info-label">Email</p>
+                                <p class="contact-info-value">errorinfotech404@gmail.com</p>
                             </div>
                         </div>
-                        <div class="feature-item">
-                            <i class="fas fa-shield-alt"></i>
+                        <div class="contact-info-item">
+                            <i class="fas fa-phone"></i>
                             <div>
-                                <h4>Expert Mentorship</h4>
-                                <p>Learn from industry veterans</p>
+                                <p class="contact-info-label">Phone</p>
+                                <p class="contact-info-value">+91 8128704400</p>
                             </div>
                         </div>
-                        <div class="feature-item">
-                            <i class="fas fa-rocket"></i>
+                        <div class="contact-info-item">
+                            <i class="fas fa-map-marker-alt"></i>
                             <div>
-                                <h4>Career Scaling</h4>
-                                <p>From intern to professional</p>
+                                <p class="contact-info-label">Address</p>
+                                <p class="contact-info-value">Rajkot, Gujarat, India</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="contact-form-container">
+                <div class="contact-card-right">
                     <form id="internshipForm" class="contact-form">
-                        <input type="hidden" name="program" value="AI/ML Internship">
-                        <div class="form-group">
-                            <label for="fullName">Full Name *</label>
-                            <input type="text" id="fullName" name="fullName" required
-                                placeholder="Surname Name Fathername">
+                        <div class="form-group-modern">
+                            <label>Full Name</label>
+                            <input type="text" id="fullName" name="fullName" class="form-input-modern" placeholder="Surname Name Fathername" required>
                         </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="email">Email Address *</label>
-                                <input type="email" id="email" name="email" required placeholder="example@email.com">
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone Number *</label>
-                                <input type="tel" id="phone" name="phone" required placeholder="+91-8128704400">
-                            </div>
+                        <div class="form-group-modern">
+                            <label>Email Address</label>
+                            <input type="email" id="email" name="email" class="form-input-modern" placeholder="example@email.com" required>
                         </div>
-
-                        <div class="form-group">
-                            <label for="experience">Internship Duration *</label>
-                            <select id="experience" name="experience" required>
-                                <option value="">Select Internship Duration</option>
-                                <option value="1.5">1.5 Month Internship (6 Weeks)</option>
-                                <option value="3">3 Month Internship (12 Weeks)</option>
-                                <option value="6">6 Month Internship (24 Weeks)</option>
+                        <div class="form-group-modern">
+                            <label>Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-input-modern" placeholder="+91-8128704400" required>
+                        </div>
+                        <div class="form-group-modern">
+                            <label>Internship Program</label>
+                            <select id="program" name="program" class="form-input-modern" required>
+                                <option value="">Select Internship Program</option>
+                                <option value="AI-ML Dev" selected>AI-ML Dev</option>
+                                <option value="Frontend Dev">Frontend Dev</option>
+                                <option value="Backend Dev">Backend Dev</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="Content Writing">Content Writing</option>
+                                <option value="Data Analysis">Data Analysis</option>
+                                <option value="QA Testing">QA Testing</option>
+                                <option value="Graphic Design">Graphic Design</option>
+                                <option value="BDE & Sales">BDE & Sales</option>
+                                <option value="Product Photography and Videography">Product Photography & Videography</option>
                             </select>
                         </div>
-
-                        <div class="form-group">
-                            <label for="package">Course Type *</label>
-                            <select id="package" name="package" required>
-                                <option value="mastery">AI & ML Mastery (6 Months - ₹26,999)</option>
+                        <div class="form-group-modern">
+                            <label>Internship Duration</label>
+                            <select id="experience" name="experience" class="form-input-modern" required>
+                                <option value="">Select Duration</option>
+                                <option value="6">6 Month Internship (Fixed)</option>
                             </select>
                         </div>
-
-                        <div class="form-group">
-                            <label for="readyToCommit">Ready to commit to the selected internship duration and start
-                                immediately? *</label>
-                            <select id="readyToCommit" name="readyToCommit" required>
-                                <option value="">Select Yes/No</option>
-                                <option value="Yes">Yes</option>
-                                <option value="No">No</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group checkbox-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="terms" name="terms" required>
-                                <span class="checkmark"></span>
+                        <div class="form-group checkbox-group" style="margin-top: 1rem;">
+                            <label class="checkbox-label" for="terms" style="font-size: 0.85rem; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                <input type="checkbox" id="terms" name="terms" required style="width: 18px; height: 18px; cursor: pointer;">
                                 I agree to the terms and conditions *
                             </label>
                         </div>
-
-                        <button type="submit" class="submit-button">
-                            <i class="fas fa-paper-plane"></i>
-                            Apply Now
-                        </button>
+                        <button type="submit" class="submit-btn" style="width: 100%; margin-top: 1rem;">Submit Application</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Enhanced Modern Footer -->
+    <!-- Modular Accordion Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-top">
-                    <div class="footer-brand">
-                        <div class="footer-logo">
-                            <img src="./image/logo4.png" alt="Error Infotech Logo" class="footer-logo-img">
+        <div class="footer-container">
+            <!-- Brand & Contact Section -->
+            <div class="footer-brand-section">
+                <!-- Logo top-left -->
+                <div class="footer-logo-row">
+                    <img src="image/logo4.png" alt="Error Infotech Logo" class="footer-logo-img">
+                </div>
+
+                <!-- Centered content -->
+                <div class="footer-center-content">
+                    <p class="footer-description">Leading digital solutions provider transforming businesses through innovation and excellence. Your trusted partner for professional growth.</p>
+
+                    <div class="footer-contact-icons">
+                        <a href="mailto:errorinfotech404@gmail.com" class="footer-icon-btn email" data-label="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="tel:+918128704400" class="footer-icon-btn phone" data-label="Call Us"><i class="fas fa-phone-alt"></i></a>
+                        <a href="https://maps.google.com/maps?q=Malviya+Coins,+Dr+Yagnik+Rd,+Rajkot,+Gujarat+360002" target="_blank" class="footer-icon-btn location" data-label="Location"><i class="fas fa-map-marker-alt"></i></a>
+                        <a href="https://wa.me/918128704400" target="_blank" class="footer-icon-btn whatsapp" data-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.linkedin.com/in/error-infotech-1947b9381/" target="_blank" class="footer-icon-btn linkedin" data-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/errorinfotech_pvt.ltd" target="_blank" class="footer-icon-btn instagram" data-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <p class="footer-address">302 - Malviya Coins, Dr Yagnik Rd, Rajkot, Gujarat 360002</p>
+                </div>
+            </div>
+
+            <!-- Map + Navigation Layout -->
+            <div class="footer-map-nav-grid">
+
+                <!-- Left: Embedded Map -->
+                <div class="footer-map-wrapper">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.3020788360077!2d70.80177727526163!3d22.30382577968585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959ca10b5fc42bd%3A0xcb1a8b1ee7c8082f!2sMalviya%20Coins%2C%20Dr%20Yagnik%20Rd%2C%20Rajkot%2C%20Gujarat%20360002!5e0!3m2!1sen!2sin!4v1712494000000!5m2!1sen!2sin"
+                        width="100%"
+                        height="100%"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        class="footer-map-iframe">
+                    </iframe>
+                    <div class="footer-map-overlay">
+                        <a href="https://maps.google.com/maps?q=Malviya+Coins,+Dr+Yagnik+Rd,+Rajkot,+Gujarat+360002" target="_blank" class="footer-map-link">
+                            <i class="fas fa-map-marker-alt"></i> Open in Google Maps
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Accordion Buttons stacked vertically -->
+                <div class="footer-accordion-stack">
+                    <!-- Program / Services -->
+                    <div class="accordion-item" id="services-accordion">
+                        <div class="accordion-header" onclick="toggleFooterAccordion('services-accordion')">
+                            <div class="header-icon"><i class="fas fa-briefcase"></i></div>
+                            <span>OUR PROGRAMS</span>
+                            <i class="fas fa-chevron-right arrow"></i>
                         </div>
-                        <p class="footer-tagline">Leading digital solutions provider transforming businesses through
-                            innovation and excellence.</p>
+                        <div class="accordion-content">
+                            <div class="accordion-links-grid">
+                                <a href="#operations">Operations</a>
+                                <a href="#packages">Internship Packages</a>
+                                <a href="#company">About Us</a>
+                                <a href="#apply">Apply Now</a>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="footer-navigation">
-                        <div class="footer-column">
-                            <h4>Program</h4>
-                            <ul>
-                                <li><a href="#operations"><i class="fas fa-chevron-right"></i> Operations</a></li>
-                                <li><a href="#packages"><i class="fas fa-chevron-right"></i> Packages</a></li>
-                                <li><a href="#company"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                                <li><a href="#contact"><i class="fas fa-chevron-right"></i> Apply Now</a></li>
-                            </ul>
+                    <!-- Support & Legal -->
+                    <div class="accordion-item" id="support-accordion">
+                        <div class="accordion-header" onclick="toggleFooterAccordion('support-accordion')">
+                            <div class="header-icon"><i class="fas fa-question-circle"></i></div>
+                            <span>SUPPORT & LEGAL</span>
+                            <i class="fas fa-chevron-right arrow"></i>
                         </div>
-
-                        <div class="footer-column">
-                            <h4>Support</h4>
-                            <ul>
-                                <li><a href="#" onclick="openModal('faqModal'); return false;"><i
-                                            class="fas fa-chevron-right"></i> FAQ</a></li>
-                                <li><a href="#" onclick="openModal('contactModal'); return false;"><i
-                                            class="fas fa-chevron-right"></i> Contact</a></li>
-                                <li><a href="#" onclick="openModal('termsModal'); return false;"><i
-                                            class="fas fa-chevron-right"></i> Terms of Service</a></li>
-                                <li><a href="#" onclick="openModal('privacyModal'); return false;"><i
-                                            class="fas fa-chevron-right"></i> Privacy Policy</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="contact-info">
-                        <h4>Get In Touch</h4>
-                        <div class="contact-list">
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <a href="mailto:errorinfotech404@gmail.com">errorinfotech404@gmail.com</a>
+                        <div class="accordion-content">
+                            <div class="accordion-links-grid">
+                                <a href="#" onclick="openModal('faqModal'); return false;">Help & FAQ</a>
+                                <a href="#" onclick="openModal('contactModal'); return false;">Contact Support</a>
+                                <a href="#" onclick="openModal('termsModal'); return false;">Terms of Service</a>
+                                <a href="#" onclick="openModal('privacyModal'); return false;">Privacy Policy</a>
                             </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone-alt"></i>
-                                <a href="tel:+918128704400">+91 8128704400</a>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Rajkot, India</span>
-                            </div>
-                        </div>
-
-                        <div class="social-links">
-                            <a href="https://www.facebook.com/share/1Gt9Ec4B2A/" class="social-link"
-                                aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.instagram.com/errorinfotech_pvt.ltd?igsh=NzVhOWU2Njc4YWV2"
-                                class="social-link" aria-label="Instagram" target="_blank"><i
-                                    class="fab fa-instagram"></i></a>
-                            <a href="https://www.linkedin.com/in/error-infotech-1947b9381/" class="social-link"
-                                aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" class="social-link" aria-label="GitHub" target="_blank"><i
-                                    class="fab fa-github"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="footer-bottom">
-                <div class="footer-bottom-content">
-                    <div class="footer-copyright">
-                        &copy; 2026 Error Infotech. All rights reserved.
-                    </div>
+            <!-- Bottom Section -->
+            <div class="footer-bottom-v2">
+                <p>&copy; 2026 Error Infotech Pvt. Ltd. All rights reserved.</p>
+                <div class="footer-bottom-socials">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
         </div>
@@ -832,9 +1345,11 @@
         }
 
         .faq-item h3 {
-            color: #304c64;
+            color: #3d2c22;
             margin-bottom: 0.5rem;
         }
+
+
 
         .contact-details {
             display: grid;
@@ -842,28 +1357,9 @@
             gap: 2rem;
         }
 
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 0.8rem;
-            margin-bottom: 1rem;
-            border: 1px solid #94a3b8;
-            border-radius: 6px;
-        }
-
-        .contact-form button {
-            background: linear-gradient(135deg, #304c64, #26788e);
-            color: white;
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 600;
-        }
-
         .terms-content h3,
         .privacy-content h3 {
-            color: #304c64;
+            color: #3d2c22;
             margin: 1.5rem 0 0.5rem 0;
         }
 
@@ -882,8 +1378,7 @@
         }
 
         function closeModal(modalId) {
-            document.getElementById(modalId).style.display = 'none';
-            document.body.style.overflow = 'auto';
+            document.getElementById(modalId).style.display = document.body.style.overflow = 'auto';
         }
 
         // Close modal when clicking outside the content
@@ -894,10 +1389,78 @@
             }
         }
 
-        
+        // Smooth Auto-scroll functionality for programs
+        const slider = document.getElementById('auto-slider');
+        let isPaused = false;
+        let step = 0.5; // Slower, smoother speed
+
+        if (slider) {
+            slider.addEventListener('mouseenter', () => isPaused = true);
+            slider.addEventListener('mouseleave', () => isPaused = false);
+            slider.addEventListener('touchstart', () => isPaused = true);
+            slider.addEventListener('touchend', () => isPaused = false);
+            
+            // Clone items and prepend/append for infinite loop behavior
+            const cloneContent = slider.innerHTML;
+            slider.innerHTML = cloneContent + cloneContent; 
+
+            function smoothScroll() {
+                if (!isPaused) {
+                    slider.scrollLeft += step;
+                    // If we've scrolled past half the content, reset to start
+                    if (slider.scrollLeft >= slider.scrollWidth / 2) {
+                        slider.scrollLeft = 0;
+                    }
+                }
+                requestAnimationFrame(smoothScroll);
+            }
+            smoothScroll();
+        }
+
+        // Vertical Footer Ticker Autoscroll
+        const ticker = document.querySelector('.footer-programs-ticker-wrapper');
+        if(ticker) {
+            let tickerPaused = false;
+            ticker.addEventListener('mouseenter', () => tickerPaused = true);
+            ticker.addEventListener('mouseleave', () => tickerPaused = false);
+
+            function autoScrollTicker() {
+                if (!tickerPaused) {
+                    ticker.scrollTop += 0.4;
+                    if (ticker.scrollTop >= (ticker.scrollHeight - ticker.clientHeight)) {
+                        ticker.scrollTop = 0;
+                    }
+                }
+                requestAnimationFrame(autoScrollTicker);
+            }
+            requestAnimationFrame(autoScrollTicker);
+        }
+
+        // Footer Accordion Toggle
+        function toggleFooterAccordion(accordionId) {
+            const footerAccordions = document.querySelectorAll('.footer .accordion-item');
+            const targetItem = document.getElementById(accordionId);
+            const wasActive = targetItem.classList.contains('active');
+
+            footerAccordions.forEach(item => {
+                if (item.id === accordionId) {
+                    item.classList.toggle('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+
+            // Auto-scroll into view when opening
+            if (!wasActive && targetItem) {
+                setTimeout(() => {
+                    targetItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 350); // wait for CSS transition to start
+            }
+        }
     </script>
 
     <script src="script.js"></script>
+    <script type="module" src="src/renderPipelines.tsx"></script>
 </body>
 
 </html>

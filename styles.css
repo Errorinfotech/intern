@@ -1,12 +1,12 @@
 /* Professional Corporate Color Scheme */
 :root {
-    --primary: #1e40af;        /* Deep Professional Blue */
-    --primary-light: #3b82f6;  /* Medium Blue */
-    --primary-dark: #1e3a8a;   /* Dark Blue */
-    --secondary: #0f766e;      /* Deep Teal - Professional & Calming */
-    --accent: #ea580c;         /* Professional Orange - Action Items */
-    --accent-light: #fb923c;   /* Light Orange - Highlights */
-    --corporate: #4f46e5;      /* Professional Indigo */
+    --primary: #3d2c22;        /* Deep Professional Blue */
+    --primary-light: #bb734b;  /* Medium Blue */
+    --primary-dark: #2b1f18;   /* Dark Blue */
+    --secondary: #bb734b;      /* Deep Teal - Professional & Calming */
+    --accent: #bb734b;         /* Professional Orange - Action Items */
+    --accent-light: #3d2c22;   /* Light Orange - Highlights */
+    --corporate: #665042;      /* Professional Indigo */
     --success: #166534;        /* Deep Green - Success Indicators */
     --warning: #b45309;        /* Gold - Warning */
     --dark: #1e293b;           /* Dark Gray-Blue - Main Text */
@@ -226,8 +226,8 @@ body {
     bottom: 0;
     background: 
         radial-gradient(circle at 15% 20%, rgba(255,255,255,0.08) 0%, transparent 40%),
-        radial-gradient(circle at 85% 80%, rgba(255, 151, 60, 0.08) 0%, transparent 40%),
-        radial-gradient(circle at 50% 50%, rgba(15, 118, 110, 0.08) 0%, transparent 50%);
+        radial-gradient(circle at 85% 80%, rgba(187, 115, 75, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(187, 115, 75, 0.08) 0%, transparent 50%);
     animation: gradientShift 12s ease-in-out infinite;
 }
 
@@ -353,7 +353,7 @@ body {
 
 .cta-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 25px rgba(234, 88, 12, 0.4);
+    box-shadow: 0 12px 25px rgba(187, 115, 75, 0.4);
     background: linear-gradient(45deg, var(--accent-light), var(--accent));
 }
 
@@ -503,22 +503,22 @@ body {
 
 .foundation {
     border-left: 6px solid var(--primary);
-    background: linear-gradient(135deg, rgba(30, 64, 175, 0.02) 0%, rgba(30, 64, 175, 0.06) 100%);
+    background: linear-gradient(135deg, rgba(61, 44, 34, 0.02) 0%, rgba(61, 44, 34, 0.06) 100%);
 }
 
 .conversion {
     border-left: 6px solid var(--secondary);
-    background: linear-gradient(135deg, rgba(15, 118, 110, 0.02) 0%, rgba(15, 118, 110, 0.06) 100%);
+    background: linear-gradient(135deg, rgba(187, 115, 75, 0.02) 0%, rgba(187, 115, 75, 0.06) 100%);
 }
 
 .engagement {
     border-left: 6px solid var(--accent);
-    background: linear-gradient(135deg, rgba(234, 88, 12, 0.02) 0%, rgba(234, 88, 12, 0.06) 100%);
+    background: linear-gradient(135deg, rgba(187, 115, 75, 0.02) 0%, rgba(187, 115, 75, 0.06) 100%);
 }
 
 .automation {
     border-left: 6px solid var(--corporate);
-    background: linear-gradient(135deg, rgba(79, 70, 229, 0.02) 0%, rgba(79, 70, 229, 0.06) 100%);
+    background: linear-gradient(135deg, rgba(187, 115, 75, 0.02) 0%, rgba(187, 115, 75, 0.06) 100%);
 }
 
 .growth {
@@ -575,9 +575,9 @@ body {
     border: 1px solid rgba(0,0,0,0.05);
 }
 
-.mandatory { background: linear-gradient(135deg, #f0f9ff, #dbeafe); color: #1e40af; }
-.impact { background: linear-gradient(135deg, #ecfdf5, #d1fae5); color: #0f766e; }
-.retention { background: linear-gradient(135deg, #fffbeb, #fef3c7); color: #ea580c; }
+.mandatory { background: linear-gradient(135deg, #f0f9ff, #dbeafe); color: #3d2c22; }
+.impact { background: linear-gradient(135deg, #ecfdf5, #d1fae5); color: #bb734b; }
+.retention { background: linear-gradient(135deg, #fffbeb, #fef3c7); color: #bb734b; }
 .scaling { background: linear-gradient(135deg, #f3e8ff, #e9d5ff); color: #7e22ce; }
 .advanced { background: linear-gradient(135deg, #fdf2f8, #fce7f3); color: #be185d; }
 
@@ -659,7 +659,7 @@ body {
 .operation-card li:hover {
     color: var(--darker);
     transform: translateX(3px);
-    background: rgba(30, 64, 175, 0.02);
+    background: rgba(61, 44, 34, 0.02);
     padding-left: 32px;
 }
 
@@ -683,7 +683,7 @@ body {
 .operation-note {
     margin-top: 1rem;
     padding: 14px 16px;
-    background: rgba(30, 64, 175, 0.06);
+    background: rgba(61, 44, 34, 0.06);
     border-left: 4px solid var(--primary);
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
     font-style: italic;
@@ -928,7 +928,7 @@ body {
     font-size: 2.2rem;
     color: var(--primary);
     min-width: 60px;
-    background: rgba(30, 64, 175, 0.1);
+    background: rgba(61, 44, 34, 0.1);
     width: 60px;
     height: 60px;
     display: flex;
@@ -1128,7 +1128,7 @@ body {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+    box-shadow: 0 0 0 3px rgba(61, 44, 34, 0.1);
     background: var(--white);
 }
 
@@ -1204,7 +1204,7 @@ body {
 .submit-button:hover {
     background: linear-gradient(45deg, var(--accent-light), var(--accent));
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(234, 88, 12, 0.3);
+    box-shadow: 0 8px 20px rgba(187, 115, 75, 0.3);
 }
 
 /* Enhanced Footer Styles */

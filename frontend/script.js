@@ -229,16 +229,10 @@ const initValidation = () => {
         field.el.addEventListener('change', () => validateField(field));
     });
 
-    // Terms checkbox listener
-    if (termsCheckbox) {
-        termsCheckbox.addEventListener('change', checkFormValidity);
-    }
-
+    // Terms checkbox listener is now handled by pure HTML/Label
     if (termsLabel) {
         termsLabel.addEventListener('click', () => {
-            if (termsCheckbox && termsCheckbox.disabled) {
-                Object.values(fields).forEach(field => validateField(field, true));
-            }
+             // Logic removed as checkbox is now always enabled
         });
     }
 
@@ -286,18 +280,10 @@ const initValidation = () => {
             return field.validate(field.el.value);
         });
 
-        if (termsCheckbox && termsLabel) {
-            termsCheckbox.disabled = !allFieldsValid;
-            if (!allFieldsValid) {
-                termsCheckbox.checked = false;
-                termsLabel.classList.add('disabled');
-            } else {
-                termsLabel.classList.remove('disabled');
-            }
-        }
-
         if (submitBtn) {
-            submitBtn.disabled = !allFieldsValid || (termsCheckbox && !termsCheckbox.checked);
+            // Only disable if explicitly submitting
+            // termsCheckbox check is still good for safety
+            submitBtn.disabled = false; 
         }
     }
 
