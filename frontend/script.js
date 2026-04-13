@@ -232,7 +232,7 @@ const initValidation = () => {
     // Terms checkbox listener is now handled by pure HTML/Label
     if (termsLabel) {
         termsLabel.addEventListener('click', () => {
-             // Logic removed as checkbox is now always enabled
+            // Logic removed as checkbox is now always enabled
         });
     }
 
@@ -283,7 +283,7 @@ const initValidation = () => {
         if (submitBtn) {
             // Only disable if explicitly submitting
             // termsCheckbox check is still good for safety
-            submitBtn.disabled = false; 
+            submitBtn.disabled = false;
         }
     }
 
@@ -388,7 +388,7 @@ const initFormSubmission = () => {
             // 🔴 IMPORTANT CONFIGURE THIS FOR LIVE SITE 🔴
             // ==========================================
             // Replace this with your actual live backend URL (e.g. 'https://api.errorinfotech.in')
-            const LIVE_BACKEND_URL = '';
+            const LIVE_BACKEND_URL = 'https://paidintern.errorinfotech.in';
 
             if (LIVE_BACKEND_URL) {
                 endpoints.push(LIVE_BACKEND_URL);
