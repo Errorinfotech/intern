@@ -161,7 +161,7 @@ const PipelineApp = ({ pageName }: { pageName: string }) => {
                         <div className="bg-white/5 backdrop-blur-md border border-white/10 p-1.5 rounded-full flex items-center gap-2">
                             <button
                                 onClick={() => handleModeChange(3)}
-                                className={`relative px-8 py-3 rounded-full text-sm md:text-base font-bold transition-all duration-300 min-w-[160px] md:min-w-[200px] ${mode === 3 ? 'text-white' : 'text-gray-400 hover:text-white'
+                                className={`relative px-12 py-4 rounded-full text-sm md:text-base font-bold transition-all duration-300 min-w-[160px] md:min-w-[200px] ${mode === 3 ? 'text-black' : 'text-black/40 hover:text-white'
                                     }`}
                             >
                                 {mode === 3 && (
@@ -175,7 +175,7 @@ const PipelineApp = ({ pageName }: { pageName: string }) => {
                             </button>
                             <button
                                 onClick={() => handleModeChange(6)}
-                                className={`relative px-8 py-3 rounded-full text-sm md:text-base font-bold transition-all duration-300 min-w-[160px] md:min-w-[200px] ${mode === 6 ? 'text-white' : 'text-gray-400 hover:text-white'
+                                className={`relative px-12 py-4 rounded-full text-sm md:text-base font-bold transition-all duration-300 min-w-[160px] md:min-w-[200px] ${mode === 6 ? 'text-black' : 'text-black/40 hover:text-white'
                                     }`}
                             >
                                 {mode === 6 && (
