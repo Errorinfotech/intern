@@ -1,0 +1,158 @@
+/* Global Responsive Overrides for Error Infotech Portal */
+
+:root {
+    --header-height: 80px;
+}
+
+/* Header & Navbar Standardized Mobile Styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(13, 10, 8, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(187, 115, 75, 0.1);
+    transition: all 0.3s ease;
+    padding: 0.5rem 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    position: relative;
+}
+
+.logo img {
+    height: 36px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--secondary);
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Responsive Table / Mobile Breakpoints */
+@media (max-width: 992px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #1a1410;
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.5rem;
+        border-bottom: 1px solid rgba(187, 115, 75, 0.2);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .hero-header h1 {
+        font-size: 3rem !important;
+    }
+
+    .contact-card-modern {
+        grid-template-columns: 1fr !important;
+    }
+
+    .contact-card-right {
+        border-left: none !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem 1.5rem !important;
+    }
+
+    .hero-header {
+        min-height: 85vh !important;
+        display: flex !important;
+        align-items: flex-start !important;
+        padding: 10rem 1rem 4rem !important;
+    }
+
+    .hero-header h1 {
+        font-size: 2.2rem !important;
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem !important;
+    }
+
+    .programs-grid {
+        gap: 1rem !important;
+    }
+
+    .program-card {
+        width: 280px !important;
+        min-width: 280px !important;
+        min-height: 24rem !important;
+    }
+
+    /* Footer stacking */
+    .footer-container {
+        flex-direction: column !important;
+        text-align: center;
+    }
+
+    .footer-brand-section {
+        flex-direction: column !important;
+        gap: 2rem;
+    }
+
+    .footer-map-nav-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-header h1 {
+        font-size: 1.8rem !important;
+    }
+
+    .nav-links {
+        padding: 1.5rem !important;
+    }
+
+    .submit-btn {
+        width: 100% !important;
+        padding: 0.8rem 1.5rem !important;
+    }
+}

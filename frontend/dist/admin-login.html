@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login | Error Infotech</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        .login-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--light) 0%, #e0e7ff 100%);
+            padding: 20px;
+        }
+
+        .login-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .login-logo {
+            margin-bottom: 30px;
+        }
+
+        .login-logo img {
+            height: 60px;
+        }
+
+        .login-header h1 {
+            font-size: 1.8rem;
+            color: var(--darker);
+            margin-bottom: 10px;
+        }
+
+        .login-header p {
+            color: var(--gray-dark);
+            margin-bottom: 30px;
+        }
+
+        .login-form .form-group {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .login-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--darker);
+        }
+
+        .login-form input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid var(--gray-light);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .login-form input:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 15px;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .login-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .login-footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: var(--gray-dark);
+        }
+
+        .login-footer a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+    
+
+        /* Modern Contact Card (Kokonut UI) */
+        .contact-card-modern {
+            position: relative;
+            background: var(--bg-section);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            display: grid;
+            grid-template-columns: 1fr;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            margin: 1rem auto 0; /* Reduced from 3rem */
+            max-width: 1024px;
+        }
+
+        @media (min-width: 1024px) {
+            .contact-card-modern {
+                grid-template-columns: 1fr 1.6fr; /* Give form significantly more space */
+            }
+        }
+
+        .plus-icon {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            color: var(--secondary);
+            z-index: 5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .plus-icon i { font-size: 1.2rem; }
+        .plus-top-left { top: -12px; left: -12px; }
+        .plus-top-right { top: -12px; right: -12px; }
+        .plus-bottom-left { bottom: -12px; left: -12px; }
+        .plus-bottom-right { bottom: -12px; right: -12px; }
+
+        .contact-card-left {
+            padding: 1.5rem 2.5rem; /* Reduced top padding */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-card-left .info-intro {
+            margin-bottom: 1.2rem; /* Reduced margin */
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .contact-info-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            padding: 1.2rem 1.5rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.2s ease;
+        }
+
+        .contact-info-item:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-info-item i {
+            font-size: 1.1rem;
+            color: var(--secondary);
+            background: rgba(187, 115, 75, 0.1);
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+
+        .contact-info-label {
+            font-size: 0.6rem; 
+            color: rgba(255, 255, 255, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 1px;
+        }
+
+        .contact-info-value {
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.75rem; /* Reduced from 0.85 */
+            word-break: break-all;
+        }
+
+        .contact-card-right {
+            background: rgba(255, 255, 255, 0.01);
+            border-left: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 1.5rem 2rem;
+        }
+
+        .form-group-modern {
+            margin-bottom: 0.6rem; /* Ultra-tight spacing */
+            position: relative;
+        }
+
+        .form-group-modern label {
+            display: block;
+            font-size: 0.65rem; /* Reduced from 0.7 */
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 0.2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-input-modern {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            padding: 0.5rem 0.7rem; /* Even tighter padding */
+            color: white;
+            font-size: 0.8rem; /* Reduced from 0.9 */
+            font-family: inherit;
+            transition: all 0.2s ease;
+        }
+
+        .form-input-modern:focus {
+            outline: none;
+            border-color: var(--secondary);
+            background: rgba(255, 255, 255, 0.06);
+            box-shadow: 0 0 0 2px rgba(187, 115, 75, 0.2);
+        }
+
+        /* Completely Hide Error Boxes */
+        .error-message-box {
+            display: none !important;
+        }
+        
+        /* Dropdown Visibility Fix */
+        .form-input-modern option {
+            background-color: #1a1410; /* Dark background to match card */
+            color: white; /* White text */
+        }
+        
+        /* Safari/Chrome specific fix for dropdown legibility */
+        select.form-input-modern {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1em;
+            padding-right: 2.5rem;
+        }
+
+        /* Subtle field error highlight */
+        .input-invalid {
+            border-color: #ef4444 !important;
+            background: rgba(239, 68, 68, 0.02) !important;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="login-section">
+        <div class="login-card">
+            <div class="login-logo">
+                <img src="image/logo4.png" alt="Error Infotech">
+            </div>
+            <div class="login-header">
+                <h1>Admin Portal</h1>
+                <p>Please enter your credentials to access the dashboard.</p>
+            </div>
+            <form id="adminLoginForm" class="login-form">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="admin@errorinfotech.com">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="••••••••">
+                </div>
+                <button type="submit" class="login-btn">Log In</button>
+            </form>
+            <div id="loginMessage" style="margin-top:15px; display:none;"></div>
+            <div class="login-footer">
+                <p>Back to <a href="index.html">Main Website</a></p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('adminLoginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const form = e.target;
+            const btn = form.querySelector('button');
+            const msg = document.getElementById('loginMessage');
+
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Logging in...';
+            btn.disabled = true;
+
+            const data = Object.fromEntries(new FormData(form));
+
+            try {
+                const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+                    ? 'http://localhost:5002'
+                    : `${window.location.protocol}//${window.location.hostname}:5002`;
+
+                const response = await fetch(`${API_BASE}/api/auth/login`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    msg.style.color = 'green';
+                    msg.textContent = 'Login Successful! Redirecting...';
+                    msg.style.display = 'block';
+                    setTimeout(() => {
+                        window.location.href = 'dashboard.html';
+                    }, 1500);
+                } else {
+                    msg.style.color = 'red';
+                    msg.textContent = result.message || 'Invalid Credentials';
+                    msg.style.display = 'block';
+                    btn.innerHTML = 'Log In';
+                    btn.disabled = false;
+                }
+            } catch (err) {
+                msg.style.color = 'red';
+                msg.textContent = 'Connection Error';
+                msg.style.display = 'block';
+                btn.innerHTML = 'Log In';
+                btn.disabled = false;
+            }
+        });
+    
+
+// Vertical Footer Ticker Autoscroll
+        const ticker = document.querySelector('.footer-programs-ticker-wrapper');
+        if(ticker) {
+            let tickerPaused = false;
+            ticker.addEventListener('mouseenter', () => tickerPaused = true);
+            ticker.addEventListener('mouseleave', () => tickerPaused = false);
+
+            function autoScrollTicker() {
+                if (!tickerPaused) {
+                    ticker.scrollTop += 0.4;
+                    if (ticker.scrollTop >= (ticker.scrollHeight - ticker.clientHeight)) {
+                        ticker.scrollTop = 0;
+                    }
+                }
+                requestAnimationFrame(autoScrollTicker);
+
+
+// Footer Accordion Logic
+        const accordionTriggers = document.querySelectorAll('.footer-v2-trigger');
+        accordionTriggers.forEach(trigger => {
+            trigger.addEventListener('click', function() {
+                const section = this.parentElement;
+                const isActive = section.classList.contains('active');
+                
+                // Close all other sections
+                document.querySelectorAll('.footer-v2-section').forEach(s => {
+                    s.classList.remove('active');
+                });
+                
+                // Toggle current section
+                if (!isActive) {
+                    section.classList.add('active');
+                    // Smooth scroll to the opened section if it's not fully visible
+                    setTimeout(() => {
+                        section.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }, 400);
+                }
+            });
+        });
+
+        smoothScroll();
+
+
+// Footer Accordion Toggle
+        function toggleFooterAccordion(accordionId) {
+            const footerAccordions = document.querySelectorAll('.footer .accordion-item');
+            footerAccordions.forEach(item => {
+                if (item.id === accordionId) {
+                    item.classList.toggle('active');
+                }
+</script>
+</body>
+
+</html>

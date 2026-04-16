@@ -1,0 +1,488 @@
+/* ============================================================
+   Error Infotech — Premium Footer (Student-Facing)
+   Deep Midnight Theme with Copper-Orange Accents
+   ============================================================ */
+
+/* Reset & Base */
+.footer {
+    background: linear-gradient(135deg, #0d0a08 0%, #050403 100%);
+    color: #e8dbce;
+    padding: 4rem 0 0;
+    position: relative;
+    border-top: 2px solid #bb734b;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+/* Dynamic background accent */
+.footer::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(187, 115, 75, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Subtle ambient glow behind footer */
+.footer::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 120px;
+    background: radial-gradient(ellipse, rgba(187, 115, 75, 0.12) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* ============================================================
+   Layout Container
+   ============================================================ */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ============================================================
+   Top Brand Strip
+   ============================================================ */
+.footer-brand-section {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(187, 115, 75, 0.15);
+    flex-wrap: wrap;
+}
+
+.footer-logo-row {
+    flex-shrink: 0;
+}
+
+.footer-logo-img {
+    height: 40px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.95;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.footer-logo-img:hover {
+    opacity: 1;
+}
+
+/* Right side: description + icons + address */
+.footer-center-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.footer-tagline {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #bb734b;
+    margin: 0;
+    background: linear-gradient(45deg, #bb734b, #d6956f);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.footer-description {
+    color: #8c7e74;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0;
+}
+
+/* ============================================================
+   Contact Icons Row
+   ============================================================ */
+.footer-contact-icons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 0.2rem;
+}
+
+.footer-icon-btn {
+    position: relative;
+    width: 38px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a89486;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Tooltip label above each icon */
+.footer-icon-btn::after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--tip-color, #bb734b);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s ease;
+    pointer-events: none;
+}
+
+.footer-icon-btn:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.footer-icon-btn:hover {
+    background: var(--tip-color, #bb734b);
+    border-color: var(--tip-color, #bb74b);
+    color: #fff;
+    transform: translateY(-4px) scale(1.08);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* Per-icon brand colors */
+.footer-icon-btn.email    { --tip-color: #ea4335; }
+.footer-icon-btn.phone    { --tip-color: #34a853; }
+.footer-icon-btn.location { --tip-color: #4285f4; }
+.footer-icon-btn.whatsapp { --tip-color: #25d366; }
+.footer-icon-btn.linkedin { --tip-color: #0077b5; }
+.footer-icon-btn.instagram{ --tip-color: #e4405f; }
+
+/* Address Line */
+.footer-address {
+    color: #5a4e47;
+    font-size: 0.8rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+}
+
+/* ============================================================
+   Main Content Grid: Map + Accordions + Highlights
+   ============================================================ */
+.footer-map-nav-grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    align-items: start;
+}
+
+@media (max-width: 900px) {
+    .footer-map-nav-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================================
+   Map Block
+   ============================================================ */
+.footer-map-wrapper {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(187, 115, 75, 0.25);
+    height: 190px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+.footer-map-iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    filter: grayscale(40%) brightness(0.75) contrast(1.1) sepia(20%);
+    pointer-events: none;
+}
+
+.footer-map-overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.footer-map-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(13, 10, 8, 0.9);
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 6px 18px;
+    border-radius: 30px;
+    border: 1px solid #bb734b;
+    backdrop-filter: blur(10px);
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.footer-map-link:hover {
+    background: #bb734b;
+    color: white;
+    border-color: #bb734b;
+    box-shadow: 0 4px 15px rgba(187, 115, 75, 0.3);
+}
+
+/* ============================================================
+   Accordion Navigation (Right Column)
+   ============================================================ */
+.footer-accordion-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.accordion-item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.accordion-item:hover {
+    border-color: rgba(187, 115, 75, 0.3);
+    background: rgba(187, 115, 75, 0.04);
+}
+
+.accordion-item.active {
+    border-color: rgba(187, 115, 75, 0.4);
+    background: rgba(187, 115, 75, 0.05);
+}
+
+.accordion-header {
+    padding: 0.9rem 1.5rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 1rem;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.header-icon {
+    width: 34px;
+    height: 34px;
+    background: rgba(187, 115, 75, 0.12);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #bb734b;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+    transition: background 0.3s ease;
+}
+
+.accordion-item.active .header-icon,
+.accordion-item:hover .header-icon {
+    background: rgba(187, 115, 75, 0.22);
+}
+
+.accordion-header span {
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    color: #c8b9ae;
+    flex-grow: 1;
+    text-transform: uppercase;
+}
+
+.accordion-header .arrow {
+    font-size: 0.75rem;
+    color: #5a4e47;
+    transition: transform 0.35s ease;
+}
+
+.accordion-item.active .arrow {
+    transform: rotate(90deg);
+    color: #bb734b;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 400px;
+}
+
+.accordion-links-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem 1.5rem;
+    padding: 0.8rem 1.5rem 1.2rem 4rem;
+}
+
+.accordion-links-grid a {
+    color: #7a6d64;
+    text-decoration: none;
+    font-size: 0.88rem;
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 0;
+}
+
+.accordion-links-grid a::before {
+    content: '›';
+    color: #bb734b;
+    font-size: 1.1rem;
+    font-weight: bold;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.accordion-links-grid a:hover {
+    color: #e8dbce;
+    transform: translateX(4px);
+}
+
+/* ============================================================
+   Trust Strip (Internship Stats)
+   ============================================================ */
+.footer-trust-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.trust-item {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 1.5rem 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.trust-item:last-child {
+    border-right: none;
+}
+
+.trust-item:hover {
+    background: rgba(187, 115, 75, 0.06);
+}
+
+.trust-number {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #bb734b;
+    line-height: 1;
+    display: block;
+}
+
+.trust-label {
+    font-size: 0.72rem;
+    color: #5a4e47;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 4px;
+    display: block;
+}
+
+@media (max-width: 600px) {
+    .footer-trust-strip {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ============================================================
+   Footer Bottom Bar
+   ============================================================ */
+.footer-bottom-v2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-bottom-v2 p {
+    font-size: 0.8rem;
+    color: #3d3530;
+    margin: 0;
+}
+
+.footer-bottom-socials {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.footer-bottom-socials a {
+    color: #3d3530;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.footer-bottom-socials a:hover {
+    color: #bb734b;
+    transform: translateY(-3px);
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 768px) {
+    .footer-brand-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-center-content {
+        align-items: center;
+    }
+    .footer-bottom-v2 {
+        flex-direction: column;
+        text-align: center;
+    }
+    .accordion-links-grid {
+        grid-template-columns: 1fr;
+        padding: 0.8rem 1.2rem 1.2rem 2.5rem;
+    }
+    .footer-trust-strip {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
