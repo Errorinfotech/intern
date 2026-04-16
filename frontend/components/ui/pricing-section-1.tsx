@@ -243,7 +243,7 @@ export default function PricingSection2({
                   <TimelineContent
                     key={index}
                     as="div"
-                    animationNum={index}
+                    animationNum={index + 2} // Shifted to be unique (starts from 2)
                     timelineRef={pricingRef}
                     customVariants={timelineVaraints}
                     className="flex items-center"
@@ -260,13 +260,7 @@ export default function PricingSection2({
             <div className="space-y-8 p-8 rounded-3xl bg-[#130f0c] border border-white/5 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-[#bb734b]/10 blur-[80px] rounded-full point-events-none" />
 
-              <TimelineContent
-                as="div"
-                animationNum={3}
-                timelineRef={pricingRef}
-                customVariants={revealVariants}
-                className="relative z-10"
-              >
+              <div className="relative z-10">
                 <h4 className="font-semibold text-white mb-2 text-lg">
                   Package Type
                 </h4>
@@ -288,11 +282,11 @@ export default function PricingSection2({
                     </div>
                   </div>
                 )}
-              </TimelineContent>
+              </div>
 
               <TimelineContent
                 as="div"
-                animationNum={5}
+                animationNum={10}
                 timelineRef={pricingRef}
                 customVariants={revealVariants}
                 className="text-center grid grid-cols-1 sm:grid-cols-2 items-center gap-6 px-2 mt-8 relative z-10"
@@ -316,7 +310,7 @@ export default function PricingSection2({
                   as="div"
                   role="button"
                   tabIndex={0}
-                  animationNum={6}
+                  animationNum={11}
                   timelineRef={pricingRef}
                   customVariants={revealVariants}
                   onClick={(e) => {

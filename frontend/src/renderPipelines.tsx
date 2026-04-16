@@ -157,70 +157,35 @@ const PipelineApp = ({ pageName }: { pageName: string }) => {
         <div className="w-full flex justify-center items-center py-10 px-4">
             <div className="max-w-7xl mx-auto flex flex-col items-center w-full">
                 {!isAIML && (
-                    <div className="flex flex-row flex-wrap justify-center p-4 gap-8 md:gap-16 mb-20 md:mb-32 relative z-20">
-                        {/* 3 Month Button */}
-                        <div className="relative inline-flex items-center justify-center group cursor-pointer" onClick={() => handleModeChange(3)}>
-                            <div
-                                className={`absolute inset-0 duration-1000 transition-all bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-400 rounded-xl blur-lg filter ${mode === 3 ? 'opacity-70 animate-pulse' : 'opacity-0 group-hover:opacity-50'
-                                    } group-hover:duration-200`}
-                            ></div>
+                    <div className="mb-20 md:mb-32 relative z-20">
+                        <div className="bg-white/5 backdrop-blur-md border border-white/10 p-1.5 rounded-2xl flex items-center gap-2">
                             <button
-                                role="button"
-                                className={`group relative inline-flex items-center justify-center text-sm md:text-base rounded-xl px-12 md:px-20 py-3 md:py-4 font-bold transition-all duration-300 min-w-[200px] md:min-w-[320px] whitespace-nowrap ${mode === 3
-                                    ? 'bg-[#bb734b] text-white shadow-lg -translate-y-0.5 shadow-[#bb734b]/30'
-                                    : 'bg-gray-200 text-black border border-black/10 hover:bg-white'
+                                onClick={() => handleModeChange(3)}
+                                className={`relative px-8 py-3 rounded-xl text-sm md:text-base font-bold transition-all duration-300 min-w-[160px] md:min-w-[200px] ${mode === 3 ? 'text-white' : 'text-gray-400 hover:text-white'
                                     }`}
                             >
-                                <span className="flex-1 text-center">3 Month (Pro)</span>
-                                <svg
-                                    aria-hidden="true"
-                                    viewBox="0 0 10 10"
-                                    height="10"
-                                    width="10"
-                                    fill="none"
-                                    className={`mt-0.5 ml-2 -mr-1 stroke-2 transition-transform duration-300 ${mode === 3 ? 'stroke-white translate-x-1' : 'stroke-black group-hover:translate-x-1'}`}
-                                >
-                                    <path
-                                        d="M0 5h7"
-                                        className={`transition duration-300 ${mode === 3 ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
-                                    ></path>
-                                    <path
-                                        d="M1 1l4 4-4 4"
-                                    ></path>
-                                </svg>
+                                {mode === 3 && (
+                                    <motion.div
+                                        layoutId="activeTab"
+                                        className="absolute inset-0 bg-[#bb734b] rounded-xl shadow-lg shadow-[#bb734b]/20"
+                                        transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                                    />
+                                )}
+                                <span className="relative z-10">3 Month (Pro)</span>
                             </button>
-                        </div>
-
-                        {/* 6 Month Button */}
-                        <div className="relative inline-flex items-center justify-center group cursor-pointer" onClick={() => handleModeChange(6)}>
-                            <div
-                                className={`absolute inset-0 duration-1000 transition-all bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-400 rounded-xl blur-lg filter ${mode === 6 ? 'opacity-70 animate-pulse' : 'opacity-0 group-hover:opacity-50'
-                                    } group-hover:duration-200`}
-                            ></div>
                             <button
-                                role="button"
-                                className={`group relative inline-flex items-center justify-center text-sm md:text-base rounded-xl px-12 md:px-20 py-3 md:py-4 font-bold transition-all duration-300 min-w-[200px] md:min-w-[320px] whitespace-nowrap ${mode === 6
-                                    ? 'bg-[#bb734b] text-white shadow-lg -translate-y-0.5 shadow-[#bb734b]/30'
-                                    : 'bg-gray-200 text-black border border-black/10 hover:bg-white'
+                                onClick={() => handleModeChange(6)}
+                                className={`relative px-8 py-3 rounded-xl text-sm md:text-base font-bold transition-all duration-300 min-w-[160px] md:min-w-[200px] ${mode === 6 ? 'text-white' : 'text-gray-400 hover:text-white'
                                     }`}
                             >
-                                <span className="flex-1 text-center">6 Month (Enterprise)</span>
-                                <svg
-                                    aria-hidden="true"
-                                    viewBox="0 0 10 10"
-                                    height="10"
-                                    width="10"
-                                    fill="none"
-                                    className={`mt-0.5 ml-2 -mr-1 stroke-2 transition-transform duration-300 ${mode === 6 ? 'stroke-white translate-x-1' : 'stroke-black group-hover:translate-x-1'}`}
-                                >
-                                    <path
-                                        d="M0 5h7"
-                                        className={`transition duration-300 ${mode === 6 ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
-                                    ></path>
-                                    <path
-                                        d="M1 1l4 4-4 4"
-                                    ></path>
-                                </svg>
+                                {mode === 6 && (
+                                    <motion.div
+                                        layoutId="activeTab"
+                                        className="absolute inset-0 bg-[#bb734b] rounded-xl shadow-lg shadow-[#bb734b]/20"
+                                        transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                                    />
+                                )}
+                                <span className="relative z-10">6 Month (Enterprise)</span>
                             </button>
                         </div>
                     </div>
