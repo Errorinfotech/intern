@@ -156,40 +156,42 @@ const PipelineApp = ({ pageName }: { pageName: string }) => {
     return (
         <div className="w-full flex justify-center items-center py-10 px-4">
             <div className="max-w-7xl mx-auto flex flex-col items-center w-full">
-                {data.prices?.pro !== 0 && (
+                {data.prices && (
                     <div className="flex flex-row flex-wrap justify-center p-4 gap-8 md:gap-16 mb-20 md:mb-32 relative z-20">
                         {/* 3 Month Button */}
-                        <div className="relative inline-flex items-center justify-center group cursor-pointer" onClick={() => handleModeChange(3)}>
-                            <div
-                                className={`absolute inset-0 duration-1000 transition-all bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-400 rounded-xl blur-lg filter ${mode === 3 ? 'opacity-70 animate-pulse' : 'opacity-0 group-hover:opacity-50'
-                                    } group-hover:duration-200`}
-                            ></div>
-                            <button
-                                role="button"
-                                className={`group relative inline-flex items-center justify-center text-sm md:text-base rounded-xl px-12 md:px-20 py-3 md:py-4 font-bold transition-all duration-300 min-w-[200px] md:min-w-[320px] whitespace-nowrap ${mode === 3
-                                    ? 'bg-[#bb734b] text-white shadow-lg -translate-y-0.5 shadow-[#bb734b]/30'
-                                    : 'bg-gray-200 text-black border border-black/10 hover:bg-white'
-                                    }`}
-                            >
-                                <span className="flex-1 text-center">3 Month (Pro)</span>
-                                <svg
-                                    aria-hidden="true"
-                                    viewBox="0 0 10 10"
-                                    height="10"
-                                    width="10"
-                                    fill="none"
-                                    className={`mt-0.5 ml-2 -mr-1 stroke-2 transition-transform duration-300 ${mode === 3 ? 'stroke-white translate-x-1' : 'stroke-black group-hover:translate-x-1'}`}
+                        {data.prices.pro !== 0 && (
+                            <div className="relative inline-flex items-center justify-center group cursor-pointer" onClick={() => handleModeChange(3)}>
+                                <div
+                                    className={`absolute inset-0 duration-1000 transition-all bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-400 rounded-xl blur-lg filter ${mode === 3 ? 'opacity-70 animate-pulse' : 'opacity-0 group-hover:opacity-50'
+                                        } group-hover:duration-200`}
+                                ></div>
+                                <button
+                                    role="button"
+                                    className={`group relative inline-flex items-center justify-center text-sm md:text-base rounded-xl px-12 md:px-20 py-3 md:py-4 font-bold transition-all duration-300 min-w-[200px] md:min-w-[320px] whitespace-nowrap ${mode === 3
+                                        ? 'bg-[#bb734b] text-white shadow-lg -translate-y-0.5 shadow-[#bb734b]/30'
+                                        : 'bg-gray-200 text-black border border-black/10 hover:bg-white'
+                                        }`}
                                 >
-                                    <path
-                                        d="M0 5h7"
-                                        className={`transition duration-300 ${mode === 3 ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
-                                    ></path>
-                                    <path
-                                        d="M1 1l4 4-4 4"
-                                    ></path>
-                                </svg>
-                            </button>
-                        </div>
+                                    <span className="flex-1 text-center">3 Month (Pro)</span>
+                                    <svg
+                                        aria-hidden="true"
+                                        viewBox="0 0 10 10"
+                                        height="10"
+                                        width="10"
+                                        fill="none"
+                                        className={`mt-0.5 ml-2 -mr-1 stroke-2 transition-transform duration-300 ${mode === 3 ? 'stroke-white translate-x-1' : 'stroke-black group-hover:translate-x-1'}`}
+                                    >
+                                        <path
+                                            d="M0 5h7"
+                                            className={`transition duration-300 ${mode === 3 ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
+                                        ></path>
+                                        <path
+                                            d="M1 1l4 4-4 4"
+                                        ></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        )}
 
                         {/* 6 Month Button */}
                         <div className="relative inline-flex items-center justify-center group cursor-pointer" onClick={() => handleModeChange(6)}>
