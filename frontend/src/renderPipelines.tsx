@@ -157,8 +157,8 @@ const PipelineApp = ({ pageName }: { pageName: string }) => {
         <div className="w-full flex justify-center items-center py-10 px-4">
             <div className="max-w-7xl mx-auto flex flex-col items-center w-full">
                 {!isAIML && (
-                    <div className="mb-20 md:mb-32 relative z-20">
-                        <div className="bg-white/5 backdrop-blur-md border border-white/10 p-1.5 rounded-2xl flex items-center gap-2">
+                    <div className="mb-20 md:mb-32 relative z-20 w-fit">
+                        <div className="bg-white/5 backdrop-blur-md border border-white/10 p-1.5 rounded-2xl flex items-center gap-2 w-fit">
                             <button
                                 onClick={() => handleModeChange(3)}
                                 className={`relative px-8 py-3 rounded-xl text-sm md:text-base font-bold transition-all duration-300 min-w-[160px] md:min-w-[200px] ${mode === 3 ? 'text-white' : 'text-gray-400 hover:text-white'
