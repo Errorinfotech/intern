@@ -120,11 +120,13 @@ const timelineVaraints = {
 export default function PricingSection2({
   mode = 3,
   onModeChange,
-  customPrices
+  customPrices,
+  showPro = true
 }: {
   mode?: 3 | 6,
   onModeChange?: (mode: 3 | 6) => void,
-  customPrices?: { pro: number, ent: number, originalPro: number, originalEnt: number }
+  customPrices?: { pro: number, ent: number, originalPro: number, originalEnt: number },
+  showPro?: boolean
 }) {
   const isEnterprise = mode === 6;
   const pricingRef = useRef<HTMLDivElement>(null);
@@ -265,22 +267,26 @@ export default function PricingSection2({
                 customVariants={revealVariants}
                 className="relative z-10"
               >
-                {customPrices?.pro !== 0 && (
-                  <>
-                    <h4 className="font-semibold text-white mb-2 text-lg">
-                      Package Type
-                    </h4>
-                    <p className="text-sm text-gray-400 mb-4">
-                      Select between Pro or Enterprise Track
-                    </p>
-                    <PricingSwitch
-                      button1="Pro (3 Months)"
-                      button2="Enterprise (6 Months)"
-                      onSwitch={toggleMode}
-                      selected={isEnterprise ? "1" : "0"}
-                      className="grid grid-cols-2 w-full"
-                    />
-                  </>
+                <h4 className="font-semibold text-white mb-2 text-lg">
+                  Package Type
+                </h4>
+                <p className="text-sm text-gray-400 mb-4">
+                  Select between Pro or Enterprise Track
+                </p>
+                {showPro ? (
+                  <PricingSwitch
+                    button1="Pro (3 Months)"
+                    button2="Enterprise (6 Months)"
+                    onSwitch={toggleMode}
+                    selected={isEnterprise ? "1" : "0"}
+                    className="grid grid-cols-2 w-full"
+                  />
+                ) : (
+                  <div className="relative z-10 w-full flex rounded-full bg-[#1a1410] border border-[rgba(187,115,75,0.3)] p-1">
+                    <div className="relative z-10 w-full sm:h-14 h-10 rounded-full sm:px-6 px-3 sm:py-2 py-1 font-medium text-white text-center flex items-center justify-center border-2 border-[#bb734b] shadow-[0_0_20px_rgba(187,115,75,0.4)] bg-[#bb734b]">
+                      Enterprise (6 Months)
+                    </div>
+                  </div>
                 )}
               </TimelineContent>
 
