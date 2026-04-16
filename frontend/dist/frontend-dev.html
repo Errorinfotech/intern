@@ -8,24 +8,31 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
-<style>
-:root {
-            --primary: #bb734b;           /* Copper Accent as Primary */
-            --primary-light: #d6956f;     /* Lighter Copper */
-            --secondary: #bb734b;         
-            --secondary-hover: #a5613a;   
-            --bg-body: #0d0a08;           /* Near Black-Brown */
-            --bg-section: #1a1410;        /* Deep Dark Brown */
-            --text-main: #ffffff;         /* Pure White */
-            --text-muted: #a1a1aa;        /* Muted Light Gray */
+    <style>
+        :root {
+            --primary: #bb734b;
+            /* Copper Accent as Primary */
+            --primary-light: #d6956f;
+            /* Lighter Copper */
+            --secondary: #bb734b;
+            --secondary-hover: #a5613a;
+            --bg-body: #0d0a08;
+            /* Near Black-Brown */
+            --bg-section: #1a1410;
+            /* Deep Dark Brown */
+            --text-main: #ffffff;
+            /* Pure White */
+            --text-muted: #a1a1aa;
+            /* Muted Light Gray */
             --border-color: rgba(187, 115, 75, 0.15);
             --border-focus: #bb734b;
-            
+
             --success: #38a169;
             --warning: #e53e3e;
-            
+
             --shadow-sm: 0 2px 8px rgba(61, 44, 34, 0.04);
             --shadow-md: 0 8px 24px rgba(61, 44, 34, 0.08);
             --shadow-hover: 0 12px 32px rgba(187, 115, 75, 0.12);
@@ -87,7 +94,7 @@
             position: absolute;
             inset: 0;
             background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.05) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(244, 63, 94, 0.05) 0%, transparent 50%);
+                radial-gradient(circle at 80% 20%, rgba(244, 63, 94, 0.05) 0%, transparent 50%);
             filter: blur(80px);
             z-index: 0;
         }
@@ -120,13 +127,27 @@
         }
 
         @keyframes shape-entrance {
-            from { opacity: 0; transform: translateY(-150px) rotate(-15deg); }
-            to { opacity: 1; transform: translateY(0) rotate(var(--rotate)); }
+            from {
+                opacity: 0;
+                transform: translateY(-150px) rotate(-15deg);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) rotate(var(--rotate));
+            }
         }
 
         @keyframes shape-float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(15px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(15px);
+            }
         }
 
         /* Fade Up Animation */
@@ -137,7 +158,10 @@
         }
 
         @keyframes fade-up {
-            to { opacity: 1; transform: translateY(0); }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .hero-container {
@@ -179,13 +203,15 @@
 
         .title-white {
             background: linear-gradient(to bottom, #ffffff, rgba(255, 255, 255, 0.8));
-            -webkit-background-clip: text; background-clip: text;
+            -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .title-gradient {
             background: linear-gradient(to right, #a5b4fc, #ffffff, #fda4af);
-            -webkit-background-clip: text; background-clip: text;
+            -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
@@ -207,7 +233,7 @@
 
         .hero-badge {
             display: inline-block;
-            background-color: rgba(187,115,75,0.1);
+            background-color: rgba(187, 115, 75, 0.1);
             color: var(--secondary);
             padding: 6px 18px;
             border-radius: 30px;
@@ -216,17 +242,17 @@
             letter-spacing: 0.5px;
             text-transform: uppercase;
             margin-bottom: 1.5rem;
-            border: 1px solid rgba(187,115,75,0.2);
+            border: 1px solid rgba(187, 115, 75, 0.2);
         }
 
         .hero-logo {
             height: 95px;
             width: auto;
             margin-bottom: 1.5rem;
-            filter: brightness(0) drop-shadow(0 4px 6px rgba(0,0,0,0.05));
+            filter: brightness(0) drop-shadow(0 4px 6px rgba(0, 0, 0, 0.05));
             transition: transform 0.3s ease;
         }
-        
+
         .hero-logo:hover {
             transform: scale(1.02);
         }
@@ -245,13 +271,13 @@
             position: relative;
             display: inline-block;
         }
-        
+
         .hero-highlight::after {
             content: '';
             position: absolute;
             width: 100%;
             height: 8px;
-            background-color: rgba(187,115,75,0.2);
+            background-color: rgba(187, 115, 75, 0.2);
             bottom: 8px;
             left: 0;
             z-index: -1;
@@ -265,14 +291,14 @@
             margin: 0 auto 2.5rem;
             max-width: 600px;
         }
-        
+
         .hero-actions {
             display: flex;
             gap: 1rem;
             justify-content: center;
             align-items: center;
         }
-        
+
         .hero-btn-primary {
             background-color: var(--secondary);
             color: white;
@@ -283,14 +309,14 @@
             transition: var(--transition);
             box-shadow: 0 4px 15px rgba(187, 115, 75, 0.3);
         }
-        
+
         .hero-btn-primary:hover {
             background-color: var(--primary);
             box-shadow: 0 6px 20px rgba(61, 44, 34, 0.2);
             transform: translateY(-2px);
             color: white;
         }
-        
+
         .hero-btn-outline {
             background-color: #0d0a08;
             background-image:
@@ -308,15 +334,16 @@
             transition: var(--transition);
             border: 2px solid var(--border-color);
         }
-        
+
         .hero-btn-outline:hover {
             border-color: var(--primary);
-            background-color: rgba(61,44,34,0.05);
+            background-color: rgba(61, 44, 34, 0.05);
             transform: translateY(-2px);
         }
 
         /* Section Global */
-        .programs-section, .contact-section {
+        .programs-section,
+        .contact-section {
             padding: 3rem 2rem;
             background-color: #0d0a08;
             background-image:
@@ -326,7 +353,8 @@
                 linear-gradient(135deg, rgba(187, 115, 75, 0.03) 25%, transparent 25%, transparent 75%, rgba(187, 115, 75, 0.03) 75%, rgba(187, 115, 75, 0.03) 75%);
             background-attachment: fixed;
             background-size: 100% 100%, 100% 100%, 80px 80px, 80px 80px;
-            margin-bottom: 3rem; /* Added margin for separation */
+            margin-bottom: 3rem;
+            /* Added margin for separation */
         }
 
         .section-header {
@@ -357,15 +385,18 @@
             width: 100%;
             overflow: hidden;
             position: relative;
-            padding: 1rem 0; /* Reduced vertical padding */
+            padding: 1rem 0;
+            /* Reduced vertical padding */
         }
 
         .programs-grid {
             display: flex !important;
             flex-wrap: nowrap !important;
-            gap: 1.5rem; /* Slightly reduced gap */
+            gap: 1.5rem;
+            /* Slightly reduced gap */
             overflow-x: auto;
-            scroll-behavior: auto; /* Changed from smooth to auto for JS control */
+            scroll-behavior: auto;
+            /* Changed from smooth to auto for JS control */
             -ms-overflow-style: none;
             scrollbar-width: none;
             cursor: grab;
@@ -391,7 +422,8 @@
             /* Dimensions matching the React aspect ratio card */
             min-height: 27rem;
             min-width: 300px;
-            width: 360px; /* On large screens */
+            width: 360px;
+            /* On large screens */
             flex-shrink: 0;
             border: none;
             text-decoration: none;
@@ -419,7 +451,7 @@
             position: absolute;
             inset: 0;
             height: 100%;
-            background: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 40%, rgba(0,0,0,0.85) 100%);
+            background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 0.85) 100%);
             z-index: -1;
             transition: opacity 0.3s ease;
         }
@@ -440,14 +472,14 @@
 
         .program-title {
             font-size: 1.35rem;
-            color: #ffffff; 
+            color: #ffffff;
             font-weight: 700;
             margin-bottom: 0.8rem;
             letter-spacing: -0.3px;
         }
 
         .program-description {
-            color: rgba(255,255,255,0.85);
+            color: rgba(255, 255, 255, 0.85);
             margin-bottom: 1.5rem;
             font-size: 0.95rem;
             line-height: 1.6;
@@ -487,7 +519,8 @@
         .contact-form-container {
             max-width: 650px;
             margin: 0 auto;
-            background: rgba(13, 10, 8, 0.7); backdrop-filter: blur(10px);
+            background: rgba(13, 10, 8, 0.7);
+            backdrop-filter: blur(10px);
             padding: 2.5rem;
             border-radius: var(--radius-lg);
             box-shadow: var(--shadow-md);
@@ -564,9 +597,9 @@
             font-size: 1.1rem;
             transition: var(--transition);
         }
-        
-        .input-icon-wrapper input:focus + i,
-        .input-icon-wrapper select:focus + i {
+
+        .input-icon-wrapper input:focus+i,
+        .input-icon-wrapper select:focus+i {
             color: var(--secondary);
         }
 
@@ -614,13 +647,13 @@
             font-size: 0.9rem;
             color: var(--text-muted);
         }
-        
+
         .checkbox-label {
             cursor: pointer;
             display: flex;
             align-items: center;
         }
-        
+
         .checkbox-label input {
             accent-color: var(--secondary);
             margin-right: 10px;
@@ -697,7 +730,7 @@
             margin-bottom: 0.5rem;
             font-size: 1.1rem;
         }
-        
+
         .faq-item p {
             color: var(--text-muted);
             font-size: 0.95rem;
@@ -706,20 +739,23 @@
         /* Modern Contact Card (Kokonut UI) */
         .contact-card-modern {
             position: relative;
-            background: rgba(13, 10, 8, 0.7); backdrop-filter: blur(10px);
+            background: rgba(13, 10, 8, 0.7);
+            backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: var(--radius-lg);
             display: grid;
             grid-template-columns: 1fr;
             overflow: hidden;
             box-shadow: var(--shadow-md);
-            margin: 1rem auto 0; /* Reduced from 3rem */
+            margin: 1rem auto 0;
+            /* Reduced from 3rem */
             max-width: 1024px;
         }
 
         @media (min-width: 1024px) {
             .contact-card-modern {
-                grid-template-columns: 1fr 1.6fr; /* Give form significantly more space */
+                grid-template-columns: 1fr 1.6fr;
+                /* Give form significantly more space */
             }
         }
 
@@ -734,20 +770,40 @@
             justify-content: center;
         }
 
-        .plus-icon i { font-size: 1.2rem; }
-        .plus-top-left { top: -12px; left: -12px; }
-        .plus-top-right { top: -12px; right: -12px; }
-        .plus-bottom-left { bottom: -12px; left: -12px; }
-        .plus-bottom-right { bottom: -12px; right: -12px; }
+        .plus-icon i {
+            font-size: 1.2rem;
+        }
+
+        .plus-top-left {
+            top: -12px;
+            left: -12px;
+        }
+
+        .plus-top-right {
+            top: -12px;
+            right: -12px;
+        }
+
+        .plus-bottom-left {
+            bottom: -12px;
+            left: -12px;
+        }
+
+        .plus-bottom-right {
+            bottom: -12px;
+            right: -12px;
+        }
 
         .contact-card-left {
-            padding: 1.5rem 2.5rem; /* Reduced top padding */
+            padding: 1.5rem 2.5rem;
+            /* Reduced top padding */
             display: flex;
             flex-direction: column;
         }
 
         .contact-card-left .info-intro {
-            margin-bottom: 1.2rem; /* Reduced margin */
+            margin-bottom: 1.2rem;
+            /* Reduced margin */
             color: rgba(255, 255, 255, 0.6);
             font-size: 0.95rem;
             line-height: 1.6;
@@ -790,7 +846,7 @@
         }
 
         .contact-info-label {
-            font-size: 0.6rem; 
+            font-size: 0.6rem;
             color: rgba(255, 255, 255, 0.4);
             text-transform: uppercase;
             letter-spacing: 0.8px;
@@ -800,7 +856,8 @@
         .contact-info-value {
             font-weight: 500;
             color: rgba(255, 255, 255, 0.9);
-            font-size: 0.75rem; /* Reduced from 0.85 */
+            font-size: 0.75rem;
+            /* Reduced from 0.85 */
             word-break: break-all;
         }
 
@@ -811,13 +868,15 @@
         }
 
         .form-group-modern {
-            margin-bottom: 0.6rem; /* Ultra-tight spacing */
+            margin-bottom: 0.6rem;
+            /* Ultra-tight spacing */
             position: relative;
         }
 
         .form-group-modern label {
             display: block;
-            font-size: 0.65rem; /* Reduced from 0.7 */
+            font-size: 0.65rem;
+            /* Reduced from 0.7 */
             font-weight: 600;
             color: rgba(255, 255, 255, 0.4);
             margin-bottom: 0.2rem;
@@ -830,9 +889,11 @@
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 4px;
-            padding: 0.5rem 0.7rem; /* Even tighter padding */
+            padding: 0.5rem 0.7rem;
+            /* Even tighter padding */
             color: white;
-            font-size: 0.8rem; /* Reduced from 0.9 */
+            font-size: 0.8rem;
+            /* Reduced from 0.9 */
             font-family: inherit;
             transition: all 0.2s ease;
         }
@@ -848,13 +909,15 @@
         .error-message-box {
             display: none !important;
         }
-        
+
         /* Dropdown Visibility Fix */
         .form-input-modern option {
-            background-color: #1a1410; /* Dark background to match card */
-            color: white; /* White text */
+            background-color: #1a1410;
+            /* Dark background to match card */
+            color: white;
+            /* White text */
         }
-        
+
         /* Safari/Chrome specific fix for dropdown legibility */
         select.form-input-modern {
             -webkit-appearance: none;
@@ -879,6 +942,7 @@
             gap: 2rem;
             margin-top: 2rem;
         }
+
         .pipeline-item {
             background: rgba(255, 255, 255, 0.05);
             padding: 2.5rem;
@@ -888,12 +952,14 @@
             position: relative;
             overflow: hidden;
         }
+
         .pipeline-item:hover {
             transform: translateY(-10px);
             background: rgba(255, 255, 255, 0.08);
             border-color: rgba(187, 115, 75, 0.3);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
+
         .pipeline-item::before {
             content: 'AI-INTEGRATED';
             position: absolute;
@@ -905,6 +971,7 @@
             letter-spacing: 1px;
             opacity: 0.7;
         }
+
         .pipeline-item h3 {
             color: #bb734b;
             margin-bottom: 1.2rem;
@@ -912,17 +979,19 @@
             font-weight: 700;
             line-height: 1.4;
         }
+
         .pipeline-item p {
             color: rgba(255, 255, 255, 0.7);
             font-size: 0.95rem;
             line-height: 1.6;
         }
+
         .pipeline-item strong {
             color: #ffffff;
             font-weight: 600;
         }
     </style>
-  <script type="module" crossorigin src="/assets/renderPipelines-CUU5mthz.js"></script>
+  <script type="module" crossorigin src="/assets/renderPipelines-mNwe0Ngh.js"></script>
   <link rel="stylesheet" crossorigin href="/assets/renderPipelines-CVeXf0T9.css">
 </head>
 
@@ -952,7 +1021,9 @@
                     <span class="highlight">77+ Core Operations</span>
                     <br>Frontend Development with AI
                 </h1>
-                <p class="hero-subtitle">Industrial-grade mastery using <strong>v0.dev, Bolt.new, Cursor AI, Tailwind AI</strong>. Build high-performance UIs using AI-powered component generation and automated styling workflows.</p>
+                <p class="hero-subtitle">Industrial-grade mastery using <strong>v0.dev, Bolt.new, Cursor AI, Tailwind
+                        AI</strong>. Build high-performance UIs using AI-powered component generation and automated
+                    styling workflows.</p>
                 <a href="#apply" class="cta-button">
                     <i class="fas fa-code"></i>
                     Start Frontend Internship
@@ -962,10 +1033,10 @@
     </section>
 
     <!-- Operations Overview -->
-        <div class="react-pipeline-root" id="operations" data-page="frontend-dev"></div>
+    <div class="react-pipeline-root" id="operations" data-page="frontend-dev"></div>
 
     <!-- Packages Section -->
-    
+
 
     <section class="contact-section" id="apply">
         <div class="container">
@@ -973,11 +1044,12 @@
                 <h2>Apply for Internship</h2>
                 <p>Join our elite program and accelerate your career with hands-on corporate experience.</p>
             </div>
-            
+
             <div class="contact-card-modern">
                 <div class="contact-card-left">
                     <div class="info-intro">
-                        If you have any questions regarding our programs or need help, please fill out the form here. We do our best to respond within 1 business day.
+                        If you have any questions regarding our programs or need help, please fill out the form here. We
+                        do our best to respond within 1 business day.
                     </div>
 
                     <div class="contact-info-grid">
@@ -1009,15 +1081,18 @@
                     <form id="internshipForm" class="contact-form">
                         <div class="form-group-modern">
                             <label>Full Name</label>
-                            <input type="text" id="fullName" name="fullName" class="form-input-modern" placeholder="Surname Name Fathername" required>
+                            <input type="text" id="fullName" name="fullName" class="form-input-modern"
+                                placeholder="Surname Name Fathername" required>
                         </div>
                         <div class="form-group-modern">
                             <label>Email Address</label>
-                            <input type="email" id="email" name="email" class="form-input-modern" placeholder="example@email.com" required>
+                            <input type="email" id="email" name="email" class="form-input-modern"
+                                placeholder="example@email.com" required>
                         </div>
                         <div class="form-group-modern">
                             <label>Phone Number</label>
-                            <input type="tel" id="phone" name="phone" class="form-input-modern" placeholder="+91-8128704400" required>
+                            <input type="tel" id="phone" name="phone" class="form-input-modern"
+                                placeholder="+91-8128704400" required>
                         </div>
                         <div class="form-group-modern">
                             <label>Internship Program</label>
@@ -1032,24 +1107,28 @@
                                 <option value="QA Testing">QA Testing</option>
                                 <option value="Graphic Design">Graphic Design</option>
                                 <option value="BDE & Sales">BDE & Sales</option>
-                                <option value="Product Photography and Videography">Product Photography & AI Post-Production</option>
+                                <option value="Product Photography and Videography">Product Photography & AI
+                                    Post-Production</option>
                             </select>
                         </div>
                         <div class="form-group-modern">
                             <label>Internship Duration</label>
                             <select id="experience" name="experience" class="form-input-modern" required>
                                 <option value="">Select Duration</option>
-                                <option value="3">3 Month with AI (Pro)</option>
-                                <option value="6">6 Month with AI (Enterprise)</option>
+                                <option value="3">3 Month with AI</option>
+                                <option value="6">6 Month with AI</option>
                             </select>
                         </div>
                         <div class="form-group checkbox-group" style="margin-top: 1rem;">
-                            <label class="checkbox-label" for="terms" style="font-size: 0.85rem; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 8px; cursor: pointer;">
-                                <input type="checkbox" id="terms" name="terms" required style="width: 18px; height: 18px; cursor: pointer;">
+                            <label class="checkbox-label" for="terms"
+                                style="font-size: 0.85rem; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                <input type="checkbox" id="terms" name="terms" required
+                                    style="width: 18px; height: 18px; cursor: pointer;">
                                 I agree to the terms and conditions *
                             </label>
                         </div>
-                        <button type="submit" class="submit-btn" style="width: 100%; margin-top: 1rem;">Submit Application</button>
+                        <button type="submit" class="submit-btn" style="width: 100%; margin-top: 1rem;">Submit
+                            Application</button>
                     </form>
                 </div>
             </div>
@@ -1067,15 +1146,25 @@
 
                 <!-- Centered content -->
                 <div class="footer-center-content">
-                    <p class="footer-description">Leading digital solutions provider transforming businesses through innovation and excellence. Your trusted partner for professional growth.</p>
+                    <p class="footer-description">Leading digital solutions provider transforming businesses through
+                        innovation and excellence. Your trusted partner for professional growth.</p>
 
                     <div class="footer-contact-icons">
-                        <a href="mailto:errorinfotech404@gmail.com" class="footer-icon-btn email" data-label="Email"><i class="fas fa-envelope"></i></a>
-                        <a href="tel:+918128704400" class="footer-icon-btn phone" data-label="Call Us"><i class="fas fa-phone-alt"></i></a>
-                        <a href="https://maps.google.com/maps?q=Malviya+Coins,+Dr+Yagnik+Rd,+Rajkot,+Gujarat+360002" target="_blank" class="footer-icon-btn location" data-label="Location"><i class="fas fa-map-marker-alt"></i></a>
-                        <a href="https://wa.me/918128704400" target="_blank" class="footer-icon-btn whatsapp" data-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                        <a href="https://www.linkedin.com/in/error-infotech-1947b9381/" target="_blank" class="footer-icon-btn linkedin" data-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.instagram.com/errorinfotech_pvt.ltd" target="_blank" class="footer-icon-btn instagram" data-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="mailto:errorinfotech404@gmail.com" class="footer-icon-btn email" data-label="Email"><i
+                                class="fas fa-envelope"></i></a>
+                        <a href="tel:+918128704400" class="footer-icon-btn phone" data-label="Call Us"><i
+                                class="fas fa-phone-alt"></i></a>
+                        <a href="https://maps.google.com/maps?q=Malviya+Coins,+Dr+Yagnik+Rd,+Rajkot,+Gujarat+360002"
+                            target="_blank" class="footer-icon-btn location" data-label="Location"><i
+                                class="fas fa-map-marker-alt"></i></a>
+                        <a href="https://wa.me/918128704400" target="_blank" class="footer-icon-btn whatsapp"
+                            data-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.linkedin.com/in/error-infotech-1947b9381/" target="_blank"
+                            class="footer-icon-btn linkedin" data-label="LinkedIn"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/errorinfotech_pvt.ltd" target="_blank"
+                            class="footer-icon-btn instagram" data-label="Instagram"><i
+                                class="fab fa-instagram"></i></a>
                     </div>
                     <p class="footer-address">302 - Malviya Coins, Dr Yagnik Rd, Rajkot, Gujarat 360002</p>
                 </div>
@@ -1088,16 +1177,12 @@
                 <div class="footer-map-wrapper">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.3020788360077!2d70.80177727526163!3d22.30382577968585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959ca10b5fc42bd%3A0xcb1a8b1ee7c8082f!2sMalviya%20Coins%2C%20Dr%20Yagnik%20Rd%2C%20Rajkot%2C%20Gujarat%20360002!5e0!3m2!1sen!2sin!4v1712494000000!5m2!1sen!2sin"
-                        width="100%"
-                        height="100%"
-                        style="border:0;"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                        class="footer-map-iframe">
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade" class="footer-map-iframe">
                     </iframe>
                     <div class="footer-map-overlay">
-                        <a href="https://maps.google.com/maps?q=Malviya+Coins,+Dr+Yagnik+Rd,+Rajkot,+Gujarat+360002" target="_blank" class="footer-map-link">
+                        <a href="https://maps.google.com/maps?q=Malviya+Coins,+Dr+Yagnik+Rd,+Rajkot,+Gujarat+360002"
+                            target="_blank" class="footer-map-link">
                             <i class="fas fa-map-marker-alt"></i> Open in Google Maps
                         </a>
                     </div>
@@ -1418,10 +1503,10 @@
             slider.addEventListener('mouseleave', () => isPaused = false);
             slider.addEventListener('touchstart', () => isPaused = true);
             slider.addEventListener('touchend', () => isPaused = false);
-            
+
             // Clone items and prepend/append for infinite loop behavior
             const cloneContent = slider.innerHTML;
-            slider.innerHTML = cloneContent + cloneContent; 
+            slider.innerHTML = cloneContent + cloneContent;
 
             function smoothScroll() {
                 if (!isPaused) {
@@ -1438,7 +1523,7 @@
 
         // Vertical Footer Ticker Autoscroll
         const ticker = document.querySelector('.footer-programs-ticker-wrapper');
-        if(ticker) {
+        if (ticker) {
             let tickerPaused = false;
             ticker.addEventListener('mouseenter', () => tickerPaused = true);
             ticker.addEventListener('mouseleave', () => tickerPaused = false);
@@ -1480,4 +1565,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
