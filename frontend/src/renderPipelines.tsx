@@ -132,7 +132,7 @@ const PIpelines: Record<string, any> = {
             { t: "Month 5: MLOps & Model Deployment", d: "Containerizing AI models with Docker, managing ML lifecycles with MLFlow, and deploying to AWS/GCP endpoints." },
             { t: "Month 6: Full-Scale Industrial AI Solutions", d: "Building an end-to-end proprietary enterprise AI system, handling concept drift, and securing model architectures." }
         ],
-        prices: { pro: 14999, ent: 19999, originalPro: 19999, originalEnt: 27999 }
+        prices: { pro: 0, ent: 26999, originalPro: 0, originalEnt: 27999 }
     }
 };
 
@@ -156,7 +156,7 @@ const PipelineApp = ({ pageName }: { pageName: string }) => {
     return (
         <div className="w-full flex justify-center items-center py-10 px-4">
             <div className="max-w-7xl mx-auto flex flex-col items-center w-full">
-                {!isAIML && (
+                {data.prices?.pro !== 0 && (
                     <div className="flex flex-row flex-wrap justify-center p-4 gap-8 md:gap-16 mb-20 md:mb-32 relative z-20">
                         {/* 3 Month Button */}
                         <div className="relative inline-flex items-center justify-center group cursor-pointer" onClick={() => handleModeChange(3)}>

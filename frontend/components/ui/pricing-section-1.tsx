@@ -265,19 +265,23 @@ export default function PricingSection2({
                 customVariants={revealVariants}
                 className="relative z-10"
               >
-                <h4 className="font-semibold text-white mb-2 text-lg">
-                  Package Type
-                </h4>
-                <p className="text-sm text-gray-400 mb-4">
-                  Select between Pro or Enterprise Track
-                </p>
-                <PricingSwitch
-                  button1="Pro (3 Months)"
-                  button2="Enterprise (6 Months)"
-                  onSwitch={toggleMode}
-                  selected={isEnterprise ? "1" : "0"}
-                  className="grid grid-cols-2 w-full"
-                />
+                {customPrices?.pro !== 0 && (
+                  <>
+                    <h4 className="font-semibold text-white mb-2 text-lg">
+                      Package Type
+                    </h4>
+                    <p className="text-sm text-gray-400 mb-4">
+                      Select between Pro or Enterprise Track
+                    </p>
+                    <PricingSwitch
+                      button1="Pro (3 Months)"
+                      button2="Enterprise (6 Months)"
+                      onSwitch={toggleMode}
+                      selected={isEnterprise ? "1" : "0"}
+                      className="grid grid-cols-2 w-full"
+                    />
+                  </>
+                )}
               </TimelineContent>
 
               <TimelineContent
