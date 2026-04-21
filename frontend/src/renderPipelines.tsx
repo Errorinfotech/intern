@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { GradientCard } from '../components/ui/gradient-card';
-import PricingSection2 from '../components/ui/pricing-section-1';
+import PricingSection2, { PricingSwitch } from '../components/ui/pricing-section-1';
 import { motion, AnimatePresence } from 'framer-motion';
 import './tailwind_built.css';
 
@@ -158,36 +158,12 @@ const PipelineApp = ({ pageName }: { pageName: string }) => {
             <div className="max-w-7xl mx-auto flex flex-col items-center w-full">
                 {!isAIML && (
                     <div className="mb-20 md:mb-32 relative z-20 w-fit">
-                        <div className="bg-white/5 backdrop-blur-md border border-white/10 p-1.5 rounded-2xl flex items-center gap-2 w-fit">
-                            <button
-                                onClick={() => handleModeChange(3)}
-                                className={`relative px-8 py-3 rounded-xl text-sm md:text-base font-bold transition-all duration-300 min-w-[160px] md:min-w-[200px] ${mode === 3 ? 'text-white' : 'text-gray-400 hover:text-white'
-                                    }`}
-                            >
-                                {mode === 3 && (
-                                    <motion.div
-                                        layoutId="activeTab"
-                                        className="absolute inset-0 bg-[#bb734b] rounded-xl shadow-lg shadow-[#bb734b]/20"
-                                        transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                                    />
-                                )}
-                                <span className="relative z-10">3 Month (Pro)</span>
-                            </button>
-                            <button
-                                onClick={() => handleModeChange(6)}
-                                className={`relative px-8 py-3 rounded-xl text-sm md:text-base font-bold transition-all duration-300 min-w-[160px] md:min-w-[200px] ${mode === 6 ? 'text-white' : 'text-gray-400 hover:text-white'
-                                    }`}
-                            >
-                                {mode === 6 && (
-                                    <motion.div
-                                        layoutId="activeTab"
-                                        className="absolute inset-0 bg-[#bb734b] rounded-xl shadow-lg shadow-[#bb734b]/20"
-                                        transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                                    />
-                                )}
-                                <span className="relative z-10">6 Month (Enterprise)</span>
-                            </button>
-                        </div>
+                        <PricingSwitch
+                            button1="3 Months"
+                            button2="6 Months"
+                            onSwitch={(val) => handleModeChange(val === "1" ? 6 : 3)}
+                            selected={mode === 6 ? "1" : "0"}
+                        />
                     </div>
                 )}
                 <br />

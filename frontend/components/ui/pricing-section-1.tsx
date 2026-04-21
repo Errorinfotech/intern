@@ -12,7 +12,7 @@ function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-const PricingSwitch = ({
+export const PricingSwitch = ({
   button1,
   button2,
   onSwitch,
@@ -51,7 +51,7 @@ const PricingSwitch = ({
           handleSwitch("0");
         }}
         className={cn(
-          "relative z-10 w-full sm:h-14 h-10 rounded-full sm:px-6 px-3 sm:py-2 py-1 font-medium transition-colors cursor-pointer text-center flex items-center justify-center",
+          "relative z-10 w-full sm:h-16 h-12 rounded-full sm:px-8 px-4 sm:py-3 py-2 font-medium transition-colors cursor-pointer text-center flex items-center justify-center",
           selected === "0"
             ? "text-white"
             : "text-gray-400 hover:text-white",
@@ -60,7 +60,7 @@ const PricingSwitch = ({
         {selected === "0" && (
           <motion.span
             layoutId={switchLayoutId}
-            className="absolute top-0 left-0 sm:h-14 h-10 w-full rounded-full border-2 border-[#bb734b] shadow-[0_0_20px_rgba(187,115,75,0.4)] bg-[#bb734b]"
+            className="absolute top-0 left-0 sm:h-16 h-12 w-full rounded-full border-2 border-[#bb734b] shadow-[0_0_20px_rgba(187,115,75,0.4)] bg-[#bb734b]"
             transition={{ type: "spring", stiffness: 500, damping: 30 }}
           />
         )}
@@ -77,7 +77,7 @@ const PricingSwitch = ({
           handleSwitch("1");
         }}
         className={cn(
-          "relative z-10 w-full sm:h-14 h-10 flex-shrink-0 rounded-full sm:px-6 px-3 sm:py-2 py-1 font-medium transition-colors cursor-pointer text-center flex items-center justify-center",
+          "relative z-10 w-full sm:h-16 h-12 flex-shrink-0 rounded-full sm:px-8 px-4 sm:py-3 py-2 font-medium transition-colors cursor-pointer text-center flex items-center justify-center",
           selected === "1"
             ? "text-white"
             : "text-gray-400 hover:text-white",
@@ -86,7 +86,7 @@ const PricingSwitch = ({
         {selected === "1" && (
           <motion.span
             layoutId={switchLayoutId}
-            className="absolute top-0 left-0 sm:h-14 h-10 w-full rounded-full border-2 border-[#bb734b] shadow-[0_0_20px_rgba(187,115,75,0.4)] bg-[#bb734b]"
+            className="absolute top-0 left-0 sm:h-16 h-12 w-full rounded-full border-2 border-[#bb734b] shadow-[0_0_20px_rgba(187,115,75,0.4)] bg-[#bb734b]"
             transition={{ type: "spring", stiffness: 500, damping: 30 }}
           />
         )}
@@ -269,8 +269,8 @@ export default function PricingSection2({
                 </p>
                 {showPro ? (
                   <PricingSwitch
-                    button1="Pro (3 Months)"
-                    button2="Enterprise (6 Months)"
+                    button1="3 Months"
+                    button2="6 Months"
                     onSwitch={toggleMode}
                     selected={isEnterprise ? "1" : "0"}
                     className="grid grid-cols-2 w-full"

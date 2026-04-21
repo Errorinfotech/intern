@@ -24,7 +24,7 @@ yarn-debug.log*
 yarn-error.log*
 logs/
 *.log
-frontend/dist/
+
 
 # Project specific ignores
 backend/exports/*.xlsx
