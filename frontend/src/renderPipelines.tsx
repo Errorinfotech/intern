@@ -56,7 +56,7 @@ const PIpelines: Record<string, any> = {
             { t: "Month 5: Security & Penetration Testing Basics", d: "Identifying vulnerabilities using OWASP top 10 and AI-driven automated security scanners." },
             { t: "Month 6: QA Team Leadership & Framework Design", d: "Designing scalable automation frameworks from scratch and managing enterprise QA lifecycles." }
         ],
-        prices: { pro: 8999, ent: 13999, originalPro: 12999, originalEnt: 19999 }
+        prices: { pro: 10999, ent: 15999, originalPro: 14999, originalEnt: 21999 }
     },
     "content-creator": {
         pro: [
@@ -69,7 +69,7 @@ const PIpelines: Record<string, any> = {
             { t: "Month 5: Video Scripting & Production AI", d: "Mastering AI tools like Synthesia and Midjourney for automated, high-retention video production." },
             { t: "Month 6: Content Agency Leadership", d: "Managing end-to-end content teams, tracking ROI, and executing massive brand campaigns." }
         ],
-        prices: { pro: 8999, ent: 13999, originalPro: 12999, originalEnt: 19999 }
+        prices: { pro: 10999, ent: 15999, originalPro: 14999, originalEnt: 21999 }
     },
     "bde-operations": {
         pro: [
@@ -121,7 +121,7 @@ const PIpelines: Record<string, any> = {
             { t: "Month 5: Generative AI Packaging & Print", d: "Designing ultra-dense packaging files and large-scale print graphics with perfect bleed/color validation." },
             { t: "Month 6: Art Direction & Portfolio Mastery", d: "Leading creative teams, pitch deck communication, and formulating million-dollar brand identities." }
         ],
-        prices: { pro: 9999, ent: 14999, originalPro: 13999, originalEnt: 20999 }
+        prices: { pro: 10999, ent: 15999, originalPro: 14999, originalEnt: 21999 }
     },
     "ai-ml internship": {
         ent: [
